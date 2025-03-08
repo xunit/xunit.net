@@ -1,0 +1,864 @@
+---
+layout: default
+title: xUnit.net v2+ XML Format
+breadcrumb: Documentation
+---
+
+<h1>xUnit.net v2+ XML Format</h1>
+
+<p>
+  Several runners&mdash;including the console and MSBuild runners&mdash;are
+  capable of generating XML reports after tests have been run. Some of those
+  runners also support running XSL-T transformations against that XML (some
+  built-in examples include transformations to HTML and NUnit format). This page
+  documents the format of the XML emitted from v2 (and later) runners.
+</p>
+
+<p>
+  The <code>schema-version</code> attribute on the <code>assemblies</code> element
+  identifies the schema version of the document. Since this attribute was introduced
+  in schema version 2, it should be assumed that the absence of this attribute implies
+  schema version 1. It's also important to note that schema versions are unrelated
+  to versions of xUnit.net and their runners; you should only make assumptions about
+  supported features in the XML file based on <code>schema-version</code> and
+  <em><strong>not</strong></em> based on the version of xUnit.net.
+</p>
+
+<p>
+  The top level element of the document is the <a href="#assemblies">assemblies</a>
+  element.
+</p>
+
+<h3>Elements</h3>
+<ul>
+  <li><a href="#assemblies">assemblies</a></li>
+  <li><a href="#assembly">assembly</a></li>
+  <li><a href="#collection">collection</a></li>
+  <li><a href="#error">error</a></li>
+  <li><a href="#errors">errors</a></li>
+  <li><a href="#failure">failure</a></li>
+  <li><a href="#test">test</a></li>
+  <li><a href="#trait">trait</a></li>
+  <li><a href="#traits">traits</a></li>
+  <li><a href="#warnings">warnings</a></li>
+</ul>
+
+<p>
+  <em>
+    Note: The XML format changed from v1 to v2. If you are looking for documentation
+    on the old v1 format, the <a href="format-xml-v1">xUnit v1 format page</a> contains that documentation.
+  </em>
+</p>
+
+
+
+<h2 class="banner" id="assemblies"><code>&lt;assemblies&gt;</code> Element</h2>
+
+<p>The <code>assemblies</code> element is the top-level element of the document.</p>
+
+<h3>Attributes</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Schema</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>computer</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        [Optional] The name of the computer that ran this set of assemblies, if known.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>finish-rtf</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The time the last assembly finished running, in round-trippable format.<br />
+        <em><strong>Data type:</strong> String (in <code>yyyy-mm-ddThh:mm:ss.fffffff[timezone]</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>id</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        A unique ID for this collection of assemblies. This ID is regenerated every time
+        the test assemblies are run.<br />
+        <em><strong>Data type:</strong> GUID</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>schema-version</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The schema version of the document.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>start-rtf</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The time the first assembly started running, in round-trippable format.<br />
+        <em><strong>Data type:</strong> String (in <code>yyyy-mm-ddThh:mm:ss.fffffff[timezone]</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>timestamp</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The human-readable timestamp of when the last assembly finished running.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>user</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        [Optional] The name of the user that ran this set of assemblies, if known.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+</table>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="#assembly"><code>&lt;assembly&gt;</code></a></th>
+      <td>1+</td>
+      <td>0..*</td>
+      <td class="wrapped-wide">One child element for each test assembly</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="assembly"><code>&lt;assembly&gt;</code> Element</h2>
+
+<p>
+  The <code>assembly</code> element contains information about the run of a single
+  test assembly. This includes environmental information.
+</p>
+
+<h3>Attributes</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Schema</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>config-file</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        [Optional] The fully qualified path name of the test assembly configuration file.<br />
+        <em><strong>Data type:</strong> String (file path)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>environment</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The runtime environment in which the tests were run.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>errors</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of environmental errors experienced in the assembly. This is separate
+        from failing tests (for example, errors that occurred while cleaning up, between or
+        after tests).<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>failed</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of test cases in the assembly which failed.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>finish-rtf</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The time the test assembly finished running, in round-trippable format.<br />
+        <em><strong>Data type:</strong> String (in <code>yyyy-mm-ddThh:mm:ss.fffffff[timezone]</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>id</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        A unique ID for this test assembly. This ID is regenerated every time the assembly
+        is run.<br />
+        <em><strong>Data type:</strong> GUID</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>name</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The fully qualified path name of the test assembly.<br />
+        <em><strong>Data type:</strong> String (file path)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>not-run</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The total number of test cases in the assembly that were not run (because they did not
+        match the user's request to run or not run explicit tests).<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>passed</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of test cases in the assembly which passed.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>run-date</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The date when the test run started.<br />
+        <em><strong>Data type:</strong> String (in <code>yyyy-mm-dd</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>run-time</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The time when the test run started.<br />
+        <em><strong>Data type:</strong> String (in 24-hour <code>hh:mm:ss</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>skipped</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of test cases in the assembly that were skipped.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>start-rtf</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The time the test assembly started running, in round-trippable format.<br />
+        <em><strong>Data type:</strong> String (in <code>yyyy-mm-ddThh:mm:ss.fffffff[timezone]</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>target-framework</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The target framework that the unit tests were compiled against, if known.<br />
+        <em><strong>Data type:</strong> String (in <code>&lt;FrameworkName&gt;,Version=&lt;FrameworkVersion&gt;</code>
+          format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>test-framework</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The display name of the test framework that ran the tests.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>time</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The number of seconds the assembly run took.<br />
+        <em><strong>Data type:</strong> Decimal</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>time-rtf</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The time spent running tests in the assembly (in a round-trippable format).<br />
+        <em><strong>Data type:</strong> String (in <code>hh:mm:ss.fffffff</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>total</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of test cases run in the assembly.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="#collection"><code>&lt;collection&gt;</code></a></th>
+      <td>1+</td>
+      <td>0..*</td>
+      <td class="wrapped-wide">One collection element for every test collection in the test assembly.</td>
+    </tr>
+    <tr>
+      <th><a href="#errors"><code>&lt;errors&gt;</code></a></th>
+      <td>1+</td>
+      <td>0..1</td>
+      <td class="wrapped-wide">Container for the environmental errors experienced in the test assembly.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="collection"><code>&lt;collection&gt;</code> Element</h2>
+
+<p>The <code>collection</code> element contains information about the run of a single test collection.</p>
+
+<h3>Attributes</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Schema</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>id</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        A unique ID for this test collection. This ID is regenerated every time the collection
+        is run.<br />
+        <em><strong>Data type:</strong> GUID</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>name</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The display name of the test collection.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>failed</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of test cases in the test collection which failed.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>not-run</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The total number of test cases in the collection that were not run (because they did not
+        match the user's request to run or not run explicit tests).<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>passed</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of test cases in the test collection which passed.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>skipped</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of test cases in the test collection that were skipped.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>time</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The number of seconds the test collection run took.<br />
+        <em><strong>Data type:</strong> Decimal</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>time-rtf</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The time spent running tests in the collection (in a round-trippable format).<br />
+        <em><strong>Data type:</strong> String (in <code>hh:mm:ss.fffffff</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>total</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The total number of test cases run in the test collection.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="#test"><code>&lt;test&gt;</code></a></th>
+      <td>1+</td>
+      <td>1..*</td>
+      <td class="wrapped-wide">One test element for every test in the test collection.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="error"><code>&lt;error&gt;</code> Element</h2>
+
+<p>
+  The <code>error</code> element contains information about an environment failure that
+  happened outside the scope of running a single unit test (for example, an exception
+  thrown while disposing of a fixture object).
+</p>
+
+<h3>Attributes</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Schema</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>name</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        [Optional] The name of the item that caused the failure, if known. The value
+        depends on the type of error being reported (for example, for <code>assembly-cleanup</code>
+        the name will be the assembly name, when known).<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>type</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        A code which indicates what kind of failure it is.<br />
+        <em>
+          <strong>Data type:</strong> Enum (values: <code>assembly-cleanup</code>,
+          <code>fatal</code>, <code>test-case-cleanup</code>, <code>test-class-cleanup</code>,
+          <code>test-cleanup</code>, <code>test-collection-cleanup</code>,
+          <code>test-method-cleanup</code>)
+        </em>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="#failure"><code>&lt;failure&gt;</code></a></th>
+      <td>1+</td>
+      <td>1</td>
+      <td class="wrapped-wide">Contains information about the failure.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="errors"><code>&lt;errors&gt;</code> Element</h2>
+
+<p>The <code>errors</code> element is a container for 0 or more <a href="#error"><code>error</code></a> elements.</p>
+<p>
+  (Note that in schema 2+, the <code>errors</code> element will never be empty; if there are no errors in the
+  collection, then the <code>errors</code> element itself will not be present. Defensively supporting both
+  schema 1 and schema 2+ means you should still plan for <code>errors</code> elements with no children.)
+</p>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="#error"><code>&lt;error&gt;</code></a></th>
+      <td>1+</td>
+      <td>0..*</td>
+      <td class="wrapped-wide">One error element for every environmental error that occurred.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="failure"><code>&lt;failure&gt;</code> Element</h2>
+
+<p>The <code>failure</code> element contains information a test failure.</p>
+
+<h3>Attributes</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Schema</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>exception-type</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        [Optional] The fully qualified type name of the exception that caused the failure.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>&lt;message&gt;</code></th>
+      <td>1+</td>
+      <td>0..1</td>
+      <td class="wrapped-wide">The composite failure message as a CDATA block.</td>
+    </tr>
+    <tr>
+      <th><code>&lt;stack-trace&gt;</code></th>
+      <td>1+</td>
+      <td>0..1</td>
+      <td class="wrapped-wide">The composite stack trace as a CDATA block.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="test"><code>&lt;test&gt;</code> Element</h2>
+
+<p>The <code>test</code> element contains information about the run of a single test.</p>
+
+<h3>Attributes</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Schema</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>finish-rtf</code></th>
+      <td>3+</td>
+      <td class="wrapped-wide">
+        [Optional] The time the test finished running, in round-trippable format.<br />
+        <em><strong>Data type:</strong> String (in <code>yyyy-mm-ddThh:mm:ss.fffffff[timezone]</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>id</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        A unique ID for this test. This ID is regenerated every time the test is run.<br />
+        <em><strong>Data type:</strong> GUID</em>
+      </td>
+    <tr>
+      <th><code>method</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        [Optional] The name of the method that contained the test.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>name</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The display name of the test.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>result</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The result of the test. (Note that while this attribute is present in schema 1, the enum
+        value of <code>NotRun</code> was not introduced until schema 2, and only applies to tests
+        written in xUnit.net v3 or later, when the explicit feature was introduced.)<br />
+        <em>
+          <strong>Data type:</strong> Enum (values: <code>Pass</code>, <code>Fail</code>,
+          <code>Skip</code>, and <code>NotRun</code>).
+        </em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>source-file</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        [Optional] The source file that this test belongs to, if known.<br />
+        <em><strong>Data type:</strong> String (file path)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>source-line</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        [Optional] The source line that this test belongs to, if known.<br />
+        <em><strong>Data type:</strong> Integer</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>start-rtf</code></th>
+      <td>3+</td>
+      <td class="wrapped-wide">
+        [Optional] The time the test started running, in round-trippable format.<br />
+        <em><strong>Data type:</strong> String (in <code>yyyy-mm-ddThh:mm:ss.fffffff[timezone]</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>time</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The number of seconds the test run took.<br />
+        <em><strong>Data type:</strong> Decimal</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>time-rtf</code></th>
+      <td>2+</td>
+      <td class="wrapped-wide">
+        The time spent running the test (in a round-trippable format).<br />
+        <em><strong>Data type:</strong> String (in <code>hh:mm:ss.fffffff</code> format)</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>type</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        [Optional] The fully qualified type name of the class that contained the test.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="#failure"><code>&lt;failure&gt;</code></a></th>
+      <td>1+</td>
+      <td>0..1</td>
+      <td class="wrapped-wide">For failing tests, contains information about the failure.</td>
+    </tr>
+    <tr>
+      <th><code>&lt;output&gt;</code></th>
+      <td>1+</td>
+      <td>0..1</td>
+      <td class="wrapped-wide">Any output that was written to the test output helper, as a CDATA block.</td>
+    </tr>
+    <tr>
+      <th><code>&lt;reason&gt;</code></th>
+      <td>1+</td>
+      <td>0..1</td>
+      <td class="wrapped-wide">For a skipped test, contains the reason text as a CDATA block.</td>
+    </tr>
+    <tr>
+      <th><a href="#traits"><code>&lt;traits&gt;</code></a></th>
+      <td>1+</td>
+      <td>0..1</td>
+      <td class="wrapped-wide">Container for 1 or more <a href="#trait"><code>trait</code></a> elements.</td>
+    </tr>
+    <tr>
+      <th><a href="#warnings"><code>&lt;warnings&gt;</code></a></th>
+      <td>2+</td>
+      <td>0..1</td>
+      <td class="wrapped-wide">Container for 1 or more <code>warning</code> elements.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="trait"><code>&lt;trait&gt;</code> Element</h2>
+
+<p>The <code>trait</code> element contains a single trait name/value pair.</p>
+
+<h3>Attributes</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Schema</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>name</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The name of the trait.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+    <tr>
+      <th><code>value</code></th>
+      <td>1+</td>
+      <td class="wrapped-wide">
+        The value of the trait.<br />
+        <em><strong>Data type:</strong> String</em>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="traits"><code>&lt;traits&gt;</code> Element</h2>
+
+<p>The <code>traits</code> element is a container for 1 or more <a href="#trait"><code>trait</code></a> elements.</p>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="#trait"><code>&lt;trait&gt;</code></a></th>
+      <td>1+</td>
+      <td>1..*</td>
+      <td class="wrapped-wide">One trait element for every trait name/value pair associated with the test.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="banner" id="warnings"><code>&lt;warnings&gt;</code> Element</h2>
+
+<p>The <code>warnings</code> element is a container for 1 or more <code>warning</code> elements.</p>
+
+<h3>Child Elements</h3>
+
+<table class="table xml-format">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Schema</th>
+      <th>Cardinality</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>&lt;warning&gt;</code></a></th>
+      <td>2+</td>
+      <td>1..*</td>
+      <td class="wrapped-wide">Contains a warning message as a CDATA block.</td>
+    </tr>
+  </tbody>
+</table>
