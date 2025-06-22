@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "build": {
+    "markdownEngineProperties": {
+      "markdigExtensions": [
+        "attributes",
+        "customcontainers"
+      ]
+    },
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ]
+      }
+    ],
+    "theme": [],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "../.site",
+    "template": [
+      "default",
+      "modern",
+      "templates/xunit"
+    ],
+    "globalMetadata": {
+      "_appName": "xUnit.net",
+      "_appTitle": "xUnit.net",
+      "_appFooter": "<div class=\"align-right\"><a href=\"https://github.com/xunit/xunit.net\">Contribute to the documentation</a></div>Copyright &copy; <a href=\"https://dotnetfoundation.org/\">.NET Foundation</a>. Made with <a href=\"https://github.com/dotnet/docfx\">DocFX</a>.",
+      "_appFaviconPath": "images/logo-128-transparent.png",
+      "_disableToc": false,
+      "_enableSearch": true,
+      "pdf": false
+    },
+    "postProcessors": [
+      "ExtractSearchIndex"
+    ]
+  }
+}

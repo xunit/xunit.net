@@ -1,4 +1,4 @@
-_site/
+.site/
 node_modules/
 bin/
 obj/
