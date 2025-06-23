@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit3002
 description: Classes which are JSON serializable should not be tested for their concrete type
 category: Extensibility

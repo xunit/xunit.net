@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit3001
 description: Classes that are marked as serializable (or created by the test framework at runtime) must have a public parameterless constructor
 category: Extensibility
@@ -36,7 +37,7 @@ You may keep any other public constructors with parameters.
 
 ### Violates
 
-#### v2 Core Framework
+### v2 Core Framework
 
 ```csharp
 using Xunit.Abstractions;
@@ -51,7 +52,7 @@ public class xUnit3001 : IXunitSerializable
 }
 ```
 
-#### v3 Core Framework
+### v3 Core Framework
 
 ```csharp
 [JsonTypeID("json-type")]
@@ -123,7 +124,7 @@ public class xUnit3001 : IXunitSerializer
 
 ### Does not violate
 
-#### v2 Core Framework
+### v2 Core Framework
 
 ```csharp
 using System;
@@ -142,7 +143,7 @@ public class xUnit3001 : IXunitSerializable
 }
 ```
 
-#### v3 Core Framework
+### v3 Core Framework
 
 ```csharp
 [JsonTypeID("json-type")]

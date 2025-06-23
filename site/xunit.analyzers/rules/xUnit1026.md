@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1026
 description: Theory methods should use all of their parameters
 category: Usage

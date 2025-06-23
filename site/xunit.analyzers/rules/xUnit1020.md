@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1020
 description: MemberData must reference a property with a getter
 category: Usage

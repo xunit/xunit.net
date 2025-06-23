@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1050
 description: The class referenced by the ClassData attribute returns untyped data rows
 category: Usage

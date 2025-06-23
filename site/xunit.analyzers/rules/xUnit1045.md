@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1045
 description: Avoid using TheoryData type arguments that might not be serializable
 category: Usage

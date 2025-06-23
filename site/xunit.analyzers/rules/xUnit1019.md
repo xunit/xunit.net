@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1019
 description: MemberData must reference a member providing a valid data type
 category: Usage
@@ -41,7 +42,7 @@ public class xUnit1019
 
 ### Does not violate
 
-#### For v2 and v3
+For v2 and v3
 
 ```csharp
 using System.Collections.Generic;
@@ -57,7 +58,7 @@ public class xUnit1019
 }
 ```
 
-#### For v3 only
+For v3 only
 
 ```csharp
 using System.Collections.Generic;

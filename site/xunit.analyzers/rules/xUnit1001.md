@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1001
 description: Fact methods cannot have parameters
 category: Usage

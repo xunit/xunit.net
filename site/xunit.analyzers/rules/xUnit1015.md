@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1015
 description: MemberData must reference an existing member
 category: Usage

@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2021
 description: Async assertions should be awaited
 category: Assertions

@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1035
 description: The value is not convertible to the method parameter type
 category: Usage

@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2019
 description: Do not use obsolete throws check to check for asynchronously thrown exception
 category: Assertions

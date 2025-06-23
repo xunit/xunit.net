@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2031
 description: Do not use Where clause with Assert.Single
 category: Assertions

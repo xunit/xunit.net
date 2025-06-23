@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1030
 description: Do not call ConfigureAwait in test method
 category: Usage
@@ -57,7 +58,7 @@ public class xUnit1030
 }
 ```
 
-#### .NET 8 or later
+### .NET 8 or later
 
 ```csharp
 using System.Threading.Tasks;
@@ -109,7 +110,7 @@ public class xUnit1030
 }
 ```
 
-#### .NET 8 or later
+### .NET 8 or later
 
 ```csharp
 using System.Threading.Tasks;

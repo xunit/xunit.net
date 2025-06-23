@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2000
 description: Constants and literals should be the expected argument
 category: Assertions

@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1051
 description: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken
 category: Usage

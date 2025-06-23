@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1006
 description: Theory methods should have parameters
 category: Usage

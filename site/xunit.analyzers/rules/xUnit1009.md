@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1009
 description: InlineData values must match the number of method parameters
 category: Usage

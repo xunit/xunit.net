@@ -1,5 +1,5 @@
 ---
-partial: foo
+analyzer: true
 title: xUnit0000
 description: Paste the description from the analyzer here
 category: '"Usage" for 1xxx, "Assertions" for 2xxx, "Extensibility" for 3xxx'

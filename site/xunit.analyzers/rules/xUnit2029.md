@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2029
 description: Do not use Assert.Empty to check if a value does not exist in a collection
 category: Assertions

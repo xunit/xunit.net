@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2005
 description: Do not use identity check on value type
 category: Assertions

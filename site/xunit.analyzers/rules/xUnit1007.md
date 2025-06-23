@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1007
 description: ClassData must point at a valid class
 category: Usage
@@ -43,7 +44,7 @@ public class xUnit1007
 
 ### Does not violate
 
-#### For v2 and v3
+For v2 and v3
 
 ```csharp
 using System.Collections;
@@ -70,7 +71,7 @@ public class xUnit1007
 }
 ```
 
-#### For v3 only
+For v3 only
 
 ```csharp
 using System.Collections.Generic;

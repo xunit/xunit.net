@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2020
 description: Do not use always-failing boolean assertion to fail a test
 category: Assertions

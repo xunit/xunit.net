@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2013
 description: Do not use equality check to check for collection size.
 category: Assertions

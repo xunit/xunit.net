@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Governance
-breadcrumb: Governance
 ---
 
 # Governance

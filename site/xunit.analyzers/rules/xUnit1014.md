@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1014
 description: MemberData should use nameof operator for member name
 category: Usage

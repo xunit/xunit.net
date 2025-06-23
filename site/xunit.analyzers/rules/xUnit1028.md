@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1028
 description: Test method must have valid return type
 category: Usage

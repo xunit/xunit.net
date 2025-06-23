@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1039
 description: The type argument to theory data is not compatible with the type of the corresponding test method parameter
 category: Usage
@@ -24,7 +25,7 @@ To fix a violation of this rule, make the types in the parameter and theory data
 
 ### Violates
 
-#### Using `TheoryData<>` (for v2 and v3)
+### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -40,7 +41,7 @@ public class xUnit1039
 }
 ```
 
-#### Using `TheoryDataRow<>` (for v3 only)
+### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using System.Collections.Generic;
@@ -84,7 +85,7 @@ public class xUnit1039
 
 ### Does not violate
 
-#### Using `TheoryData<>` (for v2 and v3)
+### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -114,7 +115,7 @@ public class xUnit1039
 }
 ```
 
-#### Using `TheoryDataRow<>` (for v3 only)
+### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using System.Collections.Generic;

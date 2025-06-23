@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2014
 description: Do not use throws check to check for asynchronously thrown exception
 category: Assertions

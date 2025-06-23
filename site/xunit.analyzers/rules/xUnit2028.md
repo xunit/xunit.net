@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2028
 description: Do not use Assert.Empty or Assert.NotEmpty with problematic types
 category: Assertions

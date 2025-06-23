@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit3003
 description: Classes which extend FactAttribute (directly or indirectly) should provide a public constructor for source information
 category: Extensibility

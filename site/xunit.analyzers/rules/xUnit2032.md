@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2032
 description: Type assertions based on 'assignable from' are confusingly named
 category: Assertions

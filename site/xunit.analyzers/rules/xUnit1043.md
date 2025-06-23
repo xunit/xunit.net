@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1043
 description: Constructors on classes derived from FactAttribute must be public when used on test methods
 category: Usage

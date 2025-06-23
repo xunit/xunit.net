@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1032
 description: Test classes cannot be nested within a generic class
 category: Usage

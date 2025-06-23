@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1017
 description: MemberData must reference a static member
 category: Usage

@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1022
 description: Theory methods cannot have a parameter array
 category: Usage

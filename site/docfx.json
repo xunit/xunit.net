@@ -31,9 +31,13 @@
     "globalMetadata": {
       "_appName": "xUnit.net",
       "_appTitle": "xUnit.net",
-      "_appFooter": "<div class=\"align-right\"><a href=\"https://github.com/xunit/xunit.net\">Contribute to the documentation</a></div>Copyright &copy; <a href=\"https://dotnetfoundation.org/\">.NET Foundation</a>. Made with <a href=\"https://github.com/dotnet/docfx\">DocFX</a>.",
+      "_appFooter": "Copyright &copy; <a href='https://dotnetfoundation.org/'>.NET Foundation</a>. Site built with <a href='https://github.com/dotnet/docfx'>DocFX</a>. Contributions welcomed at <a href='https://github.com/xunit/xunit.net'>https://github.com/xunit/xunit.net</a>.",
       "_appFaviconPath": "images/logo-128-transparent.png",
+      "_disableBreadcrumb": true,
+      "_disableNavbar": true,
+      "_disableNextArticle": true,
       "_disableToc": false,
+      "_enableNewTab": true,
       "_enableSearch": true,
       "pdf": false
     },

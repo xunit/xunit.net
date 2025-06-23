@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1041
 description: Fixture arguments to test classes must have fixture sources
 category: Usage
@@ -60,7 +61,7 @@ public class xUnit1041
 
 ### Does not violate
 
-#### For v2 and v3
+For v2 and v3
 
 ```csharp
 using Xunit;
@@ -118,7 +119,7 @@ public class xUnit1041
 }
 ```
 
-#### For v3 only
+For v3 only
 
 ```csharp
 using Xunit;

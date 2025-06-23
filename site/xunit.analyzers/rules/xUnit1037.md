@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1037
 description: There are fewer theory data type arguments than required by the parameters of the test method
 category: Usage
@@ -25,7 +26,7 @@ parameters from the test method.
 
 ### Violates
 
-#### Using `TheoryData<>` (for v2 and v3)
+### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -41,7 +42,7 @@ public class xUnit1037
 }
 ```
 
-#### Using `TheoryDataRow<>` (for v3 only)
+### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using Xunit;
@@ -84,7 +85,7 @@ public class xUnit1037
 
 ### Does not violate
 
-#### Using `TheoryData<>` (for v2 and v3)
+### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -114,7 +115,7 @@ public class xUnit1037
 }
 ```
 
-#### Using `TheoryDataRow<>` (for v3 only)
+### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using System.Collections.Generic;

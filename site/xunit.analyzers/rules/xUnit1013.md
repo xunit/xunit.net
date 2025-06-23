@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1013
 description: Public method should be marked as test
 category: Usage

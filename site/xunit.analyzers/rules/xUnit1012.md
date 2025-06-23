@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1012
 description: Null should not be used for value type parameters
 category: Usage

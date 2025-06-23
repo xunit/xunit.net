@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1029
 description: Local functions cannot be test functions
 category: Usage

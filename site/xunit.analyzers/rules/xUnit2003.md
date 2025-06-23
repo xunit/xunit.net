@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2003
 description: Do not use equality check to test for null value
 category: Assertions

@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2022
 description: Boolean assertions should not be negated
 category: Assertions

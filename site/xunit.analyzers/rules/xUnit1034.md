@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1034
 description: Null should only be used for nullable parameters
 category: Usage

@@ -1,4 +1,5 @@
 .site/
+_exported_templates/
 node_modules/
 bin/
 obj/

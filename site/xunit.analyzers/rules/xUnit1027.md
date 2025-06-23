@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1027
 description: Collection definition classes must be public
 category: Usage

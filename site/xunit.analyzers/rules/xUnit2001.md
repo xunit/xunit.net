@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2001
 description: Do not use invalid equality check
 category: Assertions

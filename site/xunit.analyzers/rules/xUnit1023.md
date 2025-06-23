@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1023
 description: Theory methods cannot have default parameter values
 category: Usage

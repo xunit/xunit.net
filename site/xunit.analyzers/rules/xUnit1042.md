@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1042
 description: The member referenced by the MemberData attribute returns untyped data rows
 category: Usage
@@ -30,7 +31,7 @@ To fix a violation of this rule in v3, replace `IEnumerable<object[]>`, `IEnumer
 
 ### Violates
 
-#### For v2 and v3
+For v2 and v3
 
 ```csharp
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ public class xUnit1042
 }
 ```
 
-#### For v3 only
+For v3 only
 
 ```csharp
 using System.Collections.Generic;
@@ -66,7 +67,7 @@ public class xUnit1042
 
 ### Does not violate
 
-#### For v2 and v3
+For v2 and v3
 
 ```csharp
 using Xunit;
@@ -82,7 +83,7 @@ public class xUnit1042
 }
 ```
 
-#### For v3
+For v3
 
 ```csharp
 using System.Collections.Generic;

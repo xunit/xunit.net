@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1000
 description: Test classes must be public
 category: Usage

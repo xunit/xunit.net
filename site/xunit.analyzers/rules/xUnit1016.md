@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1016
 description: MemberData must reference a public member
 category: Usage

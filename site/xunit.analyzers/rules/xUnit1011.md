@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1011
 description: There is no matching method parameter
 category: Usage

@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1018
 description: MemberData must reference a valid member kind
 category: Usage

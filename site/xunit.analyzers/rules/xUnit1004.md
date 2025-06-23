@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1004
 description: Test methods should not be skipped
 category: Usage
@@ -28,7 +29,7 @@ To fix a violation of this rule, you will typically employ one of two strategies
 
 ### Violates
 
-#### For v2 and v3
+For v2 and v3
 
 ```csharp
 using Xunit;
@@ -42,7 +43,7 @@ public class xUnit1004
 
 ### Does not violate
 
-#### For v2 and v3
+For v2 and v3
 
 ```csharp
 using Xunit;
@@ -54,7 +55,7 @@ public class xUnit1004
 }
 ```
 
-#### For v3 only
+For v3 only
 
 ```csharp
 using System;

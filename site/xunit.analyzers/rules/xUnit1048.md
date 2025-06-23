@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1048
 description: Avoid using 'async void' for test methods as it is deprecated in xUnit.net v3
 category: Usage

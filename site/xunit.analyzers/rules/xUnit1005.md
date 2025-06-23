@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1005
 description: Fact methods should not have test data
 category: Usage

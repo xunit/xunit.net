@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1040
 description: The type argument to theory data is nullable, while the type of the corresponding test method parameter is not
 category: Usage
@@ -24,7 +25,7 @@ To fix a violation of this rule, either make the theory data type non-nullable, 
 
 ### Violates
 
-#### Using `TheoryData<>` (for v2 and v3)
+### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -40,7 +41,7 @@ public class xUnit1040
 }
 ```
 
-#### Using `TheoryDataRow<>` (for v3 only)
+### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using System.Collections.Generic;
@@ -84,7 +85,7 @@ public class xUnit1040
 
 ### Does not violate
 
-#### Using `TheoryData<>` (for v2 and v3)
+### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -114,7 +115,7 @@ public class xUnit1040
 }
 ```
 
-#### Using `TheoryDataRow<>` (for v3 only)
+### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using System.Collections.Generic;

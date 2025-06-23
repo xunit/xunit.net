@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1038
 description: There are more theory data type arguments than allowed by the parameters of the test method
 category: Usage
@@ -24,7 +25,7 @@ To fix a violation of this rule, either remove unused type arguments, or add mor
 
 ### Violates
 
-#### Using `TheoryData<>` (for v2 and v3)
+### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -40,7 +41,7 @@ public class xUnit1038
 }
 ```
 
-#### Using `TheoryDataRow<>` (for v3 only)
+### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using System.Collections.Generic;
@@ -83,7 +84,7 @@ public class xUnit1038
 
 ### Does not violate
 
-#### Using `TheoryData<>` (for v2 and v3)
+### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -114,7 +115,7 @@ public class xUnit1038
 ```
 
 
-#### Using `TheoryDataRow<>` (for v3 only)
+### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using System.Collections.Generic;

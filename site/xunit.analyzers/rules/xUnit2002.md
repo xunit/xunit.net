@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2002
 description: Do not use null check on value type
 category: Assertions

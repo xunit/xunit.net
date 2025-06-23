@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2023
 description: Do not use collection methods for single-item collections
 category: Assertions

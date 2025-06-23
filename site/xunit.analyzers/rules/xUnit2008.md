@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2008
 description: Do not use boolean check to match on regular expressions
 category: Assertions

@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1046
 description: Avoid using TheoryDataRow arguments that are not serializable
 category: Usage

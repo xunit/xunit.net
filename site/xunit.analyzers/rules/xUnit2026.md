@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit2026
 description: Comparison of sets must be done with IEqualityComparer
 category: Assertions
@@ -85,7 +86,7 @@ public class xUnit2026
 
 ### Does not violate
 
-#### Override `Equals` and `GetHashCode` on the item
+### Override `Equals` and `GetHashCode` on the item
 
 ```csharp
 using System;
@@ -127,7 +128,7 @@ public class xUnit2026
 }
 ```
 
-#### Pass the comparer to the set during construction
+### Pass the comparer to the set during construction
 
 ```csharp
 using System;
@@ -175,7 +176,7 @@ public class xUnit2026
 }
 ```
 
-#### Pass the comparer to the assertion
+### Pass the comparer to the assertion
 
 ```csharp
 using System;

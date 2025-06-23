@@ -1,4 +1,5 @@
 ---
+analyzer: true
 title: xUnit1008
 description: Test data attribute should only be used on a Theory
 category: Usage
