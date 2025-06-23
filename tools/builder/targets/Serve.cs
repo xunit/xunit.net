@@ -1,3 +1,4 @@
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Xunit.BuildTools.Models;
@@ -12,7 +13,9 @@ public static class Serve
 {
 	public static async Task OnExecute(BuildContext context)
 	{
-		context.BuildStep("Building web site");
+		context.BuildStep("Serving web site (with auto-build)");
+
+		Directory.CreateDirectory(Path.Combine(context.BaseFolder, ".site"));
 
 		if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 			await context.Exec("cmd", "/c npm run watch");

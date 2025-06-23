@@ -13,7 +13,8 @@ This site is built with Jekyll, which is based on Ruby, as this is the default s
 In order to successfully build and view the content locally, you will need the following pre-requisites:
 
 * [.NET SDK 9 or later](https://dotnet.microsoft.com/download/dotnet/)
-* [NodeJS 22 or later](https://nodejs.org/)
+* [NodeJS 22 or later](https://nodejs.org/) for live content rebuild during development
+* [Docker](https://docs.docker.com/engine/install/) to host nginx during development
 
 ### Editing the site pages
 

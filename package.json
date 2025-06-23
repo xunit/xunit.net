@@ -1,20 +1,18 @@
 {
   "scripts": {
-    "browser-livereload": "browser-sync start --port 4000 --server .site --files .site --extensions html --browser false",
-    "watch": "concurrently \"npm-watch build\" \"npm run browser-livereload\"",
-    "build": "dotnet docfx build site/docfx.json"
+    "build": "dotnet docfx build site/docfx.json",
+    "nginx": "docker run --rm --name xunit.net -p 4000:80 -v .site:/usr/share/nginx/html:ro -v .nginx:/etc/nginx/conf.d:ro nginx",
+    "watch": "concurrently \"npm-watch build\" \"npm run nginx\""
   },
   "watch": {
     "build": {
-      "patterns": ["**/*"],
+      "patterns": ["site/**/*"],
       "extensions": "*",
       "quiet": false,
-      "ignore": [".site/*"],
       "delay": 500
     }
   },
   "devDependencies": {
-    "browser-sync": "^3.0.4",
     "concurrently": "^9.2.0",
     "npm-watch": "^0.13.0"
   }
