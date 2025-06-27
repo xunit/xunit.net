@@ -1,12 +1,14 @@
 /* This is adapted from DocFX Material: https://ovasquez.github.io/docfx-material/ */
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
 
 /** PAGE WIDE **/
 
 :root {
   --bs-body-font-size: 14px;
   --bs-font-sans-serif: 'Open Sans';
+  --bs-font-monospace: 'Inconsolata';
   --bs-border-radius: 10px;
 
   --border-radius-button: 40px;
@@ -38,6 +40,12 @@ main.container-xxl {
   margin-left: 1em;
   margin-right: 1em;
   width: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-box-shadow: 0 1px 2px 0 #d0e0eb0f, 0 1px 3px 1px #d0e0eb29;
+  }
 }
 
 /** HEADINGS **/
@@ -138,13 +146,13 @@ form.filter {
 /** ALERTS **/
 
 .alert {
-  padding: 0;
+  padding: 0 0 0.01em 0;
   border: none;
   box-shadow: var(--card-box-shadow);
 }
 
 .alert > p {
-  padding: 0.2rem 0.7rem 0.7rem 1rem;
+  padding: 0 1em;
 }
 
 .alert > ul {
@@ -205,13 +213,18 @@ form.filter {
 
 code {
   border-radius: var(--bs-border-radius);
-  margin: 4px 2px;
+  font-size: inherit;
+  margin: 2px 2px;
   padding: 0 0.5em;
   box-shadow: var(--card-box-shadow);
 }
 
 a>code {
   color: var(--bs-code-color);
+}
+
+pre {
+  font-size: 14px;
 }
 
 /** TABLES **/
@@ -230,8 +243,8 @@ a>code {
   background-color: var(--bs-border-color);
 }
 
-.no-wrap {
-  white-space: nowrap;
+.table-no-header thead th {
+  padding: 0;
 }
 
 /** RELEASE LINKS **/
@@ -243,7 +256,7 @@ a>code {
   color: White;
   display: inline-block;
   font-size: 90%;
-  margin-right: 5px;
+  margin: 0 5px 2px 0;
   padding: 2px 8px;
 }
 
@@ -268,7 +281,7 @@ blockquote.about-links {
   float: right;
 }
 
-/** ANALYZER RULES **/
+/** LABELS **/
 
 .label {
   background-color: #777;
@@ -312,6 +325,15 @@ blockquote.about-links {
 .label-version-True::after {
   content: " ✓";
 }
+
+.label-title-date {
+  background-color: #0fc115;
+  display: inline-block;
+  font-size: 45%;
+  margin: 0.5em 0 0 0.5em;
+}
+
+/** ANALYZER RULES **/
 
 .table-analyzers td:nth-child(2) {
   white-space: nowrap;

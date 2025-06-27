@@ -20,7 +20,8 @@ This rule is triggered when your `[MemberData]` attribute points to a member doe
 
 To fix a violation of this rule, update the data member to have an appropriate return type.
 
-<p class="note">Using the types <code>object[]</code> or <code>ITheoryRowData</code> will trigger <a href="xUnit1042">xUnit1042</a> because they are not strongly typed. It is strongly suggested that you choose to use <code>TheoryData&lt;&gt;</code> for v2/v3, or <code>IEnumerable&lt;TheoryDataRow&lt;&gt;&gt;</code>/<code>IAsyncEnumerable&lt;TheoryDataRow&lt;&gt;&gt;</code> for v3, as those provide compiler-level type safety and additional code analysis is possible to ensure the types of the test method parameters match the generic types of your theory data.</p>
+> [!NOTE]
+> Using the types `object[]` or `ITheoryRowData` will trigger [xUnit1042](xUnit1042) because they are not strongly typed. It is strongly suggested that you choose to use `TheoryData<>` for v2/v3, or `IEnumerable<TheoryDataRow<>>`/`IAsyncEnumerable<TheoryDataRow<>>` for v3, as those provide compiler-level type safety and additional code analysis is possible to ensure the types of the test method parameters match the generic types of your theory data.</p>
 
 ## Examples
 

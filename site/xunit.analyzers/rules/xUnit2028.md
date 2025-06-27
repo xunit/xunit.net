@@ -10,8 +10,8 @@ v3: true
 
 ## Cause
 
-Some problematic types ([`ArraySegment<T>`](https://docs.microsoft.com/en-us/dotnet/api/system.arraysegment-1) and
-[`StringValues`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.primitives.stringvalues)) should
+Some problematic types ([`ArraySegment<T>`](https://docs.microsoft.com/dotnet/api/system.arraysegment-1) and
+[`StringValues`](https://learn.microsoft.com/dotnet/api/microsoft.extensions.primitives.stringvalues)) should
 not used with `Assert.Empty` or `Assert.NotEmpty`.
 
 ## Reason for rule

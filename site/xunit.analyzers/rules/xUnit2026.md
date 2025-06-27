@@ -33,7 +33,7 @@ don't have a custom item comparer. This is the recommended way to do this when y
 of the item type.
 
 If you don't control the definition of the item being placed into the set, then you need to implement a custom
-[`IEqualityComparer<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iequalitycomparer-1)
+[`IEqualityComparer<T>`](https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1)
 for the type in question. Once you have the custom comparer, there are two ways you can use it. The preferred
 way is to pass it to the set during construction so that it will be used for all comparison operations. Doing
 this means you don't have to pass the comparer to the assertion function.

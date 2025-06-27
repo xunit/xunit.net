@@ -14,7 +14,7 @@ A violation of this rule occurs when two value type objects are compared using `
 
 ## Reason for rule
 
-`Assert.Same` and `Assert.NotSame` both use [`Object.ReferenceEquals`](https://msdn.microsoft.com/en-us/library/system.object.referenceequals.aspx) to compare objects. This always fails for value types since the values will be boxed before they are passed to the method, creating two different references (even if the values are the equal).
+`Assert.Same` and `Assert.NotSame` both use [`Object.ReferenceEquals`](https://msdn.microsoft.com/library/system.object.referenceequals.aspx) to compare objects. This always fails for value types since the values will be boxed before they are passed to the method, creating two different references (even if the values are the equal).
 
 ## How to fix violations
 

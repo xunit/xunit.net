@@ -1,0 +1,24 @@
+.issue-link {
+  display: block;
+  margin-left: 1em;
+  font-family: Inconsolata, monospace;
+  font-size: 85%;
+}
+
+h3 ~ ul p:has(img) {
+  display: inline-block;
+  height: 0;
+  margin: 0;
+}
+
+h3 ~ ul p img {
+  box-shadow: 3px 3px 20px #666;
+  margin-left: 15px;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+ul ul,
+ul pre {
+  margin-bottom: 15px;
+}

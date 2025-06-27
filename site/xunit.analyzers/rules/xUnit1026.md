@@ -16,7 +16,8 @@ This rule is triggered by having an unused parameter on your `[Theory]`.
 
 Unused parameters are typically an indication of some kind of coding error (typically a parameter that was previously used and is no longer required, or a parameter that was overlooked in the test implementation).
 
-<div class="note">As of <code>xunit.analyzers</code> version <code>1.2</code>, this rule will no longer trigger with parameters that are named as discards (meaning, starting with <code>_</code> and optionally 1 or more numbers). For more information on discard parameter names, see <a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0060">IDE0060</a>.</div>
+> [!NOTE]
+> As of `xunit.analyzers` version `1.2`, this rule will no longer trigger with parameters that are named as discards (meaning, starting with `_` and optionally 1 or more numbers). For more information on discard parameter names, see [IDE0060](https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0060).</div>
 
 ## How to fix violations
 

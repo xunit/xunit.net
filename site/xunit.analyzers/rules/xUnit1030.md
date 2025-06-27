@@ -23,7 +23,7 @@ pool to limit the number of tests which can actively run in parallel.
 This only affects test methods marked with `[Fact]` or `[Theory]`. It does not apply to any third party test methods
 or test any non-test methods.
 
-[CA2007](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2007) forces users to
+[CA2007](https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2007) forces users to
 write `ConfigureAwait` regardless of the situation, so if you've enabled this rule, you may write `.ConfigureAwait(true)`
 and this rule will not trigger. However, this comes with at least two side effects. First, the call is not free;
 it always allocates at least one (or more) unnecessary objects, even when the net result should be the same, in
