@@ -28,7 +28,7 @@ Install the xUnit.net v3 project templates:
 dotnet new install xunit.v3.templates
 ```
 
-```shell
+```text
 The following template packages will be installed:
     xunit.v3.templates
 
@@ -45,7 +45,7 @@ Create a unit test project:
 dotnet new xunit3 --language C#
 ```
 
-```shell
+```text
 The template "xUnit.net v3 Test Project" was created successfully.
 
 Processing post-creation actions...
@@ -79,7 +79,7 @@ Execute the tests:
 dotnet run
 ```
 
-```shell
+```text
 xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
   Discovering: SampleProject
   Discovered:  SampleProject
@@ -103,7 +103,7 @@ Install the xUnit.net v3 project templates:
 dotnet new install xunit.v3.templates
 ```
 
-```shell
+```text
 The following template packages will be installed:
     xunit.v3.templates
 
@@ -120,7 +120,7 @@ Create a unit test project:
 dotnet new xunit3 --language F#
 ```
 
-```shell
+```text
 The template "xUnit.net v3 Test Project" was created successfully.
 
 Processing post-creation actions...
@@ -153,7 +153,7 @@ Execute the tests: `dotnet run`
 dotnet run
 ```
 
-```shell
+```text
 xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
   Discovering: SampleProject
   Discovered:  SampleProject
@@ -177,7 +177,7 @@ Install the xUnit.net v3 project templates:
 dotnet new install xunit.v3.templates
 ```
 
-```shell
+```text
 The following template packages will be installed:
     xunit.v3.templates
 
@@ -194,7 +194,7 @@ Create a unit test project:
 dotnet new xunit3 --language VB
 ```
 
-```shell
+```text
 The template "xUnit.net v3 Test Project" was created successfully.
 
 Processing post-creation actions...
@@ -232,7 +232,7 @@ Execute the tests: `dotnet run`
 dotnet run
 ```
 
-```shell
+```text
 xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
   Discovering: SampleProject
   Discovered:  SampleProject
@@ -291,8 +291,7 @@ _For older release notes, see the [full release notes list](/releases/)._
 * [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
 * [MSBuild Reference](https://docs.microsoft.com/visualstudio/msbuild/msbuild-reference)
 
-{: .ndepend-logo }
-[![Powered by NDepend](https://raw.github.com/xunit/media/main/powered-by-ndepend-transparent.png){: width="142" }](https://www.NDepend.com)
+[![Powered by NDepend](/images/powered-by-ndepend-transparent.png){: width="175" }](https://www.ndepend.com)
 
 ## Sponsors
 
