@@ -18,7 +18,7 @@ xUnit.net is part of the [.NET Foundation](https://www.dotnetfoundation.org/) an
 > NCrunch support is provided and supported by [Remco Software](https://www.ncrunch.net/).<br />
 > The xUnit.net logo was designed by [Nathan Young](https://mas.to/@nathanyoung).
 
-## Quick Start with .NET SDK
+## Quick Start with .NET SDK{ #quick-start }
 
 ### [C#](#tab/cs)
 
@@ -250,7 +250,7 @@ xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
 
 ---
 
-## Latest Release Notes
+## Latest Release Notes{ #release-notes }
 
 {: .latest }
 |                       | Stable                                             | Prerelease
@@ -262,22 +262,23 @@ xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
 
 _For older release notes, see the [full release notes list](/releases/)._
 
-## Latest NuGet Packages
+## Latest NuGet Packages{ #packages }
 
 {: .table .latest }
 |                             | Latest stable                                                                                                                            | Latest CI ([how to use](/docs/using-ci-builds))                                                                                                                                                                          | Build status
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------
 | `xunit.v3`                  | [![](https://img.shields.io/nuget/v/xunit.v3.svg?logo=nuget)](https://www.nuget.org/packages/xunit.v3)                                   | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.v3/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3)                                   | [![](https://img.shields.io/endpoint.svg?url=https://actions-badge.atrox.dev/xunit/xunit/badge%3Fref%3Dmain&amp;label=build)](https://actions-badge.atrox.dev/xunit/xunit/goto?ref=main)
+| `xunit`                     | [![](https://img.shields.io/nuget/v/xunit.svg?logo=nuget)](https://www.nuget.org/packages/xunit)                                         | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit)                                         | [![](https://img.shields.io/endpoint.svg?url=https://actions-badge.atrox.dev/xunit/xunit/badge%3Fref%3Dv2&amp;label=build)](https://actions-badge.atrox.dev/xunit/xunit/goto?ref=v2)
 | `xunit.analyzers`           | [![](https://img.shields.io/nuget/v/xunit.analyzers.svg?logo=nuget)](https://www.nuget.org/packages/xunit.analyzers)                     | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.analyzers/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers)                     | [![](https://img.shields.io/endpoint.svg?url=https://actions-badge.atrox.dev/xunit/xunit.analyzers/badge%3Fref%3Dmain&amp;label=build)](https://actions-badge.atrox.dev/xunit/xunit.analyzers/goto?ref=main)
 | `xunit.runner.visualstudio` | [![](https://img.shields.io/nuget/v/xunit.runner.visualstudio.svg?logo=nuget)](https://www.nuget.org/packages/xunit.runner.visualstudio) | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.runner.visualstudio/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.visualstudio) | [![](https://img.shields.io/endpoint.svg?url=https://actions-badge.atrox.dev/xunit/visualstudio.xunit/badge%3Fref%3Dmain&amp;label=build)](https://actions-badge.atrox.dev/xunit/visualstudio.xunit/goto?ref=main)
 
-## Issues and Discussions
+## Issues and Discussions{ #issues }
 
 * Issues in the core framework and analyzers should be reported in the [primary issue tracker](https://github.com/xunit/xunit/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
 * Issues in `xunit.runner.visualstudio` should be reported in the [project issue tracker](https://github.com/xunit/visualstudio.xunit/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
 * Discussions are hosted in the [primary discussion forums](https://github.com/xunit/xunit/discussions?discussions_q=is%3Aunanswered+is%3Aopen)
 
-## Github Projects
+## Github Projects{ #github }
 
 * [xUnit.net](https://github.com/xunit/xunit) (core framework, built-in runners)
 * [Assertion library](https://github.com/xunit/assert.xunit)
@@ -286,17 +287,17 @@ _For older release notes, see the [full release notes list](/releases/)._
 * [Media files](https://github.com/xunit/media)
 * [This site](https://github.com/xunit/xunit.net)
 
-## Links to Resources
+## Links to Resources{ #links }
 
 * [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
 * [MSBuild Reference](https://docs.microsoft.com/visualstudio/msbuild/msbuild-reference)
 
 [![Powered by NDepend](/images/powered-by-ndepend-transparent.png){: width="175" }](https://www.ndepend.com)
 
-## Sponsors
+## Sponsors{ #sponsors }
 
 Help support this project by becoming a sponsor through [GitHub Sponsors](https://github.com/sponsors/xunit).
 
-## Additional copyrights
+## Additional copyrights{ #copyrights }
 
 Portions copyright The Legion Of The Bouncy Castle
