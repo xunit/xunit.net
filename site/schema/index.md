@@ -6,7 +6,7 @@ title: JSON Schemas
 
 This page includes a complete list of schema versions that have been published.
 
-The [configuration files](/docs/configuration-files) documentation indicates which versions of the Core Framework and associated first party runners support which version of the schema. In general, the schema versions are additive, so passing a newer configuration file to a runner which only understands an older version of the schema _should_ result in the runner simply ignoring any newly added configuration entries. If you are finding that some configuration items aren't being respected by a first or third party runner, once you've verified name and value validity against the schema, you may need to upgrade to a newer runner to take advantage of newer configuration items.
+The [configuration files](/docs/config-xunit-runner-json) documentation indicates which versions of the Core Framework and associated first party runners support which version of the schema. In general, the schema versions are additive, so passing a newer configuration file to a runner which only understands an older version of the schema _should_ result in the runner simply ignoring any newly added configuration entries. If you are finding that some configuration items aren't being respected by a first or third party runner, once you've verified name and value validity against the schema, you may need to upgrade to a newer runner to take advantage of newer configuration items.
 
 The primary recommended URL is [https://xunit.net/schema/current/xunit.runner.schema.json](current/xunit.runner.schema.json), which always points to the latest RTM version.
 
