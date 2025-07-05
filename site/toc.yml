@@ -240,7 +240,21 @@
       href: /xunit.analyzers/rules/xUnit3003
 
 - name: API Documentation
-  href: https://api.xunit.net
+  items:
+  - name: v3 2.0.3
+    href: https://api.xunit.net/v3/2.0.3
+  - name: v3 2.0.2
+    href: https://api.xunit.net/v3/2.0.2
+  - name: v3 2.0.1
+    href: https://api.xunit.net/v3/2.0.1
+  - name: v3 2.0.0
+    href: https://api.xunit.net/v3/2.0.0
+  - name: v3 1.1.0
+    href: https://api.xunit.net/v3/1.1.0
+  - name: v3 1.0.1
+    href: https://api.xunit.net/v3/1.0.1
+  - name: v3 1.0.0
+    href: https://api.xunit.net/v3/1.0.0
 
 - name: Test Results in CI Systems
   items:
