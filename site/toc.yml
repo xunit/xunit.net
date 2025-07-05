@@ -1,232 +1,247 @@
 - name: Home
   href: /
+
 - name: Release Notes
   href: /releases
-- name: Getting started
+
+- name: xUnit.net v3
   items:
-  - name: Getting started with v3
-    href: /docs/getting-started/v3/cmdline
-  - name: Config with xunit.runner.json
-    href: /docs/configuration-files
-  - name: Source analyzer rules
-    href: /xunit.analyzers/rules/
-    items:
-    - name: Usage
-      items:
-      - name: xUnit1000
-        href: /xunit.analyzers/rules/xUnit1000
-      - name: xUnit1001
-        href: /xunit.analyzers/rules/xUnit1001
-      - name: xUnit1002
-        href: /xunit.analyzers/rules/xUnit1002
-      - name: xUnit1003
-        href: /xunit.analyzers/rules/xUnit1003
-      - name: xUnit1004
-        href: /xunit.analyzers/rules/xUnit1004
-      - name: xUnit1005
-        href: /xunit.analyzers/rules/xUnit1005
-      - name: xUnit1006
-        href: /xunit.analyzers/rules/xUnit1006
-      - name: xUnit1007
-        href: /xunit.analyzers/rules/xUnit1007
-      - name: xUnit1008
-        href: /xunit.analyzers/rules/xUnit1008
-      - name: xUnit1009
-        href: /xunit.analyzers/rules/xUnit1009
-      - name: xUnit1010
-        href: /xunit.analyzers/rules/xUnit1010
-      - name: xUnit1011
-        href: /xunit.analyzers/rules/xUnit1011
-      - name: xUnit1012
-        href: /xunit.analyzers/rules/xUnit1012
-      - name: xUnit1013
-        href: /xunit.analyzers/rules/xUnit1013
-      - name: xUnit1014
-        href: /xunit.analyzers/rules/xUnit1014
-      - name: xUnit1015
-        href: /xunit.analyzers/rules/xUnit1015
-      - name: xUnit1016
-        href: /xunit.analyzers/rules/xUnit1016
-      - name: xUnit1017
-        href: /xunit.analyzers/rules/xUnit1017
-      - name: xUnit1018
-        href: /xunit.analyzers/rules/xUnit1018
-      - name: xUnit1019
-        href: /xunit.analyzers/rules/xUnit1019
-      - name: xUnit1020
-        href: /xunit.analyzers/rules/xUnit1020
-      - name: xUnit1021
-        href: /xunit.analyzers/rules/xUnit1021
-      - name: xUnit1022
-        href: /xunit.analyzers/rules/xUnit1022
-      - name: xUnit1023
-        href: /xunit.analyzers/rules/xUnit1023
-      - name: xUnit1024
-        href: /xunit.analyzers/rules/xUnit1024
-      - name: xUnit1025
-        href: /xunit.analyzers/rules/xUnit1025
-      - name: xUnit1026
-        href: /xunit.analyzers/rules/xUnit1026
-      - name: xUnit1027
-        href: /xunit.analyzers/rules/xUnit1027
-      - name: xUnit1028
-        href: /xunit.analyzers/rules/xUnit1028
-      - name: xUnit1029
-        href: /xunit.analyzers/rules/xUnit1029
-      - name: xUnit1030
-        href: /xunit.analyzers/rules/xUnit1030
-      - name: xUnit1031
-        href: /xunit.analyzers/rules/xUnit1031
-      - name: xUnit1032
-        href: /xunit.analyzers/rules/xUnit1032
-      - name: xUnit1033
-        href: /xunit.analyzers/rules/xUnit1033
-      - name: xUnit1034
-        href: /xunit.analyzers/rules/xUnit1034
-      - name: xUnit1035
-        href: /xunit.analyzers/rules/xUnit1035
-      - name: xUnit1036
-        href: /xunit.analyzers/rules/xUnit1036
-      - name: xUnit1037
-        href: /xunit.analyzers/rules/xUnit1037
-      - name: xUnit1038
-        href: /xunit.analyzers/rules/xUnit1038
-      - name: xUnit1039
-        href: /xunit.analyzers/rules/xUnit1039
-      - name: xUnit1040
-        href: /xunit.analyzers/rules/xUnit1040
-      - name: xUnit1041
-        href: /xunit.analyzers/rules/xUnit1041
-      - name: xUnit1042
-        href: /xunit.analyzers/rules/xUnit1042
-      - name: xUnit1043
-        href: /xunit.analyzers/rules/xUnit1043
-      - name: xUnit1044
-        href: /xunit.analyzers/rules/xUnit1044
-      - name: xUnit1045
-        href: /xunit.analyzers/rules/xUnit1045
-      - name: xUnit1046
-        href: /xunit.analyzers/rules/xUnit1046
-      - name: xUnit1047
-        href: /xunit.analyzers/rules/xUnit1047
-      - name: xUnit1048
-        href: /xunit.analyzers/rules/xUnit1048
-      - name: xUnit1049
-        href: /xunit.analyzers/rules/xUnit1049
-      - name: xUnit1050
-        href: /xunit.analyzers/rules/xUnit1050
-      - name: xUnit1051
-        href: /xunit.analyzers/rules/xUnit1051
-    - name: Assertion
-      items:
-      - name: xUnit2000
-        href: /xunit.analyzers/rules/xUnit2000
-      - name: xUnit2001
-        href: /xunit.analyzers/rules/xUnit2001
-      - name: xUnit2002
-        href: /xunit.analyzers/rules/xUnit2002
-      - name: xUnit2003
-        href: /xunit.analyzers/rules/xUnit2003
-      - name: xUnit2004
-        href: /xunit.analyzers/rules/xUnit2004
-      - name: xUnit2005
-        href: /xunit.analyzers/rules/xUnit2005
-      - name: xUnit2006
-        href: /xunit.analyzers/rules/xUnit2006
-      - name: xUnit2007
-        href: /xunit.analyzers/rules/xUnit2007
-      - name: xUnit2008
-        href: /xunit.analyzers/rules/xUnit2008
-      - name: xUnit2009
-        href: /xunit.analyzers/rules/xUnit2009
-      - name: xUnit2010
-        href: /xunit.analyzers/rules/xUnit2010
-      - name: xUnit2011
-        href: /xunit.analyzers/rules/xUnit2011
-      - name: xUnit2012
-        href: /xunit.analyzers/rules/xUnit2012
-      - name: xUnit2013
-        href: /xunit.analyzers/rules/xUnit2013
-      - name: xUnit2014
-        href: /xunit.analyzers/rules/xUnit2014
-      - name: xUnit2015
-        href: /xunit.analyzers/rules/xUnit2015
-      - name: xUnit2016
-        href: /xunit.analyzers/rules/xUnit2016
-      - name: xUnit2017
-        href: /xunit.analyzers/rules/xUnit2017
-      - name: xUnit2018
-        href: /xunit.analyzers/rules/xUnit2018
-      - name: xUnit2019
-        href: /xunit.analyzers/rules/xUnit2019
-      - name: xUnit2020
-        href: /xunit.analyzers/rules/xUnit2020
-      - name: xUnit2021
-        href: /xunit.analyzers/rules/xUnit2021
-      - name: xUnit2022
-        href: /xunit.analyzers/rules/xUnit2022
-      - name: xUnit2023
-        href: /xunit.analyzers/rules/xUnit2023
-      - name: xUnit2024
-        href: /xunit.analyzers/rules/xUnit2024
-      - name: xUnit2025
-        href: /xunit.analyzers/rules/xUnit2025
-      - name: xUnit2026
-        href: /xunit.analyzers/rules/xUnit2026
-      - name: xUnit2027
-        href: /xunit.analyzers/rules/xUnit2027
-      - name: xUnit2028
-        href: /xunit.analyzers/rules/xUnit2028
-      - name: xUnit2029
-        href: /xunit.analyzers/rules/xUnit2029
-      - name: xUnit2030
-        href: /xunit.analyzers/rules/xUnit2030
-      - name: xUnit2031
-        href: /xunit.analyzers/rules/xUnit2031
-      - name: xUnit2032
-        href: /xunit.analyzers/rules/xUnit2032
-    - name: Extensibility
-      items:
-      - name: xUnit3000
-        href: /xunit.analyzers/rules/xUnit3000
-      - name: xUnit3001
-        href: /xunit.analyzers/rules/xUnit3001
-      - name: xUnit3002
-        href: /xunit.analyzers/rules/xUnit3002
-      - name: xUnit3003
-        href: /xunit.analyzers/rules/xUnit3003
-  - name: Query filter language
-    href: /docs/query-filter-language
-  - name: NuGet packages
-    href: /docs/nuget-packages-v3
-  - name: Sample projects
-    href: https://github.com/xunit/samples.xunit
-- name: API
-  items:
-  - name: v3 2.0.3
-    href: /api/v3/2.0.3
-- name: Microsoft Testing Platform
-  items:
-  - name: Microsoft Testing Platform support
-    href: /docs/getting-started/v3/microsoft-testing-platform
-  - name: Getting Code Coverage
-    href: /docs/getting-started/v3/code-coverage-with-mtp
-  - name: Config with testconfig.json
-    href: /docs/testconfig-json-mtp
-- name: VSTest & Test Explorer
-  items:
-  - name: Config with RunSettings
-    href: /docs/runsettings
-  - name: Theory data stability
-    href: /docs/common/theory-data-stability-in-vs
-- name: Migrating from v2
-  items:
-  - name: What's new in v3?
+  - name: Getting Started
+    href: /docs/getting-started/v3/getting-started
+  - name: What's New in v3?
     href: /docs/getting-started/v3/whats-new
-  - name: Migrating unit tests
+  - name: Migrating Unit Tests
     href: /docs/getting-started/v3/migration
-  - name: Migrating extensibility
+  - name: Migrating Extensibility
     href: /docs/getting-started/v3/migration-extensibility
+  - name: Microsoft Testing Platform (MTP)
+    href: /docs/getting-started/v3/microsoft-testing-platform
+  - name: Code Coverage with MTP
+    href: /docs/getting-started/v3/code-coverage-with-mtp
+  - name: NuGet Packages
+    href: /docs/nuget-packages-v3
+  - name: TDD Example
+    href: /docs/tdd-example
+  - name: Sample Projects
+    href: https://github.com/xunit/samples.xunit/tree/main/v3
+  - name: Custom Theory Data Serialization (IXunitSerializer and IXunitSerializable)
+    href: /docs/getting-started/v3/custom-serialization
+  - name: Writing a Custom Runner Reporter
+    href: /docs/getting-started/v3/custom-runner-reporter
+
+- name: xUnit.net v2
+  items:
+  - name: Getting Started
+    href: /docs/getting-started/v2/getting-started
+  - name: Migrating Unit Tests
+    href: /docs/getting-started/v2/migration
+  - name: NuGet Packages
+    href: /docs/nuget-packages-v2
+  - name: Sample Projects
+    href: https://github.com/xunit/samples.xunit/tree/main/v2
+
+- name: Configuration
+  items:
+  - name: Config with xunit.runner.json
+    href: /docs/config-xunit-runner-json
+  - name: JSON Schema for xunit.runner.json
+    href: /schema/
+  - name: Config with testconfig.json
+    href: /docs/config-testconfig-json
+  - name: Config with RunSettings
+    href: /docs/config-runsettings
+
+- name: Source analyzer rules
+  href: /xunit.analyzers/rules/
+  items:
+  - name: Usage
+    items:
+    - name: xUnit1000
+      href: /xunit.analyzers/rules/xUnit1000
+    - name: xUnit1001
+      href: /xunit.analyzers/rules/xUnit1001
+    - name: xUnit1002
+      href: /xunit.analyzers/rules/xUnit1002
+    - name: xUnit1003
+      href: /xunit.analyzers/rules/xUnit1003
+    - name: xUnit1004
+      href: /xunit.analyzers/rules/xUnit1004
+    - name: xUnit1005
+      href: /xunit.analyzers/rules/xUnit1005
+    - name: xUnit1006
+      href: /xunit.analyzers/rules/xUnit1006
+    - name: xUnit1007
+      href: /xunit.analyzers/rules/xUnit1007
+    - name: xUnit1008
+      href: /xunit.analyzers/rules/xUnit1008
+    - name: xUnit1009
+      href: /xunit.analyzers/rules/xUnit1009
+    - name: xUnit1010
+      href: /xunit.analyzers/rules/xUnit1010
+    - name: xUnit1011
+      href: /xunit.analyzers/rules/xUnit1011
+    - name: xUnit1012
+      href: /xunit.analyzers/rules/xUnit1012
+    - name: xUnit1013
+      href: /xunit.analyzers/rules/xUnit1013
+    - name: xUnit1014
+      href: /xunit.analyzers/rules/xUnit1014
+    - name: xUnit1015
+      href: /xunit.analyzers/rules/xUnit1015
+    - name: xUnit1016
+      href: /xunit.analyzers/rules/xUnit1016
+    - name: xUnit1017
+      href: /xunit.analyzers/rules/xUnit1017
+    - name: xUnit1018
+      href: /xunit.analyzers/rules/xUnit1018
+    - name: xUnit1019
+      href: /xunit.analyzers/rules/xUnit1019
+    - name: xUnit1020
+      href: /xunit.analyzers/rules/xUnit1020
+    - name: xUnit1021
+      href: /xunit.analyzers/rules/xUnit1021
+    - name: xUnit1022
+      href: /xunit.analyzers/rules/xUnit1022
+    - name: xUnit1023
+      href: /xunit.analyzers/rules/xUnit1023
+    - name: xUnit1024
+      href: /xunit.analyzers/rules/xUnit1024
+    - name: xUnit1025
+      href: /xunit.analyzers/rules/xUnit1025
+    - name: xUnit1026
+      href: /xunit.analyzers/rules/xUnit1026
+    - name: xUnit1027
+      href: /xunit.analyzers/rules/xUnit1027
+    - name: xUnit1028
+      href: /xunit.analyzers/rules/xUnit1028
+    - name: xUnit1029
+      href: /xunit.analyzers/rules/xUnit1029
+    - name: xUnit1030
+      href: /xunit.analyzers/rules/xUnit1030
+    - name: xUnit1031
+      href: /xunit.analyzers/rules/xUnit1031
+    - name: xUnit1032
+      href: /xunit.analyzers/rules/xUnit1032
+    - name: xUnit1033
+      href: /xunit.analyzers/rules/xUnit1033
+    - name: xUnit1034
+      href: /xunit.analyzers/rules/xUnit1034
+    - name: xUnit1035
+      href: /xunit.analyzers/rules/xUnit1035
+    - name: xUnit1036
+      href: /xunit.analyzers/rules/xUnit1036
+    - name: xUnit1037
+      href: /xunit.analyzers/rules/xUnit1037
+    - name: xUnit1038
+      href: /xunit.analyzers/rules/xUnit1038
+    - name: xUnit1039
+      href: /xunit.analyzers/rules/xUnit1039
+    - name: xUnit1040
+      href: /xunit.analyzers/rules/xUnit1040
+    - name: xUnit1041
+      href: /xunit.analyzers/rules/xUnit1041
+    - name: xUnit1042
+      href: /xunit.analyzers/rules/xUnit1042
+    - name: xUnit1043
+      href: /xunit.analyzers/rules/xUnit1043
+    - name: xUnit1044
+      href: /xunit.analyzers/rules/xUnit1044
+    - name: xUnit1045
+      href: /xunit.analyzers/rules/xUnit1045
+    - name: xUnit1046
+      href: /xunit.analyzers/rules/xUnit1046
+    - name: xUnit1047
+      href: /xunit.analyzers/rules/xUnit1047
+    - name: xUnit1048
+      href: /xunit.analyzers/rules/xUnit1048
+    - name: xUnit1049
+      href: /xunit.analyzers/rules/xUnit1049
+    - name: xUnit1050
+      href: /xunit.analyzers/rules/xUnit1050
+    - name: xUnit1051
+      href: /xunit.analyzers/rules/xUnit1051
+  - name: Assertion
+    items:
+    - name: xUnit2000
+      href: /xunit.analyzers/rules/xUnit2000
+    - name: xUnit2001
+      href: /xunit.analyzers/rules/xUnit2001
+    - name: xUnit2002
+      href: /xunit.analyzers/rules/xUnit2002
+    - name: xUnit2003
+      href: /xunit.analyzers/rules/xUnit2003
+    - name: xUnit2004
+      href: /xunit.analyzers/rules/xUnit2004
+    - name: xUnit2005
+      href: /xunit.analyzers/rules/xUnit2005
+    - name: xUnit2006
+      href: /xunit.analyzers/rules/xUnit2006
+    - name: xUnit2007
+      href: /xunit.analyzers/rules/xUnit2007
+    - name: xUnit2008
+      href: /xunit.analyzers/rules/xUnit2008
+    - name: xUnit2009
+      href: /xunit.analyzers/rules/xUnit2009
+    - name: xUnit2010
+      href: /xunit.analyzers/rules/xUnit2010
+    - name: xUnit2011
+      href: /xunit.analyzers/rules/xUnit2011
+    - name: xUnit2012
+      href: /xunit.analyzers/rules/xUnit2012
+    - name: xUnit2013
+      href: /xunit.analyzers/rules/xUnit2013
+    - name: xUnit2014
+      href: /xunit.analyzers/rules/xUnit2014
+    - name: xUnit2015
+      href: /xunit.analyzers/rules/xUnit2015
+    - name: xUnit2016
+      href: /xunit.analyzers/rules/xUnit2016
+    - name: xUnit2017
+      href: /xunit.analyzers/rules/xUnit2017
+    - name: xUnit2018
+      href: /xunit.analyzers/rules/xUnit2018
+    - name: xUnit2019
+      href: /xunit.analyzers/rules/xUnit2019
+    - name: xUnit2020
+      href: /xunit.analyzers/rules/xUnit2020
+    - name: xUnit2021
+      href: /xunit.analyzers/rules/xUnit2021
+    - name: xUnit2022
+      href: /xunit.analyzers/rules/xUnit2022
+    - name: xUnit2023
+      href: /xunit.analyzers/rules/xUnit2023
+    - name: xUnit2024
+      href: /xunit.analyzers/rules/xUnit2024
+    - name: xUnit2025
+      href: /xunit.analyzers/rules/xUnit2025
+    - name: xUnit2026
+      href: /xunit.analyzers/rules/xUnit2026
+    - name: xUnit2027
+      href: /xunit.analyzers/rules/xUnit2027
+    - name: xUnit2028
+      href: /xunit.analyzers/rules/xUnit2028
+    - name: xUnit2029
+      href: /xunit.analyzers/rules/xUnit2029
+    - name: xUnit2030
+      href: /xunit.analyzers/rules/xUnit2030
+    - name: xUnit2031
+      href: /xunit.analyzers/rules/xUnit2031
+    - name: xUnit2032
+      href: /xunit.analyzers/rules/xUnit2032
+  - name: Extensibility
+    items:
+    - name: xUnit3000
+      href: /xunit.analyzers/rules/xUnit3000
+    - name: xUnit3001
+      href: /xunit.analyzers/rules/xUnit3001
+    - name: xUnit3002
+      href: /xunit.analyzers/rules/xUnit3002
+    - name: xUnit3003
+      href: /xunit.analyzers/rules/xUnit3003
+
+- name: API Documentation
+  href: https://api.xunit.net
+
 - name: Test Results in CI Systems
   items:
   - name: Azure DevOps
@@ -235,31 +250,35 @@
     href: /docs/getting-test-results-in-teamcity
   - name: CruiseControl.NET
     href: /docs/getting-test-results-in-ccnet
+
 - name: Frequently Asked Questions
   items:
+  - name: What is the query filter language?
+    href: /docs/query-filter-language
   - name: How do I use a CI build of xUnit.net?
     href: /docs/using-ci-builds
-  - name: What is the JSON schema for xunit.runner.json?
-    href: /schema/
-  - name: What is the format of the XML generated by the test runners?
+  - name: What is the format of the XML v2 generated by the test runners?
     href: /docs/format-xml-v2
+  - name: What is the format of the XML v1 generated by the test runners?
+    href: /docs/format-xml-v1
+  - name: How do I run tests in MSBuild?
+    href: /docs/running-tests-in-msbuild
   - name: How do I build xUnit.net?
     href: https://github.com/xunit/xunit/blob/main/BUILDING.md
-  - name: Why doesn't xUnit.net support netstandard?
+  - name: Why can't my test project target netstandard?
     href: /docs/why-no-netstandard
+
 - name: Advanced topics
   items:
-  - name: Running tests in parallel
+  - name: Running Tests in Parallel
     href: /docs/running-tests-in-parallel
-  - name: Sharing context between tests (class, collection, and assembly fixtures)
+  - name: Sharing Context between Tests (class, collection, and assembly fixtures)
     href: /docs/shared-context
-  - name: Capturing output
+  - name: Capturing Output
     href: /docs/capturing-output
-  - name: Serialization with `IXunitSerializer` and `IXunitSerializable`
-    href: /docs/getting-started/v3/custom-serialization
-  - name: Writing a custom Runner Reporter
-    href: /docs/getting-started/v3/custom-runner-reporter
-  - name: Multi-targeting on non-Windows OSes
+  - name: Multi-Targeting on Non-Windows OSes
     href: /docs/getting-started/multi-target/non-windows
-  - name: Equality with hash sets vs. linear containers
+  - name: Equality with Hash Sets vs. Linear Containers
     href: /docs/hash-sets-vs-linear-containers
+  - name: Theory Data Stability in Test Explorer
+    href: /docs/theory-data-stability-in-vs

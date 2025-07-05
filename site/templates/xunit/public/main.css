@@ -48,6 +48,14 @@ main.container-xxl {
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.float-right {
+  float: right;
+}
+
 /** HEADINGS **/
 
 article h1 {
@@ -101,6 +109,20 @@ img.dnflogo {
   float: right;
   width: 6em;
   margin: 0 0 1em 1em;
+}
+
+.border {
+  background-color: #ccc;
+  display: inline-block;
+  margin-left: 15px;
+  box-shadow: 3px 3px 20px #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  .border {
+    background-color: #2e3436;
+    box-shadow: 3px 3px 20px #888;
+  }
 }
 
 /** NAVBAR **/
@@ -213,10 +235,14 @@ form.filter {
 
 code {
   border-radius: var(--bs-border-radius);
+  box-shadow: var(--card-box-shadow);
   font-size: inherit;
   margin: 2px 2px;
   padding: 0 0.5em;
-  box-shadow: var(--card-box-shadow);
+}
+
+td code {
+  white-space: nowrap;
 }
 
 a>code {
@@ -245,6 +271,37 @@ pre {
 
 .table-no-header thead th {
   padding: 0;
+}
+
+.table-analyzers td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.table-compact {
+  border-collapse: unset;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+.table-compact thead {
+  display: none;
+}
+
+.table-compact th,
+.table-compact td {
+  border: none;
+  margin: 0;
+  padding: 0 1em 0 0;
+}
+
+.table-compact td:nth-child(1) {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table.table-smaller td {
+  font-size: 90%;
 }
 
 /** RELEASE LINKS **/
@@ -333,8 +390,37 @@ blockquote.about-links {
   margin: 0.5em 0 0 0.5em;
 }
 
-/** ANALYZER RULES **/
+/** COLORS **/
 
-.table-analyzers td:nth-child(2) {
-  white-space: nowrap;
+.green {
+  color: #292;
+  font-weight: 600;
+}
+
+.red {
+  color: #922;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .green {
+    color: #3f3;
+  }
+
+  .red {
+    color: #f33;
+  }
+}
+
+/** VERSION PICKER **/
+
+.version-picker {
+  margin-left: 0.5em;
+}
+
+/** TABLE OF CONTENTS **/
+
+.toc li li,
+.link-secondary {
+  font-size: 90%;
 }

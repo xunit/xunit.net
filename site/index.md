@@ -13,7 +13,7 @@ xUnit.net works with the [.NET SDK](https://dotnet.microsoft.com/download) comma
 xUnit.net is part of the [.NET Foundation](https://www.dotnetfoundation.org/) and operates under their [code of conduct](https://www.dotnetfoundation.org/code-of-conduct). It is licensed under [Apache 2](https://opensource.org/licenses/Apache-2.0) (an OSI approved license). The project is [governed](/governance) by a Project Lead.
 
 { .about-links }
-> Follow: [xUnit.net on Mastodon](https://dotnet.social/@xunit), [xUnit.net on Bluesky](https://bsky.app/profile/xunit.net), [Brad Wilson](https://bradwilson.dev/), [James Newkirk](https://www.jamesnewkirk.com/), [Claire Novotny](https://github.com/clairernovotny)<br />
+> Follow: [xUnit.net on Mastodon](https://dotnet.social/@xunit), [xUnit.net on Bluesky](https://bsky.app/profile/xunit.net), [Brad Wilson](https://bradwilson.dev/), [James Newkirk](https://www.jamesnewkirk.com/)<br />
 > JetBrains Rider support is provided and supported by [JetBrains](https://www.jetbrains.com/).<br />
 > NCrunch support is provided and supported by [Remco Software](https://www.ncrunch.net/).<br />
 > The xUnit.net logo was designed by [Nathan Young](https://mas.to/@nathanyoung).
