@@ -13,7 +13,7 @@ Continuous integration packages are available on [Feedz.io](https://feedz.io/org
 | NuGet&nbsp;Package: | [`xunit.v3`](https://www.nuget.org/packages/xunit.v3) and friends
 | ------------------- | -----
 | **Releases:**       | [2.0.3](/releases/v3/2.0.3){: .release } [2.0.2](/releases/v3/2.0.2){: .release } [2.0.1](/releases/v3/2.0.1){: .release } [2.0.0](/releases/v3/2.0.0){: .release } [1.1.0](/releases/v3/1.1.0){: .release } [1.0.1](/releases/v3/1.0.1){: .release } [1.0.0](/releases/v3/1.0.0){: .release }
-| **Prereleases:**    | [3.0.0-pre.25](/releases/v3/3.0.0-pre.25){: .prerelease } [3.0.0-pre.15](/releases/v3/3.0.0-pre.15){: .prerelease }
+| **Prereleases:**    | [3.0.0-pre.40](/releases/v3/3.0.0-pre.40){: .prerelease } [3.0.0-pre.25](/releases/v3/3.0.0-pre.25){: .prerelease } [3.0.0-pre.15](/releases/v3/3.0.0-pre.15){: .prerelease }
 
 ## Core Framework v2
 
