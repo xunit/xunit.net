@@ -18,44 +18,44 @@ The typical structure of a unit test is to test a single thing in relative isola
 
 ## Algorithms{ #algorithms }
 
-As of Core Framework v2 2.8, we've changed the default parallelism algorithm, with the ability to fall back to the original. The two algorithms are called <code>conservative</code> (the new default) and <code>aggressive</code> (the original algorithm). They have the following attributes:
+As of Core Framework v2 2.8, we've changed the default parallelism algorithm, with the ability to fall back to the original. The two algorithms are called `conservative` (the new default) and `aggressive` (the original algorithm). They have the following attributes:
 
 ### Conservative
 
-> This will only <em>start</em> as many tests as your max parallel threads setting. The system will wait for a test to finish before starting another test. This allows more accurate timing of the running of tests, which allows <code>Timeout</code> on <code>[Fact]</code> to work as expected even when running tests in parallel. It also creates less pressure on the task system, which has occasionally caused deadlocks in complex projects. The downside is that projects with lots of tests which spend a significant amount of time waiting for async operations to complete will under-utilize the maximum CPU potential, so this new algorithm may cause your overall test run to be slower.
+> This will only _start_ as many tests as your max parallel threads setting. The system will wait for a test to finish before starting another test. This allows more accurate timing of the running of tests, which allows `Timeout` on `[Fact]` to work as expected even when running tests in parallel. It also creates less pressure on the task system, which has occasionally caused deadlocks in complex projects. The downside is that projects with lots of tests which spend a significant amount of time waiting for async operations to complete will under-utilize the maximum CPU potential, so this new algorithm may cause your overall test run to be slower.
 
 ### Aggressive
 
-> This is the original parallelism algorithm, which starts as many tests as possible, regardless of your max parallel threads setting, and uses a <a href="https://learn.microsoft.com/dotnet/api/system.threading.synchronizationcontext"><code>SynchronizationContext</code></a> to limit the number of things that are running at any given time. Since tests in this system which encounter async awaits are put back into a pool to compete against all potential running tests, they may wait longer to resume which causes the inaccuracy of timing that makes <code>Timeout</code> problematic. On the flip side, projects with lots of tests which spend a significant amount of time waiting for async operations will make better use of CPU resources, assuming there are more tests ready to run, so this old algorithm may finish running your tests quicker than the new algorithm.
+> This is the original parallelism algorithm, which starts as many tests as possible, regardless of your max parallel threads setting, and uses a [`SynchronizationContext`](https://learn.microsoft.com/dotnet/api/system.threading.synchronizationcontext) to limit the number of things that are running at any given time. Since tests in this system which encounter async awaits are put back into a pool to compete against all potential running tests, they may wait longer to resume which causes the inaccuracy of timing that makes `Timeout` problematic. On the flip side, projects with lots of tests which spend a significant amount of time waiting for async operations will make better use of CPU resources, assuming there are more tests ready to run, so this old algorithm may finish running your tests quicker than the new algorithm.
 
 In general, the advice here is to try to use the new (default) algorithm, and only revert back to the original algorithm if you find your tests are significantly slower (understanding that other limitations around timing).
 
 With Runners v2 2.8+, you can specify overrides for the parallelism algorithm in the following ways:
 
-* You can specify a value in your [`xunit.runner.json`](config-xunit-runner-json#parallelAlgorithm)
-* The console runner can specify the value via the <code>-parallelalgorithm</code> switch
-* The MSBuild runner can specify the value via the <code>ParallelAlgorithm</code> property
-* The Visual Studio runner can specify the value via [RunSettings](config-runsettings#ParallelAlgorithm)
-* Microsoft Testing Platform can specify the value via [`testconfig.json`](config-testconfig-json#parallelAlgorithm)
+* You can specify a value in your [`xunit.runner.json`](/docs/config-xunit-runner-json#parallelAlgorithm)
+* The console runner can specify the value via the `-parallelalgorithm` switch
+* The MSBuild runner can specify the value via the `ParallelAlgorithm` property
+* The Visual Studio runner can specify the value via [RunSettings](/docs/config-runsettings#ParallelAlgorithm)
+* Microsoft Testing Platform can specify the value via [`testconfig.json`](/docs/config-testconfig-json#parallelAlgorithm)
 
 > [!NOTE]
-> * The algorithm is only used when you have enabled test collection parallelism, and you are using a limited number of threads (i.e., not <code>unlimited</code> or <code>-1</code>).
+> * The algorithm is only used when you have enabled test collection parallelism, and you are using a limited number of threads (i.e., not `unlimited` or `-1`).
 > * You must be using Core Framework v2 2.8 or later (or Core Framework v3) for the new algorithm.
-> * You must be using a runner linked against v2 2.8 or later (or v3) for the new algorithm configuration file support. This includes all in-box v2 runners 2.8 or later, all in-box v3 runners, and <code>xunit.runner.visualstudio</code> 2.8 or later. Third party runners will need to be linked against <code>xunit.runner.utility</code> 2.8.0 or later, or `xunit.v3.runner.utility`.
+> * You must be using a runner linked against v2 2.8 or later (or v3) for the new algorithm configuration file support. This includes all in-box v2 runners 2.8 or later, all in-box v3 runners, and `xunit.runner.visualstudio` 2.8 or later. Third party runners will need to be linked against `xunit.runner.utility` 2.8.0 or later, or `xunit.v3.runner.utility`.
 
 ## Runners and Test Frameworks{ #runners-and-test-frameworks }
 
 For the purposes of this section, it's important to separate the two actors that participate in running your unit tests.
 
-The first is the <em>runner</em>, which is the program (or third party plugin to a program) that is responsible for looking for one or more test assemblies, and then activating the test frameworks that it finds therein. It generally contains very little knowledge about how the test frameworks work, and instead relies on the xUnit.net runner utility library to do most of the heavy lifting. Through the runner utility library, it can discover <em>test cases</em> and then ask for them to be run. It does not itself understand how this discovery or execution works, but instead relies on the runner utility library to understand those details.
+The first is the _runner_, which is the program (or third party plugin to a program) that is responsible for looking for one or more test assemblies, and then activating the test frameworks that it finds therein. It generally contains very little knowledge about how the test frameworks work, and instead relies on the xUnit.net runner utility library to do most of the heavy lifting. Through the runner utility library, it can discover _test cases_ and then ask for them to be run. It does not itself understand how this discovery or execution works, but instead relies on the runner utility library to understand those details.
 
-The second is the <em>test framework</em>, which is the code that has the detailed knowledge of how to discover and run unit tests. These libraries are the ones that the unit tests themselves link against, and so those DLLs live along side the unit test code itself. For xUnit.net v1, that is <code>xunit.dll</code>; for v2, it's <code>xunit.core.dll</code> (and, indirectly, <code>xunit.execution.*.dll</code>); for v3, it's `xunit.v3.core.dll`.
+The second is the _test framework_, which is the code that has the detailed knowledge of how to discover and run unit tests. These libraries are the ones that the unit tests themselves link against, and so those DLLs live along side the unit test code itself. For xUnit.net v1, that is `xunit.dll`; for v2, it's `xunit.core.dll` (and, indirectly, `xunit.execution.*.dll`); for v3, it's `xunit.v3.core.dll`.
 
-There is a third player here that does not have any code, but rather contains the abstractions that allow runners and v2 test projects to communicate: <code>xunit.abstractions.dll</code>.
+There is a third player here that does not have any code, but rather contains the abstractions that allow runners and v2 test projects to communicate: `xunit.abstractions.dll`.
 
 ## Parallelism in Test Frameworks{ #parallelism-in-test-frameworks }
 
-When we say "Parallelism in Test Frameworks", what we mean specifically is how a test framework may choose to support running tests <em>within a single assembly</em> in parallel with one another. The next section, "Parallelism in Runners", we mean how a test runner may choose to support running <em>test assemblies</em> in parallel against each other.
+When we say "Parallelism in Test Frameworks", what we mean specifically is how a test framework may choose to support running tests _within a single assembly_ in parallel with one another. The next section, "Parallelism in Runners", we mean how a test runner may choose to support running _test assemblies_ in parallel against each other.
 
 As mentioned above, parallelism in the test framework is a feature that was introduced in Core Framework v2. Tests written in xUnit.net v1 cannot be run in parallel against each other in the same assembly, though multiple test assemblies linked against v1 are still able to participate in the runner parallelism feature described in the next sub-section.
 
@@ -63,7 +63,7 @@ As mentioned above, parallelism in the test framework is a feature that was intr
 
 #### Test Collections
 
-How does xUnit.net v2/v3 decide which tests can run against each other in parallel? It uses a concept called <em>test collections</em> to make that decision.
+How does xUnit.net v2/v3 decide which tests can run against each other in parallel? It uses a concept called _test collections_ to make that decision.
 
 By default, each test class is a unique test collection. Tests within the same test class will not run in parallel against each other. Let's examine a very simple test assembly, one with a single test class:
 
@@ -108,7 +108,7 @@ public class TestClass2
 }
 ```
 
-Now when we run this test assembly, we see that the total time spent running the tests is approximately 5 seconds (assuming you have at least two threads available for parallelism). That's because <code>Test1</code> and <code>Test2</code> are in different test collections, so they are able to run in parallel against one another.
+Now when we run this test assembly, we see that the total time spent running the tests is approximately 5 seconds (assuming you have at least two threads available for parallelism). That's because `Test1` and `Test2` are in different test collections, so they are able to run in parallel against one another.
 
 #### Custom Test Collections
 
@@ -139,7 +139,7 @@ public class TestClass2
 This instructs xUnit.net not run these two classes against each other in parallel. Our total run time now goes back to approximately 8 seconds, which indicates that the tests did indeed run one after another.
 
 > [!NOTE]
-> For more information on test collections, including the ability to use them to share text context, see <a href="shared-context">Shared Context</a>.
+> For more information on test collections, including the ability to use them to share text context, see [Shared Context](/docs/shared-context).
 
 #### Changing Default Behavior
 
@@ -149,25 +149,25 @@ There are several default pieces of behavior that can be configured by the devel
 
   `[assembly: CollectionBehavior(CollectionBehavior.CollectionPerAssembly)]`
 
-  <em>**Default**: CollectionBehavior.CollectionPerClass</em>
+  _**Default**: CollectionBehavior.CollectionPerClass_
 
 * Set the maximum number of threads to use when running test in parallel:
 
-  `[assembly: CollectionBehavior(MaxParallelThreads = <em>n</em>)]`
+  `[assembly: CollectionBehavior(MaxParallelThreads = _n_)]`
 
-  <em>**Default**: number of CPU threads in the PC</em>
+  _**Default**: number of CPU threads in the PC_
 
 * Turn off parallelism inside the assembly:
 
-  <code>[assembly: CollectionBehavior(DisableTestParallelization = true)]</code>
+  `[assembly: CollectionBehavior(DisableTestParallelization = true)]`
 
-  <em>**Default**: false</em>
+  _**Default**: false_
 
 * Turn off parallelism for specific Test Collection
 
-  <code>[CollectionDefinition(DisableParallelization = true)]</code> (placed on the collection definition class)
+  `[CollectionDefinition(DisableParallelization = true)]` (placed on the collection definition class)
 
-  <em>**Default**: false</em><br />
+  _**Default**: false_<br />
 
   Parallel-capable test collections will be run first (in parallel), followed by parallel-disabled test collections (run sequentially).
 
@@ -187,27 +187,27 @@ The following command line options can be used to influence parallelism:
 
 | Option                        | Effect
 | ----------------------------- | ------
-| `-maxThreads <n>`             | Overrides the maximum number of threads used <em>per assembly.</em> For console runner v2 2.8.0 or later (and console runner v3), you can also use a multiplier syntax (i.e., <code>2.0x</code> will use a max thread count that is double the number of CPU threads). The default value is the number of CPU threads in the PC.
+| `-maxThreads <n>`             | Overrides the maximum number of threads used _per assembly._ For console runner v2 2.8.0 or later (and console runner v3), you can also use a multiplier syntax (i.e., `2.0x` will use a max thread count that is double the number of CPU threads). The default value is the number of CPU threads in the PC.
 | `-parallel <option>`          | Allows the user to specify which kinds of parallelization should be allowed for the test run. The valid option values are `none` (turns off all parallelization), `collections` (parallelizes collections but not assemblies), `assemblies` (parallelizes assemblies but not collections), and `all` (parallelizes both collections and assemblies). The default value is `collections`.
-| `-parallelAlgorithm <option>` | Changes the parallelism algorithm. Prior to Core Framework v2 2.8, the system always used the <code>aggressive</code> algorithm; for Core Framework v2 2.8 onward (and Core Framework v3), you can specify either <code>conservative</code> or <code>aggressive</code>.
+| `-parallelAlgorithm <option>` | Changes the parallelism algorithm. Prior to Core Framework v2 2.8, the system always used the `aggressive` algorithm; for Core Framework v2 2.8 onward (and Core Framework v3), you can specify either `conservative` or `aggressive`.
 
 ### MSBuild Runner{ #msbuild-runner }
 
 Like the console runner, the MSBuild runner can run multiple assemblies at the same time, and build file options can be used to configuration the parallelism options used when running the tests.
 
-The following <code>xunit</code> task properties can be used to influence parallelism:
+The following `xunit` task properties can be used to influence parallelism:
 
 | Property                     | Effect
 | ---------------------------- | ------
-| `MaxParallelThreads`         | Overrides the maximum number of threads used <em>per assembly.</em> For MSBuild runner v2 2.8.0 or later (and MSBuild runner v3), you can also use a multiplier syntax (i.e., <code>2.0x</code> will use a max thread count that is double the number of CPU threads). The default value is the number of CPU threads in the PC.
-| `ParallelAlgorithm`          | Changes the parallelism algorithm. Prior to Core Framework v2 2.8, the system always used the <code>aggressive</code> algorithm; for Core Framework v2 2.8 onward (and Core Framework v3), you can specify either <code>conservative</code> or <code>aggressive</code>.
-| `ParallelizeAssemblies`      | Set to <code>true</code> to run the test assemblies in parallel against one other; set to <code>false</code> to run them sequentially. The default value is <code>false</code>.
-| `ParallelizeTestCollections` | Set to <code>true</code> to run the test collections in parallel against one other; set to <code>false</code> to run them sequentially. The default value is <code>true</code>
+| `MaxParallelThreads`         | Overrides the maximum number of threads used _per assembly._ For MSBuild runner v2 2.8.0 or later (and MSBuild runner v3), you can also use a multiplier syntax (i.e., `2.0x` will use a max thread count that is double the number of CPU threads). The default value is the number of CPU threads in the PC.
+| `ParallelAlgorithm`          | Changes the parallelism algorithm. Prior to Core Framework v2 2.8, the system always used the `aggressive` algorithm; for Core Framework v2 2.8 onward (and Core Framework v3), you can specify either `conservative` or `aggressive`.
+| `ParallelizeAssemblies`      | Set to `true` to run the test assemblies in parallel against one other; set to `false` to run them sequentially. The default value is `false`.
+| `ParallelizeTestCollections` | Set to `true` to run the test collections in parallel against one other; set to `false` to run them sequentially. The default value is `true`
 
 ## Parallelism via Configuration{ #parallelism-via-configuration }
 
 There are several configuration elements that can influence parallelism. Please see the appropriate configuration documentation for more information:
 
-* [Config with `xunit.runner.json`](config-xunit-runner-json)
-* [Config with `testconfig.json`](config-testconfig-json) (for Microsoft Testing Platform)
-* [Config with RunSettings](config-runsettings) (for VSTest)
+* [Config with `xunit.runner.json`](/docs/config-xunit-runner-json)
+* [Config with `testconfig.json`](/docs/config-testconfig-json) (for Microsoft Testing Platform)
+* [Config with RunSettings](/docs/config-runsettings) (for VSTest)
