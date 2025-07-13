@@ -21,7 +21,7 @@ This rule is triggered when your `[MemberData]` attribute points to a member doe
 To fix a violation of this rule, update the data member to have an appropriate return type.
 
 > [!NOTE]
-> Using the types `object[]` or `ITheoryRowData` will trigger [xUnit1042](xUnit1042) because they are not strongly typed. It is strongly suggested that you choose to use `TheoryData<>` for v2/v3, or `IEnumerable<TheoryDataRow<>>`/`IAsyncEnumerable<TheoryDataRow<>>` for v3, as those provide compiler-level type safety and additional code analysis is possible to ensure the types of the test method parameters match the generic types of your theory data.</p>
+> Using the types `object[]` or `ITheoryRowData` will trigger [xUnit1042](/xunit.analyzers/rules/xUnit1042) because they are not strongly typed. It is strongly suggested that you choose to use `TheoryData<>` for v2/v3, or `IEnumerable<TheoryDataRow<>>`/`IAsyncEnumerable<TheoryDataRow<>>` for v3, as those provide compiler-level type safety and additional code analysis is possible to ensure the types of the test method parameters match the generic types of your theory data.</p>
 
 ## Examples
 

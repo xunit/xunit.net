@@ -6,7 +6,9 @@
   },
   "watch": {
     "build": {
-      "patterns": ["site/**/*"],
+      "patterns": [
+        "site/**/*"
+      ],
       "extensions": "*",
       "quiet": false,
       "delay": 500

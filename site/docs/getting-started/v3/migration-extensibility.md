@@ -29,7 +29,7 @@ In v3, this package has a single target framework: .NET Standard 2.0 (`netstanda
 
 ### Package naming
 
-We have migrated to new package names in v3, for the reasons described in the [unit test migration guide](migration#why-did-we-change-the-package-names):
+We have migrated to new package names in v3, for the reasons described in the [unit test migration guide](/docs/getting-started/v3/migration#why-did-we-change-the-package-names):
 
 > We changed the package naming scheme from `xunit.*` to `xunit.v3.*` for two primary reasons and one secondary reason:
 >

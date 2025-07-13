@@ -12,7 +12,7 @@ RunSettings can either by provided by an XML file (named `.runsettings`) which c
 > Since RunSettings are expressed as XML, it's important to remember that XML element names are case-sensitive. Please carefully verify that you are using the correct casing for the XML element names. This also applies to the command line switches for `dotnet test`, as they are transparently translated into XML elements behind the scenes.
 
 > [!NOTE]
-> RunSettings are only supported when running tests with VSTest. Running tests any other way (including using our first party runners, non-VSTest third party runners, or running tests in Microsoft.Testing.Platform mode) does not support RunSettings, and you should rely on [`xunit.runner.json`](config-xunit-runner-json) instead.
+> RunSettings are only supported when running tests with VSTest. Running tests any other way (including using our first party runners, non-VSTest third party runners, or running tests in Microsoft.Testing.Platform mode) does not support RunSettings, and you should rely on [`xunit.runner.json`](/docs/config-xunit-runner-json) instead.
 
 ## Format of the `.runsettings` file{ #runsettings }
 
@@ -216,7 +216,7 @@ Set this to `true` to disable automatically enabled reporters (for example, repo
 
 ### `ParallelAlgorithm`{ #ParallelAlgorithm }
 
-Set this to change the way tests are scheduled when they're running in parallel. For more information, see [Running Tests in Parallel](running-tests-in-parallel#algorithms). Note that the algorithm only applies when you have [enabled test collection parallelism](#parallelizeTestCollections), and are using a limited [number of threads](#maxParallelThreads) (i.e., not `unlimited` or `-1`).
+Set this to change the way tests are scheduled when they're running in parallel. For more information, see [Running Tests in Parallel](/docs/running-tests-in-parallel#algorithms). Note that the algorithm only applies when you have [enabled test collection parallelism](#ParallelizeTestCollections), and are using a limited [number of threads](#MaxParallelThreads) (i.e., not `unlimited` or `-1`).
 
 > { .table-compact }
 > |                |

@@ -14,7 +14,7 @@ The top level element of the document is the [assemblies](#assemblies) element.
 > Any child element that doesn't link to specific documentation is an element that contains text, rather than child elements and/or attributes. Older runners will place this text in a CDATA block; newer runners will just put the text directly into the element. XSL-T (and most parsers) won't differentiate between naked text vs. a CDATA block.
 
 > [!NOTE]
-> If you are looking for documentation on the deprecated XML format supported by xUnit.net v1, see the [xUnit.net XML Format v1](format-xml-v1) documentation page.
+> If you are looking for documentation on the deprecated XML format supported by xUnit.net v1, see the [xUnit.net XML Format v1](/docs/format-xml-v1) documentation page.
 
 ## `<assemblies>`{ #assemblies }
 

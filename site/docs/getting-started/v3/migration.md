@@ -3,11 +3,11 @@ title: Migrating Unit Tests from v2 to v3
 title-version: 2025 April 12
 ---
 
-This migration guide aims to be a comprehensive list helping developers migrate from xUnit.net v2 to v3. This guide is focused on what to expect for unit test authors. Extensibility authors will want to review this document, and then read the [migration guide specifically for extensibility authors](migration-extensibility).
+This migration guide aims to be a comprehensive list helping developers migrate from xUnit.net v2 to v3. This guide is focused on what to expect for unit test authors. Extensibility authors will want to review this document, and then read the [migration guide specifically for extensibility authors](/docs/getting-started/v3/migration-extensibility).
 
 Because this is a comprehensive guide, you may wish to only skim parts of it, and use search functionality to find information on specific issues that arise, rather than trying to read the guide entirely. You should read the first informational section titled "Architectural Changes", then follow the next three sections related to (a) updating NuGet packages, (b) updating to create an executable instead of a library, and (c) updating your target framework. All sections after that should be consider reference material.
 
-In addition to this migration document (which only covers the differences between v2 and v3), we have a parallel document which covers [what's new in v3](whats-new). The "What's New" document describes newly available features (including information on the best way to create new xUnit.net v3 projects), and should be consulted after you've successfully migrated your project from v2 to v3.
+In addition to this migration document (which only covers the differences between v2 and v3), we have a parallel document which covers [what's new in v3](/docs/getting-started/v3/whats-new). The "What's New" document describes newly available features (including information on the best way to create new xUnit.net v3 projects), and should be consulted after you've successfully migrated your project from v2 to v3.
 
 The current builds are:
 
@@ -242,7 +242,7 @@ The following types have been removed:
 
 By and large, the assertion library in v3 is a small superset of the assertion library in v2 2.9. There are new assertions as well as overloads to existing assertions that might conflict with any custom assertions you've added and/or might cause compilation issues due to ambiguous overloads now available.
 
-A complete list of what was added is available in the [what's new in v3](whats-new#whats-new-in-the-assertion-library) document.
+A complete list of what was added is available in the [what's new in v3](/docs/getting-started/v3/whats-new#whats-new-in-the-assertion-library) document.
 
 ## Changes to Core Framework
 

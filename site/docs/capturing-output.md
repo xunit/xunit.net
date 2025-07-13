@@ -83,11 +83,11 @@ To see output from `dotnet test`, pass the command line option `--logger "consol
 
 ### Showing live output
 
-Starting with xUnit.net v2 2.8.1 (and runners linked against this version), we have added a new configuration option named [`showLiveOutput`](config-xunit-runner-json#showLiveOutput) to indicate that you would like to be able to see output from `ITestOutputHelper` live as it occurs, rather than just waiting for the test to finish. This is turned off by default as that was the behavior prior to 2.8.1, and showing live output can add significantly to the noise of the output when not needed. We anticipate that users will turn this option on temporarily while debugging through particular issues rather than be something that's left on all the time.
+Starting with xUnit.net v2 2.8.1 (and runners linked against this version), we have added a new configuration option named [`showLiveOutput`](/docs/config-xunit-runner-json#showLiveOutput) to indicate that you would like to be able to see output from `ITestOutputHelper` live as it occurs, rather than just waiting for the test to finish. This is turned off by default as that was the behavior prior to 2.8.1, and showing live output can add significantly to the noise of the output when not needed. We anticipate that users will turn this option on temporarily while debugging through particular issues rather than be something that's left on all the time.
 
 ## Output in extensibility classes
 
-Output for unit tests are grouped and displayed with the specific unit test. Output from extensibility classes, on the other hand, is considered diagnostic information. Most runners require you to enable diagnostic output either explicitly with a command line option, or implicitly on an assembly-by-assembly basis by using [configuration files](config-xunit-runner-json).
+Output for unit tests are grouped and displayed with the specific unit test. Output from extensibility classes, on the other hand, is considered diagnostic information. Most runners require you to enable diagnostic output either explicitly with a command line option, or implicitly on an assembly-by-assembly basis by using [configuration files](/docs/config-xunit-runner-json).
 
 ### xUnit.net v3
 
@@ -162,7 +162,7 @@ public class MyTestCaseOrderer : ITestCaseOrderer
 
 ### Viewing diagnostic messages in Visual Studio
 
-After [enabling diagnostic messages in your configuration file](config-xunit-runner-json#diagnosticMessages), when run, Visual Studio's output window contains a Tests tab which contains the information from running the tests, including the diagnostic message.
+After [enabling diagnostic messages in your configuration file](/docs/config-xunit-runner-json#diagnosticMessages), when run, Visual Studio's output window contains a Tests tab which contains the information from running the tests, including the diagnostic message.
 
 ```text
 Starting test discovery for requested test run

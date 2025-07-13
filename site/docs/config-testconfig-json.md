@@ -7,7 +7,7 @@ title: Config with testconfig.json (Microsoft Testing Platform)
 Beginning with xUnit.net v3 version `3.0.0-pre.15`, when running tests in Microsoft Testing Platform mode, you can utilize [`testconfig.json`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#testconfigjson) to provide test project configuration.
 
 > [!NOTE]
-> Using `testconfig.json` is only supported when running tests in Microsoft Testing Platform mode. Running tests any other way (including using our first party runners or any non-Microsoft Testing Plateform third party runner) does not support `testconfig.json`, and you should rely on [xUnit.net's native JSON configuration files](config-xunit-runner-json) instead. For more information about v3 and Microsoft Testing Platform, see [our documentation page](getting-started/v3/microsoft-testing-platform).
+> Using `testconfig.json` is only supported when running tests in Microsoft Testing Platform mode. Running tests any other way (including using our first party runners or any non-Microsoft Testing Plateform third party runner) does not support `testconfig.json`, and you should rely on [xUnit.net's native JSON configuration files](/docs/config-xunit-runner-json) instead. For more information about v3 and Microsoft Testing Platform, see [our documentation page](/docs/getting-started/v3/microsoft-testing-platform).
 
 ## Format of the `testconfig.json` file
 
@@ -173,7 +173,7 @@ Set this to automatically perform transforms on default test names. This value c
 
 ### `parallelAlgorithm`{ #parallelAlgorithm }
 
-Set this to change the way tests are scheduled when they're running in parallel. For more information, see [Running Tests in Parallel](running-tests-in-parallel#algorithms). Note that the algorithm only applies when you have [enabled test collection parallelism](#parallelizeTestCollections), and are using a limited [number of threads](#maxParallelThreads) (i.e., not `unlimited` or `-1`).
+Set this to change the way tests are scheduled when they're running in parallel. For more information, see [Running Tests in Parallel](/docs/running-tests-in-parallel#algorithms). Note that the algorithm only applies when you have [enabled test collection parallelism](#parallelizeTestCollections), and are using a limited [number of threads](#maxParallelThreads) (i.e., not `unlimited` or `-1`).
 
 > { .table-compact }
 > |                  |

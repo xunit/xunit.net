@@ -5,7 +5,7 @@ title: xUnit.net XML Format v1
 # xUnit.net v1 XML Format
 
 > [!NOTE]
-> This documentation for the v1 XML format is provided for historical purposes only. New transformations should use the [XML Format v2](format-xml-v2), which is the XML format used for transformations by xUnit.net v2 and v3.
+> This documentation for the v1 XML format is provided for historical purposes only. New transformations should use the [XML Format v2](/docs/format-xml-v2), which is the XML format used for transformations by xUnit.net v2 and v3.
 
 xUnit.net v1 exposed XML in several ways:
 

@@ -210,7 +210,7 @@ xUnit.net treats collection fixtures in much the same way as class fixtures, exc
 
 Test collections can also be decorated with `IClassFixture<>`. xUnit.net treats this as though each individual test class in the test collection were decorated with the class fixture.
 
-Test collections also influence the way xUnit.net runs tests when running them in parallel. For more information, see [Running Tests in Parallel](running-tests-in-parallel).
+Test collections also influence the way xUnit.net runs tests when running them in parallel. For more information, see [Running Tests in Parallel](/docs/running-tests-in-parallel).
 
 > [!NOTE]
 > Fixtures can be shared across assemblies, but collection definitions **must be in the same assembly** as the test that uses them.
@@ -270,4 +270,4 @@ public class DatabaseTestClass2
 
 Instance of assembly fixtures are created once before any test in your assembly is run, and cleaned up after all tests have finished running. Any test class may gain access to the assembly fixture simply by adding it as a constructor argument.
 
-Note that unlike collection fixtures, there is no change in parallelization when using an assembly fixture. This means fixtures used as assembly fixtures may be used from multiple tests simultaneously, and must be designed for with this parallelism requirement in mind. Alternatively, you could disable all parallelism in your test assembly by setting the [`parallelizeTestCollections`](config-xunit-runner-json#parallelizeTestCollections) configuration setting to `false`.
+Note that unlike collection fixtures, there is no change in parallelization when using an assembly fixture. This means fixtures used as assembly fixtures may be used from multiple tests simultaneously, and must be designed for with this parallelism requirement in mind. Alternatively, you could disable all parallelism in your test assembly by setting the [`parallelizeTestCollections`](/docs/config-xunit-runner-json#parallelizeTestCollections) configuration setting to `false`.

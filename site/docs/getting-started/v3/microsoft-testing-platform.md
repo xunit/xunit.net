@@ -31,7 +31,7 @@ For more information, see [Using `testconfig.json` with Microsoft Testing Platfo
 
 By default, xUnit.net v3 projects have a native command line experience that is similar to our console runner command line experience.
 
-If you `dotnet run` your test project, you should see something like this (examples using our test project from the [Getting Started with the command line](cmdline) documentation):
+If you `dotnet run` your test project, you should see something like this (examples using our test project from the [Getting Started](/docs/getting-started/v3/cmdline) documentation):
 
 ```shell
 $ dotnet run

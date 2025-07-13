@@ -5,7 +5,7 @@ title-version: 2025 April 12
 
 This guide aims to be a comprehensive list of the new features added to v3, written for existing developers who are using v2.
 
-In addition to this new features document (which only covers new features in v3), we have a parallel document which covers [migrating from v2 to v3](migration). The "Migrating from v2 to v3" document describes changes that developers will need to understand when porting their v2 projects to v3, as well as when starting new v3 projects armed with their v2 experience.
+In addition to this new features document (which only covers new features in v3), we have a parallel document which covers [migrating from v2 to v3](/docs/getting-started/v3/migration). The "Migrating from v2 to v3" document describes changes that developers will need to understand when porting their v2 unit test projects to v3, as well as when starting new v3 projects armed with their v2 experience.
 
 ## New Project Templates
 
