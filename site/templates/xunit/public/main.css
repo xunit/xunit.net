@@ -140,19 +140,8 @@ img.dnflogo {
   background-color: var(--bs-tertiary-bg);
 }
 
-.navbar-nav > li > a {
-  border-radius: var(--border-radius-button);
-  transition: 200ms;
-}
-
-.navbar-nav a.nav-link:focus,
-.navbar-nav a.nav-link:hover {
-  background-color: var(--bs-primary-border-subtle);
-}
-
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link.show {
-  color: var(--bs-link-hover-color);
+.navbar .navbar-nav {
+  display: none;
 }
 
 /** SEARCH AND FILTER **/
