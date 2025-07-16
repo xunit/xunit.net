@@ -36,12 +36,6 @@
   --material-danger-background-dark: #572c2c;
 }
 
-main.container-xxl {
-  margin-left: 1em;
-  margin-right: 1em;
-  width: auto;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --card-box-shadow: 0 1px 2px 0 #d0e0eb0f, 0 1px 3px 1px #d0e0eb29;
