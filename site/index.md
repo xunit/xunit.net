@@ -292,7 +292,7 @@ _For older release notes, see the [full release notes list](/releases/)._
 * [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
 * [MSBuild Reference](https://docs.microsoft.com/visualstudio/msbuild/msbuild-reference)
 
-[![Powered by NDepend](/images/powered-by-ndepend-transparent.png){: width="175" }](https://www.ndepend.com)
+[![Powered by NDepend](https://raw.githubusercontent.com/xunit/media/refs/heads/main/powered-by-ndepend-transparent.svg){: width="175" }](https://www.ndepend.com)
 
 ## Sponsors{ #sponsors }
 
