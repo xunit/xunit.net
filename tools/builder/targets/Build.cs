@@ -5,7 +5,7 @@ namespace Xunit.BuildTools.Targets;
 
 [Target(
 	BuildTarget.Build,
-	BuildTarget.Restore
+	BuildTarget.RestoreDotNet
 )]
 public static class Build
 {

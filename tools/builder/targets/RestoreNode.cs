@@ -4,14 +4,12 @@ using Xunit.BuildTools.Models;
 
 namespace Xunit.BuildTools.Targets;
 
-[Target(BuildTarget.Restore)]
-public static partial class RestoreTools
+[Target(BuildTarget.RestoreNode)]
+public static partial class RestoreNode
 {
 	public static async Task OnExecute(BuildContext context)
 	{
-		context.BuildStep("Restoring build environment");
-
-		await context.Exec("dotnet", "tool restore");
+		context.BuildStep("Restoring NodeJS build environment");
 
 		if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 			await context.Exec("cmd", "/c npm install --no-fund");

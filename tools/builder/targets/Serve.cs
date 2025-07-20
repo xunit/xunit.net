@@ -7,7 +7,7 @@ namespace Xunit.BuildTools.Targets;
 
 [Target(
 	BuildTarget.Serve,
-	BuildTarget.Restore
+	BuildTarget.RestoreDotNet, BuildTarget.RestoreNode
 )]
 public static class Serve
 {

@@ -17,7 +17,6 @@ function GuardBin {
 
 GuardBin git "please install the Git CLI from https://git-scm.com/"
 GuardBin dotnet "please install the .NET SDK from https://dot.net/"
-GuardBin node "please install NodeJS from https://nodejs.org/"
 
 $version = [Version]$([regex]::matches((&dotnet --version), '^(\d+\.)?(\d+\.)?(\*|\d+)').value)
 if ($version.Major -lt 9) {

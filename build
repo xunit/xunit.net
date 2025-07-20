@@ -12,7 +12,6 @@ function guard_bin {
 
 guard_bin git "please install the Git CLI from https://git-scm.com/"
 guard_bin dotnet "please install the .NET SDK from https://dot.net/"
-guard_bin node "please install NodeJS from https://nodejs.org/"
 
 [ $(dotnet --version | cut -d. -f1) -ge 9 ] || write_error ".NET SDK version $(dotnet --version) is too low; please install version 9.0 from https://dot.net/"
 
