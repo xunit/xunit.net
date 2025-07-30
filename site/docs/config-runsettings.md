@@ -1,8 +1,7 @@
 ---
 title: Config with RunSettings (VSTest)
+title-version: 2025 July 30
 ---
-
-# Config with RunSettings (VSTest)
 
 RunSettings describes the configuration system provided by VSTest, the mechanism used by Visual Studio and `dotnet test` to run unit tests since roughly 2013. VSTest is currently being sunset in favor of Microsoft Testing Platform.
 
@@ -349,7 +348,7 @@ Set this value to use a different reporter than the default. There are five repo
 
 ### `Seed`{ #Seed }
 
-Set this to set the seed used for randomization (affects how the test cases are randomized). This is only valid for v3.0+ test assemblies; it will be ignored for v1 or v2 assemblies. If the seed value isn't set, then the system will determine a reasonable seed (and print that seed when running the test assembly, to assist you in reproducing order-dependent failures).
+Set this to set the seed used for randomization. For the most part, this value is unused, as test case randomness is now determined in a more stable way that does not involve pseudo-randomness; however, the seed may be used in some fallback cases (notably with custom test cases via 3rd party extensibility, which throw when queried for their unique ID). This value is otherwise currently unused.
 
 > { .table-compact }
 > |                |

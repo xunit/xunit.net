@@ -1,8 +1,7 @@
 ---
 title: Config with testconfig.json (Microsoft Testing Platform)
+title-version: 2025 July 30
 ---
-
-# Config with `testconfig.json`
 
 Beginning with xUnit.net v3 version `3.0.0-pre.15`, when running tests in Microsoft Testing Platform mode, you can utilize [`testconfig.json`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#testconfigjson) to provide test project configuration.
 
@@ -276,7 +275,7 @@ _This can also be set by environment variable `XUNIT_PRINT_MAX_STRING_LENGTH`. A
 
 ### `seed`{ #seed }
 
-Set this to set the seed used for randomization (affects how the test cases are randomized). If the seed value isn't set, then the system will determine a reasonable seed (and print that seed when diagnostic messages are enabled, to assist you in reproducing order-dependent failures).
+Set this to set the seed used for randomization. For the most part, this value is unused, as test case randomness is now determined in a more stable way that does not involve pseudo-randomness; however, the seed may be used in some fallback cases (notably with custom test cases via 3rd party extensibility, which throw when queried for their unique ID). This value is otherwise currently unused.
 
 > { .table-compact }
 > |                  |

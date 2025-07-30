@@ -1,6 +1,6 @@
 ---
 title: What's New in v3?
-title-version: 2025 April 12
+title-version: 2025 July 30
 ---
 
 This guide aims to be a comprehensive list of the new features added to v3, written for existing developers who are using v2.
@@ -228,9 +228,11 @@ In v2, the culture that your unit tests ran with was the default culture of your
 
 In v3, while using the default culture of your PC remains the default behavior, you can override the culture with either a command line switch or [in your configuration file](/docs/config-xunit-runner-json#culture). You can set any culture (supported by your OS) based on its [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646.txt) culture name. For example, you can use `en-US` to represent English as spoken in the US.
 
-### Repeatable randomization
+### Stable randomization
 
-The randomization of test cases in v3 is stable until you rebuild, and then the order may change. In an attempt to help developer track down issues related to the particular random order of specific test cases, we will print the randomization seed we use when [diagnostic messages are enabled](/docs/config-xunit-runner-json#diagnosticMessages). The command line of the console runner has been updated to allow passing this seed value so you can attempt to reproduce the same random order that was used previously, as well as providing the seed [in your configuration file](/docs/config-xunit-runner-json#seed).
+The randomization algorithm for test collections and test cases is no longer based on pseudo-random number generation. This allows the randomization order to remain stable across most changes while remaining unpredictable.
+
+The randomization seed remains available for some edge cases, but mostly is unused now.
 
 ### Updated theory data serialization support
 
