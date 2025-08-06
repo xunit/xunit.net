@@ -24,7 +24,7 @@ You should feel confident to use CI builds, especially ones that we recommend.
 
 ## How to consume CI builds{ #consume }
 
-The [packages table on the home page](/#packages) lists the currently available builds. The column titled "Latest CI" indicates the version of the most recent build that was pushed automatically as a result of new code being pushed to GitHub. These automated builds are currently sent to [feedz.io](https://feedz.io/org/xunit/repository/xunit/search) (that link will require you to log into your feedz.io account, which is free if you don't already have one).
+CI builds are created automatically for every commit that is pushed to the appropriate branch (typically `main`, though `xunit` builds from the `v2` branch of `xunit/xunit`). The code is compiled in GitHub Actions, and if successful, the packages are uploaded to [feedz.io](https://feedz.io/org/xunit/repository/xunit/search) (that link will require you to log into your feedz.io account, which is free if you don't already have one).
 
 In order to consume packages from this feed, you need to create or update the `NuGet.Config` file for your project. Here is an example:
 
