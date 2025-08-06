@@ -12,6 +12,16 @@ Does that mean they won't have bugs? No. But that's also true for RTW builds. ðŸ
 
 You should feel confident to use CI builds, especially ones that we recommend.
 
+## What are the latest CI builds?
+
+{: .table .latest }
+|                             | Latest CI
+| --------------------------- | ---------
+| `xunit.v3`                  | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.v3/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3)
+| `xunit`                     | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit)
+| `xunit.analyzers`           | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.analyzers/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers)
+| `xunit.runner.visualstudio` | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.runner.visualstudio/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.visualstudio)
+
 ## How to consume CI builds{ #consume }
 
 The [packages table on the home page](/#packages) lists the currently available builds. The column titled "Latest CI" indicates the version of the most recent build that was pushed automatically as a result of new code being pushed to GitHub. These automated builds are currently sent to [feedz.io](https://feedz.io/org/xunit/repository/xunit/search) (that link will require you to log into your feedz.io account, which is free if you don't already have one).
