@@ -1,6 +1,6 @@
 ---
 title: Getting Started with xUnit.net v3
-title-version: 2025 July 4
+title-version: 2025 August 13
 ---
 
 In this document, we will demonstrate getting started with xUnit.net v3 when targeting .NET 8 (or later) and/or .NET Framework 4.7.2 (or later), showing you how to write and run your first set of unit tests. We will be using the .NET SDK command line.
@@ -469,3 +469,31 @@ A few notable things about running with `xunit.v3.runner.console`:
 * Result files from `xunit.v3.runner.console` contain run information for all tests assemblies in a single report. If you were run each v3 project individually and ask for a result file, it would only include information for that single test assembly.
 
 * Custom reporters are not available through `xunit.v3.runner.console`, as they are installed into the v3 test assembly's runner directly. If you are using a custom reporter, then you must directly run the test project.
+
+### Using a response file with `xunit.v3.runner.console`{: #response-file }
+
+In the rare case that your command line exceeds the 32K character limit in Windows, you can use a "response file" to provide the command line arguments rather than the command line.
+
+In "response file mode", the command line must contain only `@@ filename`, and the filename that's pointed must contain one command line argument per line (no quoting). For example, if you have this command line:
+
+```
+/path/to/MyTestProject.exe -culture en-GB -noLogo -maxThreads 32 -xml "/path/to/The XML Output File.xml"
+```
+
+You would create a response file (we'll call `/path/to/response-file`) with this content:
+
+```text
+-culture
+en-GB
+-noLogo
+-maxThreads
+32
+-xml
+/path/to/The XML Output File.xml
+```
+
+And run the tests with this command line:
+
+```
+/path/to/MyTestProject.exe @@ /path/to/response-file
+```
