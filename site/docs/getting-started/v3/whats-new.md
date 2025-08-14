@@ -1,6 +1,6 @@
 ---
 title: What's New in v3?
-title-version: 2025 July 30
+title-version: 2025 August 14
 ---
 
 This guide aims to be a comprehensive list of the new features added to v3, written for existing developers who are using v2.
@@ -232,7 +232,38 @@ In v3, while using the default culture of your PC remains the default behavior, 
 
 The randomization algorithm for test collections and test cases is no longer based on pseudo-random number generation. This allows the randomization order to remain stable across most changes while remaining unpredictable.
 
-The randomization seed remains available for some edge cases, but mostly is unused now.
+As of v3 version 3.0.1, the test assembly unique ID (for v3 tests) is now printed in the results output, like this example shows:
+
+```shell
+$ .\src\xunit.v3.assert.tests\bin\Release\net8.0\xunit.v3.assert.netcore.tests.exe
+xUnit.net v3 In-Process Runner v3.0.1-pre.31-dev+bc5da59e79 (64-bit .NET 8.0.18)
+  Discovering: xunit.v3.assert.netcore.tests (method display = ClassAndMethod, method display options = None)
+  Discovered:  xunit.v3.assert.netcore.tests (1290 test cases to be run)
+  Starting:    xunit.v3.assert.netcore.tests (parallel test collections = on [32 threads], stop on fail = off, explicit = off, seed = 539400576, culture = invariant)
+  Finished:    xunit.v3.assert.netcore.tests
+=== TEST EXECUTION SUMMARY ===
+   xunit.v3.assert.netcore.tests  Total: 1530, Errors: 0, Failed: 0, Skipped: 0, Not Run: 0, Time: 0.123s, ID: '8b21b008c584f88489008494f43f8683792002cd3e144875b8b3ba37c9836e4e'
+```
+
+The test assembly unique ID is the basis for the stable randomization algorithm, and is normally auto-generated based on the file path to the test assembly on disk. This means running the tests from the same location should re-run them in the same (random) order, but running a test assembly from a different location will generated a different unique ID, and thus run the tests in a different (random) order. The most common situation where you might see this is running tests locally vs. running them in a CI build environment.
+
+With tests linked against v3 3.0.1 or later, you can create a file on disk to override the test assembly unique ID, which can be useful when trying to reproduce an order-related test failure in a separate environment. To do this, place a file on disk next to the test assembly, with the same name but the extension of `.uniqueid`. For example:
+
+```shell
+$ cat .\src\xunit.v3.assert.tests\bin\Release\net8.0\xunit.v3.assert.netcore.tests.uniqueid
+abc123
+
+$ .\src\xunit.v3.assert.tests\bin\Release\net8.0\xunit.v3.assert.netcore.tests.exe
+xUnit.net v3 In-Process Runner v3.0.1-pre.31-dev+bc5da59e79 (64-bit .NET 8.0.18)
+  Discovering: xunit.v3.assert.netcore.tests (method display = ClassAndMethod, method display options = None)
+  Discovered:  xunit.v3.assert.netcore.tests (1290 test cases to be run)
+  Starting:    xunit.v3.assert.netcore.tests (parallel test collections = on [32 threads], stop on fail = off, explicit = off, seed = 539400576, culture = invariant)
+  Finished:    xunit.v3.assert.netcore.tests
+=== TEST EXECUTION SUMMARY ===
+   xunit.v3.assert.netcore.tests  Total: 1530, Errors: 0, Failed: 0, Skipped: 0, Not Run: 0, Time: 0.124s, ID: 'abc123'
+```
+
+_Note: The randomization seed from earlier versions of v3 remains available for some edge cases, but mostly is unused now._
 
 ### Updated theory data serialization support
 
