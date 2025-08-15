@@ -40,10 +40,10 @@ System types:
 * `System.DateOnly`
 * `System.DateTime`
 * `System.DateTimeOffset`
-* `System.Guid`
-* `System.Index`
+* `System.Guid` _(starting with v3 1.0.0 or later)_
+* `System.Index` _(starting with v3 1.0.0 or later)_
 * `System.Numerics.BigInteger`
-* `System.Range`
+* `System.Range` _(starting with v3 1.0.0 or later)_
 * `System.TimeOnly`
 * `System.TimeSpan`
 * `System.Type`
@@ -55,6 +55,7 @@ Additional supported values:
 * Arrays of serializable values
 * Enum values
 * Values which implement both [`IFormattable`](https://learn.microsoft.com/dotnet/api/system.iformattable) and [`IParsable<TSelf>`](https://learn.microsoft.com/dotnet/api/system.iparsable-1) _(starting with v3 1.1.0 or later)_.
+* Tuples, typed via `Tuple<>` or `ValueTuple<>`, as well as untyped _(starting with v3 3.0.1 or later)_.
 * `null` values
 
 In order to support developers wanting to be able to run individual theory data rows, we also added the ability to provide your own custom serialization for your own custom data types.
