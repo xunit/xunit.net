@@ -236,6 +236,11 @@ pre {
   font-size: 14px;
 }
 
+div.alert pre {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
 /** TABLES **/
 
 .table {
