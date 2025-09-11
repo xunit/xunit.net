@@ -43,6 +43,11 @@ Similarly, the `CaptureTrace` attribute will capture output to be `Trace` and `D
 
 Also bear in mind that `Debug` output is only captured when running a Debug build of your unit tests; when running a Release build, all usage of `Debug` is turned off, including output.
 
+> [!NOTE]
+> Both the console and the trace system are process-wide shared resources. xUnit.net v3 uses an async-local context (`TestContext`) to be able to associate the current thread with the associated test. This allows test parallelization while routing the console and trace output to their appropriate tests.
+>
+> If you write console or trace output to a thread that is not associated with a test (such as a background worker thread created by your test or production code), then that output will silently discarded as there is no test to associate the output to.
+
 xUnit.net v3 tests may also continue to use `ITestOutputHelper` as described below.
 
 ### xUnit.net v2
