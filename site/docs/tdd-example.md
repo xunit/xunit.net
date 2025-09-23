@@ -59,7 +59,7 @@ When you're in the ::Green::{ .green } state, though, you have a choice of two a
 This loop—bouncing between ::Green::{ .green } and ::Red::{ .red } while occasionally stopping to improve the implementation of the production code—is the heart of Red/Green/Refactor, and the core of Test Driven Development.
 
 > [!NOTE]
-> Can you refactor your test code? Yes: if you want to modify tests to improve clarity, reduce duplication, etc., you can do this as well. However, bear in mind that during any single refactoring action, you should only change either the test code or the production code, but _**never both at the same time**_. Any refactoring should always go from ::Green::{ .green } to ::Green::{ .green } while only touching one side or the other. If you're tempted to touch both tests and production code, then you should probably be writing a new test first, watching it go ::Red::{ .red }, then implementing to get it back to "Green.
+> Can you refactor your test code? Yes: if you want to modify tests to improve clarity, reduce duplication, etc., you can do this as well. However, bear in mind that during any single refactoring action, you should only change either the test code or the production code, but _**never both at the same time**_. Any refactoring should always go from ::Green::{ .green } to ::Green::{ .green } while only touching one side or the other. If you're tempted to touch both tests and production code, then you should probably be writing a new test first, watching it go ::Red::{ .red }, then implementing to get it back to ::Green::{ .green }.
 
 ### Step #1: An empty stack has a zero count{ #step-1 }
 
