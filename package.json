@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "dotnet docfx build site/docfx.json",
-    "nginx": "docker run --rm --name xunit.net -p 4000:80 -v .site:/usr/share/nginx/html:ro -v .nginx:/etc/nginx/conf.d:ro nginx",
+    "nginx": "docker run --rm --name xunit.net -p 127.0.0.1:4040:4040 -v .site:/usr/share/nginx/html:ro -v .nginx:/etc/nginx/conf.d:ro nginx",
     "watch": "concurrently \"npm-watch build\" \"npm run nginx\""
   },
   "watch": {
