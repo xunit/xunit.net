@@ -59,7 +59,8 @@ xUnit.net v3 In-Process Runner v3.1.0+03a071627b (64-bit .NET 8.0.20)
         UnitTest1.cs(28,0): at MyFirstUnitTests.UnitTest1.MyFirstTheory(Int32 value)
   Finished:    MyFirstUnitTests (ID = '80800e0af62d4c98efccd4ccc97bc5732c1c4655418cf54e297426d4f586eeff')
 === TEST EXECUTION SUMMARY ===
-   MyFirstUnitTests  Total: 5, Errors: 0, Failed: 2, Skipped: 0, Not Run: 0, Time: 0.064s```
+   MyFirstUnitTests  Total: 5, Errors: 0, Failed: 2, Skipped: 0, Not Run: 0, Time: 0.064s
+```
 
 If you want to replace the xUnit.net native command line experience with the Microsoft Testing Platform command line experience, add the following property to your project file (.csproj/.fsproj/.vbproj):
 
