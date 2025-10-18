@@ -289,6 +289,8 @@
     href: https://github.com/xunit/xunit/blob/main/BUILDING.md
   - name: Why can't my test project target netstandard?
     href: /docs/why-no-netstandard
+  - name: GlobalPackageReference and xUnit.net
+    href: /docs/global-package-reference
 
 - name: Advanced topics
   items:
