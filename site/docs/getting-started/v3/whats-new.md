@@ -145,7 +145,7 @@ In v2, the contract for theory data providers was that they must return somethin
 In v3, this contract has been expanded to allow three different legal data row representations:
 
 * `object[]`
-* named or unnamed `Tuple<>`
+* named or unnamed tuples (anything implementing `ITuple`, including `Tuple<>` and `ValueTuple<>`)
 * `ITheoryDataRow`
 
 In addition, methods from `MemberData` may be async, returning `Task<>` or `ValueTask<>` versions of these, so that data retrieval can be async.
