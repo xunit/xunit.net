@@ -27,6 +27,9 @@ The xUnit.net integration with Microsoft Testing Platform comes at three levels:
 
 Unlike our support for VSTest, our support for Microsoft Testing Platform is built natively into xUnit.net v3. If you want to rely solely on Microsoft Testing Platform support, you can remove the package references to `xunit.runner.visualstudio` and `Microsoft.NET.Test.Sdk`. However, for backward compatibility reasons, we recommend you leave these in place until you can be certain that all your supported versions of your development environments are using MTP instead of VSTest. Once all runners can support Microsoft Testing Platform, then we'll be able to deprecate `xunit.runner.visualstudio`. Supporting VSTest is separate from (and does not interfere with) our support for Microsoft Testing Platform.
 
+> [!NOTE]
+> Some versions of xUnit.net v3 include references to `Microsoft.Testing.Extensions.Telemetry` which allows the Microsoft Testing Platform team to collect usage metrics. You can disable this metric collection by setting an environment variable named `TESTINGPLATFORM_TELEMETRY_OPTOUT` to `1`. For more information, see [Microsoft.Testing.Platform telemetry](https://learn.microsoft.com/en-us/dotnet/core/testing/microsoft-testing-platform-telemetry).
+
 ### Configuration with `testconfig.json`
 
 Starting with v3 build `3.0.0-pre.15`, you can use `testconfig.json` to provide xUnit.net configuration options for your test project. Note that this configuration is only applied when running in Microsoft Testing Platform mode.
