@@ -1,9 +1,9 @@
 ---
 title: "Microsoft Testing Platform"
-title-version: 2025 September 27
+title-version: 2025 November 2
 ---
 
-Starting with Core Framework v3 build `0.4.0-pre.10`, we have added support for the new [Microsoft Testing Platform](https://learn.microsoft.com/dotnet/core/testing/unit-testing-platform-intro) (MTP) natively into xUnit.net v3.
+xUnit.net v3 includes built-in support for the new [Microsoft Testing Platform](https://learn.microsoft.com/dotnet/core/testing/unit-testing-platform-intro) (MTP).
 
 Samples below are shown using:
 
@@ -27,14 +27,43 @@ The xUnit.net integration with Microsoft Testing Platform comes at three levels:
 
 Unlike our support for VSTest, our support for Microsoft Testing Platform is built natively into xUnit.net v3. If you want to rely solely on Microsoft Testing Platform support, you can remove the package references to `xunit.runner.visualstudio` and `Microsoft.NET.Test.Sdk`. However, for backward compatibility reasons, we recommend you leave these in place until you can be certain that all your supported versions of your development environments are using MTP instead of VSTest. Once all runners can support Microsoft Testing Platform, then we'll be able to deprecate `xunit.runner.visualstudio`. Supporting VSTest is separate from (and does not interfere with) our support for Microsoft Testing Platform.
 
-> [!NOTE]
-> Some versions of xUnit.net v3 include references to `Microsoft.Testing.Extensions.Telemetry` which allows the Microsoft Testing Platform team to collect usage metrics. You can disable this metric collection by setting an environment variable named `TESTINGPLATFORM_TELEMETRY_OPTOUT` to `1`. For more information, see [Microsoft.Testing.Platform telemetry](https://learn.microsoft.com/en-us/dotnet/core/testing/microsoft-testing-platform-telemetry).
+### Choosing the Microsoft Testing Platform version
+
+Starting with v3 build `3.2.0`, we now support the ability to choose which major version of Microsoft Testing Platform you wish to support. This includes:
+
+* Microsoft Testing Platform v1 support **(default)**
+* Microsoft Testing Platform v2 support
+* Microsoft Testing Platform support disabled
+
+If you are currently including the `xunit.v3` NuGet package, you may choose among these alternatives:
+
+* `xunit.v3` (includes whatever the default version is, which is currently MTP v1)
+* `xunit.v3.mtp-v1` (explicitly chooses MTP v1)
+* `xunit.v3.mtp-v2` (explicitly chooses MTP v2)
+* `xunit.v3.mtp-off` (explicitly disables MTP support)
+
+If you are currently including the `xunit.v3.core` NuGet package, you may choose among these alternatives:
+
+* `xunit.v3.core` (includes whatever the default version is, which is currently MTP v1)
+* `xunit.v3.core.mtp-v1` (explicitly chooses MTP v1)
+* `xunit.v3.core.mtp-v2` (explicitly chooses MTP v2)
+* `xunit.v3.core.mtp-off` (explicitly disables MTP support)
+
+At this point in time, we do not have a timeframe for when support for MTP v1 will be discontinued, as Microsoft has not announced any timeframe for the retirement of support for MTP v1. We also do not have a timeframe for if or when we might choose to move to MTP v2 by default (though when we do, that will be considered a breaking change, and we will bump the major version of the xUnit.net NuGet packages).
 
 ### Configuration with `testconfig.json`
 
-Starting with v3 build `3.0.0-pre.15`, you can use `testconfig.json` to provide xUnit.net configuration options for your test project. Note that this configuration is only applied when running in Microsoft Testing Platform mode.
+Starting with v3 build `3.0.0`, you can use `testconfig.json` to provide xUnit.net configuration options for your test project. Note that this configuration is only applied when running in Microsoft Testing Platform mode.
 
 For more information, see [Using `testconfig.json` with Microsoft Testing Platform](/docs/testconfig-json-mtp).
+
+### Microsoft Testing Platform Telemetry
+
+Starting with v3 build `3.2.0`, our NuGet packages now include package references to `Microsoft.Testing.Extensions.Telemetry`. This allows the Microsoft Testing Platform team to collect usage metrics.
+
+You can disable metrics collection by setting an environment variable named `TESTINGPLATFORM_TELEMETRY_OPTOUT` to `1`.
+
+For more information, see [Microsoft.Testing.Platform telemetry](https://learn.microsoft.com/en-us/dotnet/core/testing/microsoft-testing-platform-telemetry).
 
 ## Enabling the command line experience
 
