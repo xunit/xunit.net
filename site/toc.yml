@@ -162,6 +162,8 @@
       href: /xunit.analyzers/rules/xUnit1051
     - name: xUnit1052
       href: /xunit.analyzers/rules/xUnit1052
+    - name: xUnit1053
+      href: /xunit.analyzers/rules/xUnit1053
   - name: Assertion
     items:
     - name: xUnit2000
