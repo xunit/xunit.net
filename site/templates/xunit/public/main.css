@@ -93,6 +93,10 @@ article h4 {
 
 /** IMAGES **/
 
+article img {
+  max-width: unset;
+}
+
 img#logo {
   height: 2em;
   width: 2em;
