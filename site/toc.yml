@@ -245,6 +245,8 @@
 
 - name: API Documentation
   items:
+  - name: v3 3.2.1
+    href: https://api.xunit.net/v3/3.2.1
   - name: v3 3.2.0
     href: https://api.xunit.net/v3/3.2.0
   - name: v3 3.1.0
