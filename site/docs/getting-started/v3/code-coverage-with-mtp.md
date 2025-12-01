@@ -182,6 +182,9 @@ $ dotnet run --project Tests -- -?
 
 Passing `--coverage` is the minimum requirement for enabling code coverage; the other three switches influence how the coverage information is reported.
 
+> [!NOTE]
+> The `--coverage-settings` is a path to the `.runsettings` file relative from your test project. Alternatively, you could use a full path to the `.runsettings` file. You could in example use it like: `dotnet run/test src/Foo.sln -- --coverage --coverage-output-format cobertura --coverage-output coverage.cobertura.xml --coverage-settings ${{ github.workspace }}/src/.runsettings'`. You can use `dotnet run` or `dotnet test`.
+
 ## Generating code coverage XML
 
 ### Using `dotnet run`
