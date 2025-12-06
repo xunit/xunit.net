@@ -69,7 +69,7 @@ The generated project file should look something like this:
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
     <RootNamespace>MyFirstUnitTests</RootNamespace>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <!--
     To enable the Microsoft Testing Platform 'dotnet test' experience, add property:
       <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
