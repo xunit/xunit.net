@@ -109,6 +109,10 @@ img.dnflogo {
   margin: 0 0 1em 1em;
 }
 
+img.oversize {
+  max-width: 95%;
+}
+
 .border {
   background-color: #ccc;
   display: inline-block;

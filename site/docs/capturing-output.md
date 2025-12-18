@@ -80,11 +80,11 @@ As you can see in the example above, the `WriteLine` function on `ITestOutputHel
 
 In addition to being able to write to the output system during the unit test, you can also write to it during the constructor (and during your implementation of `IDisposable.Dispose`, if you choose to have one). This test output will be wrapped up into the XML output, and most test runners will surface the output for you as well.
 
-![](/images/capturing-output/vs-runner-output.png){ .border }
+![](/images/capturing-output/vs-runner-output.png){ .border .oversize }
 
 To see output from `dotnet test`, pass the command line option `--logger "console;verbosity=detailed"`:
 
-![](/images/capturing-output/dotnet-test-output.png){ .border width=800 }
+![](/images/capturing-output/dotnet-test-output.png){ .border .oversize width=800 }
 
 ### Showing live output
 

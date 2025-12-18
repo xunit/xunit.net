@@ -284,13 +284,13 @@ Now open your solution with Visual Studio. Build your solution after it has open
 
 After a moment of discovery, you should see the list of discovered tests:
 
-![Visual Studio Test Explorer](/images/getting-started/v3/visualstudio-testexplorer-icons.png){: .border width=461 }
+![Visual Studio Test Explorer](/images/getting-started/v3/visualstudio-testexplorer-icons.png){: .border .oversize width=461 }
 
 By default, the test list is arranged by project, namespace, class, and finally test method. In this case, the `MyFirstTheory` method shows 3 sub-items, as that is a data theory with 3 data rows.
 
 Clicking the run button (the double play button) in the Test Explorer tool bar will run your tests:
 
-![Visual Studio Test Explorer (after tests have run)](/images/getting-started/v3/visualstudio-testexplorer-run.png){: .border width=431 }
+![Visual Studio Test Explorer (after tests have run)](/images/getting-started/v3/visualstudio-testexplorer-run.png){: .border .oversize width=431 }
 
 You can double click on any test in the list to be taken directly to the source code for the test in question.
 
@@ -298,11 +298,11 @@ You can double click on any test in the list to be taken directly to the source 
 
 You should notice after the build is complete that your unit test source becomes decorated with small blue `i` icons that indicate that there is a runnable test:
 
-![Visual Studio unit test source](/images/getting-started/v3/visualstudio-source-icons.png){: .border width=278 }
+![Visual Studio unit test source](/images/getting-started/v3/visualstudio-source-icons.png){: .border .oversize width=278 }
 
 Clicking the `i` will pop up a panel that will allow you to Run or Debug your tests, as well as navigate to the test inside Test Explorer. After running the tests, you'll see that the icons now change to indicate which tests are currently passing vs. failing:
 
-![Visual Studio unit test source (after tests have run)](/images/getting-started/v3/visualstudio-source-run.png){: .border width=279 }
+![Visual Studio unit test source (after tests have run)](/images/getting-started/v3/visualstudio-source-run.png){: .border .oversize width=279 }
 
 ## Using Visual Studio Code
 
@@ -315,7 +315,7 @@ From the command prompt, open Visual Studio code on your project folder by runni
 
 Using the side bar on the left, click the Explorer side bar (it's probably already selected by default), and make sure Solution Explorer is visible. You should see something like this:
 
-![Visual Studio Code Solution Explorer](/images/getting-started/v3/vscode-solution-explorer.png){: .border width=184 }
+![Visual Studio Code Solution Explorer](/images/getting-started/v3/vscode-solution-explorer.png){: .border .oversize width=184 }
 
 To build your project, right click on "MyFirstUnitTests" and choose "Build".
 
@@ -323,13 +323,13 @@ To build your project, right click on "MyFirstUnitTests" and choose "Build".
 
 Once the project has finished building, click on the Testing panel. After a moment of discovery, you should see the list of discovered tests:
 
-![Visual Studio Code Testing Panel](/images/getting-started/v3/vscode-testing-panel.png){: .border width=414 }
+![Visual Studio Code Testing Panel](/images/getting-started/v3/vscode-testing-panel.png){: .border .oversize width=414 }
 
 By default, the test list is arranged by project, namespace, class, and finally test method. In this case, the `MyFirstTheory` method shows 3 sub-items, as that is a data theory with 3 data rows.
 
 Clicking the run button (the double play button) in the Testing panel tool bar will run your tests:
 
-![Visual Studio Code Testing Panel (after tests have run)](/images/getting-started/v3/vscode-testing-run.png){: .border width=362 }
+![Visual Studio Code Testing Panel (after tests have run)](/images/getting-started/v3/vscode-testing-run.png){: .border .oversize width=362 }
 
 You can double click on any test in the list to be taken directly to the source code for the test in question.
 
@@ -337,11 +337,11 @@ You can double click on any test in the list to be taken directly to the source 
 
 Once the project has finished building, you should notice that your unit test source becomes decorated with play icons that you can click to run your tests:
 
-![Visual Studio Code unit test source](/images/getting-started/v3/vscode-source-icons.png){: .border width=350 }
+![Visual Studio Code unit test source](/images/getting-started/v3/vscode-source-icons.png){: .border .oversize width=350 }
 
 After running the tests, you'll see that the icons now change to indicate which tests are currently passing vs. failing, and failed tests will include failure information inline with your source code:
 
-![Visual Studio Code unit test source (after tests have run)](/images/getting-started/v3/vscode-source-run.png){: .border width=522 }
+![Visual Studio Code unit test source (after tests have run)](/images/getting-started/v3/vscode-source-run.png){: .border .oversize width=522 }
 
 ## Using JetBrains Rider
 
@@ -356,13 +356,13 @@ Open your project in Rider. Build the project by right clicking on it and choosi
 
 Once the project has finished building, click on the Tests tool window. After a moment of discovery, you should see the list of discovered tests:
 
-![JetBrains Rider Tests tool window](/images/getting-started/v3/rider-tests-icons.png){: .border }
+![JetBrains Rider Tests tool window](/images/getting-started/v3/rider-tests-icons.png){: .border .oversize }
 
 By default, the test list is arranged by project, namespace, class, and finally test method.
 
 Clicking the run button (the double play button) in the Tests tool window will run your tests:
 
-![JetBrains Rider Tests tool window (after tests have run)](/images/getting-started/v3/rider-tests-run.png){: .border }
+![JetBrains Rider Tests tool window (after tests have run)](/images/getting-started/v3/rider-tests-run.png){: .border .oversize }
 
 You can double click on any test in the list to be taken directly to the source code for the test in question.
 
@@ -370,11 +370,11 @@ You can double click on any test in the list to be taken directly to the source 
 
 Once the project has finished building, you should notice that your unit test source becomes decorated with play icons that you can click to run your tests:
 
-![JetBrains Rider unit test source](/images/getting-started/v3/rider-source-icons.png){: .border }
+![JetBrains Rider unit test source](/images/getting-started/v3/rider-source-icons.png){: .border .oversize }
 
 After running the tests, you'll see that the icons now change to indicate which tests are currently passing vs. failing:
 
-![JetBrains Rider unit test source (after tests have run)](/images/getting-started/v3/rider-source-run.png){: .border }
+![JetBrains Rider unit test source (after tests have run)](/images/getting-started/v3/rider-source-run.png){: .border .oversize }
 
 ## Using `dotnet test`
 

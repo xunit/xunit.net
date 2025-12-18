@@ -36,7 +36,7 @@ These instructions are written for `Version 2.*` of the `Visual Studio Test` tas
 
 After a successful build, the test results are available on the main view of the build. It should look something like this:
 
-![](/images/getting-test-results-in-vsts/test-results.png){ .border }
+![](/images/getting-test-results-in-vsts/test-results.png){ .border .oversize }
 
 ## Comments
 

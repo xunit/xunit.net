@@ -33,11 +33,11 @@ public class Repro
 
 This is what the test discovery looks like inside Visual Studio:
 
-![](/images/theory-data-stability-in-vs/pre-run.png){ .border width=494 }
+![](/images/theory-data-stability-in-vs/pre-run.png){ .border .oversize width=494 }
 
 When you click "Run All", this is what Visual Studio shows:
 
-![](/images/theory-data-stability-in-vs/post-run.png){ .border width=482 }
+![](/images/theory-data-stability-in-vs/post-run.png){ .border .oversize width=482 }
 
 ## Discovery vs. Execution in Visual Studio's test runner
 
@@ -65,6 +65,6 @@ The most common way to fix this issue is to tell xUnit.net not to perform data e
 
 Now Test Explorer will only show a single entry for your test method, and when you run it, all the results of the individual data elements will be shown when you click on the test in the tree:
 
-![](/images/theory-data-stability-in-vs/run-with-disabled-discovery.png){ .border width=632 }
+![](/images/theory-data-stability-in-vs/run-with-disabled-discovery.png){ .border .oversize width=632 }
 
 This allows you to continue to successfully run and report all the test results, albeit at the expense of being able to run any one individual data row.

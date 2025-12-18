@@ -54,7 +54,7 @@ A common question people ask when a CI package is available is whether they can 
 
 If you look at the [dependencies](https://www.nuget.org/packages/xunit#dependencies-body-tab) list for `xunit`, you'll notice that both `xunit.assert` and `xunit.analyzers` are listed with a `>=` designation. This means that if you don't have an explicit reference to either of those packages, you'll get the version shown on that page:
 
-![](/images/xunit-dependencies.png){ .border width=876 }
+![](/images/xunit-dependencies.png){ .border .oversize width=876 }
 
 However, any version that is that _or newer_ satisfies the requirement. So in this example, I could pull in a newer `xunit.analyzers` reference simply by adding it with the version I want, like this:
 

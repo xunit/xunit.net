@@ -276,11 +276,11 @@ $ ReportGenerator -reports:Tests\bin\Debug\net8.0\TestResults\coverage.cobertura
 
 If you open the `index.html` file in your browser you should see a report that looks something like this:
 
-[![Code Coverage Report, Main Page](/images/getting-started/v3/code-coverage-report-1.png){: .border .full-width }](/images/getting-started/v3/code-coverage-report-1.png)
+[![Code Coverage Report, Main Page](/images/getting-started/v3/code-coverage-report-1.png){: .border .oversize width=1390 }](/images/getting-started/v3/code-coverage-report-1.png)
 
 You can click on the `ClassLibrary.Class1` to dive into the coverage details:
 
-[![Code Coverage Report, Detail Page](/images/getting-started/v3/code-coverage-report-2.png){: .border .full-width }](/images/getting-started/v3/code-coverage-report-2.png)
+[![Code Coverage Report, Detail Page](/images/getting-started/v3/code-coverage-report-2.png){: .border .oversize width=1390 }](/images/getting-started/v3/code-coverage-report-2.png)
 
 Code coverage is showing us that our test have only covered the `Add` method, and not the `Subtract` method, which is correct given that our unit test sample only included a single test for `Add`.
 

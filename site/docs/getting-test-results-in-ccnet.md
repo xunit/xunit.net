@@ -49,10 +49,10 @@ If you're using CruiseControl.NET for continuous integration services, you can s
 
 * Edit `C:\Program Files\CruiseControl.NET\webdashboard\dashboard.config` and add a line for the summary, as shown below (highlighted in yellow):
 
-  ![](/images/getting-test-results-in-ccnet/dashboard-config.png){: .border }
+  ![](/images/getting-test-results-in-ccnet/dashboard-config.png){: .border .oversize }
 
 * Reset the IIS server that's running CCnet
 
 * Force a build and see the results! They should look similar to the following:
 
-  ![](/images/getting-test-results-in-ccnet/sample-output.png){: .border }
+  ![](/images/getting-test-results-in-ccnet/sample-output.png){: .border .oversize }

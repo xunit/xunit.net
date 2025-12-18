@@ -16,11 +16,11 @@ Binaries for xUnit.net are now distributed exclusively through NuGet. Updating t
 
 2. Then, add the new `xunit` NuGet package. Start by right clicking on the project in Solution Explorer, and then choosing the `Manage NuGet Packages...` menu item:
 
-  ![](/images/manage-nuget-packages.png){ .border width=357 }
+  ![](/images/manage-nuget-packages.png){ .border .oversize width=357 }
 
 3. Click on `Browse` in the upper left corner. In the search box on the upper right, type `xunit`. The search should yield results like this:
 
-  ![](/images/add-xunit.png){ .border width=845 }
+  ![](/images/add-xunit.png){ .border .oversize width=845 }
 
 4. Locate the xUnit.net entry, and click `Install`.
 
@@ -28,15 +28,15 @@ Binaries for xUnit.net are now distributed exclusively through NuGet. Updating t
 
 1. Right click on the project in Solution Explorer, and then choose the `Manage NuGet Packages...` menu item:
 
-  ![](/images/manage-nuget-packages.png){ .border width=357 }
+  ![](/images/manage-nuget-packages.png){ .border .oversize width=357 }
 
 1. Click on `Installed` along the top. If you see `xUnit.net: Extensions` installed, please click the `Uninstall` button. (If NuGet offers to uninstall the `xunit` package for you, you should decline. You're going to upgrade that package in the next step.)
 
-  ![](/images/test-migration/uninstall-extensions.png){ .border width=982 }
+  ![](/images/test-migration/uninstall-extensions.png){ .border .oversize width=982 }
 
 1. Click on `Updates` along the top. Locate `xUnit.net` in the list of packages, and click `Update`:
 
-  ![](/images/test-migration/update-xunit.png){ .border width=981 }
+  ![](/images/test-migration/update-xunit.png){ .border .oversize width=981 }
 
 ## Update the unit tests{ #update-tests }
 

@@ -54,7 +54,7 @@ When you build a v3 test project, the result is directly executable.
 
 If you run the executable without any command line options, all your tests will run:
 
-![](/images/v3-migration/stand-alone-executable.png){: .border .shrink-75 }
+![](/images/v3-migration/stand-alone-executable.png){: .border .oversize }
 
 You can pass `-?` to the executable for a complete list of command line switches that are available. The list will be very similar to the console runner's command line options, except slightly reduced because of the fact that you're only running a single test assembly.
 
