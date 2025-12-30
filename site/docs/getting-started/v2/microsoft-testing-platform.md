@@ -22,7 +22,7 @@ When using the `YTest.MTP.XUnit2` package, running your executable will run your
 
 ```shell
 $ dotnet run
-YTest.MTP.XUnit2 Runner version 1.0.0+e77a8357f5ea91b148d2f7ba8091d30ea45c5d81 (64-bit .NET 8.0.22)
+YTest.MTP.XUnit2 Runner version 1.0.1+f1554021e38b5be2d84515eb7da51a6e5ed0c8cb (64-bit .NET 8.0.22)
 
 Test run summary: Passed! - path/to/test-project.dll (net8.0|x64)
   total: 1
