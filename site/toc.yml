@@ -35,6 +35,8 @@
     href: /docs/getting-started/v2/getting-started
   - name: Migrating Unit Tests
     href: /docs/getting-started/v2/migration
+  - name: Microsoft Testing Platform (MTP)
+    href: /docs/getting-started/v2/microsoft-testing-platform
   - name: NuGet Packages
     href: /docs/nuget-packages-v2
   - name: Sample Projects
