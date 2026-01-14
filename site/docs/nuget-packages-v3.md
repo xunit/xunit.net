@@ -27,7 +27,7 @@ This is the package that will most typically be used by unit test authors. It br
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.svg?style=flat)](https://www.nuget.org/packages/xunit.v3){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.svg?style=flat)](https://www.nuget.org/packages/xunit.v3){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `net472`, `net8.0`
 > | Depends on | [`xunit.v3.assert`](#xunit.v3.assert), [`xunit.v3.core`](#xunit.v3.core), [`xunit.analyzers`](#xunit.analyzers)
@@ -44,7 +44,7 @@ This is a separate NuGet package, because some developers wish to use the xUnit.
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.assert.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.assert){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.assert%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.assert){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.assert.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.assert){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.assert?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.assert){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `netstandard2.0`, `net8.0`
 
@@ -60,7 +60,7 @@ Referencing this package provides the required infrastructure to be able to writ
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.core.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.core){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.core%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.core){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.core.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.core){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.core?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.core){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `net472`, `net8.0`
 > | Depends on | [`xunit.v3.extensibility.core`](#xunit.v3.extensibility.core), [`xunit.v3.runner.inproc.console`](#xunit.v3.runner.inproc.console)
@@ -74,7 +74,7 @@ To install this package, run: `dotnet new install xunit.v3.templates`. This will
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.templates.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.templates){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.templates%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.templates){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.templates.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.templates){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.templates?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.templates){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | **xunit3**: **`net8.0`**, `net9.0`, `net472`, `net48`, `net481`<br />**xunit3-extension**: **`netstandard2.0`**, `net8.0`, `net9.0`, `net472`, `net48`, `net481`
 
@@ -87,7 +87,7 @@ This library provides code analysis and code fixers for common issues that are e
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.analyzers.svg?style=flat)](https://www.nuget.org/packages/xunit.analyzers){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.analyzers%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.analyzers.svg?style=flat)](https://www.nuget.org/packages/xunit.analyzers){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.analyzers?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | Roslyn 3.11+ (Visual Studio 2019 16.11+)
 
@@ -105,7 +105,7 @@ This package contains the console test runner. This runner is capable of running
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.console.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.console){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.runner.console%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.console){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.console.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.console){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.runner.console?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.console){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `net472` (v1/v2/v3), `net8.0` (v3)
 
@@ -119,7 +119,7 @@ This package contains the MSBuild test runner. This runner is capable of running
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.msbuild.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.msbuild){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.runner.msbuild%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.runner.msbuild){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.msbuild.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.msbuild){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.runner.msbuild?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.runner.msbuild){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `net472` (v1/v2/v3), `net8.0` (v3)
 
@@ -137,7 +137,7 @@ The VSTest framework is used by several 3rd party runners, including:
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.visualstudio.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.visualstudio){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.runner.visualstudio%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.visualstudio){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.visualstudio.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.visualstudio){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.runner.visualstudio?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.visualstudio){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `net472` (v1/v2/v3), `net8.0` (v2/v3)
 
@@ -156,7 +156,7 @@ For more information, see the [`xunit/assert.xunit` README](https://github.com/x
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.assert.source.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.assert.source){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.assert.source%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.assert.source){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.assert.source.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.assert.source){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.assert.source?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.assert.source){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `netstandard1.1` with C# 6 or later
 
@@ -169,7 +169,7 @@ This package is referenced by [`xunit.v3.core`](#xunit.v3.core). It differs in t
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.extensibility.core.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.extensibility.core){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.extensibility.core%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.extensibility.core){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.extensibility.core.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.extensibility.core){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.extensibility.core?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.extensibility.core){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `netstandard2.0`
 > | Depends on | [`xunit.v3.common`](#xunit.v3.common)
@@ -181,7 +181,7 @@ This package contains the code that provides the command line UI for running xUn
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.inproc.console.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.inproc.console){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.runner.inproc.console%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.runner.inproc.console){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.inproc.console.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.inproc.console){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.runner.inproc.console?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.runner.inproc.console){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `net472`, `net8.0`
 > | Depends on | [`xunit.v3.extensibility.core`](#xunit.v3.extensibility.core), [`xunit.v3.runner.common`](#xunit.v3.runner.common)
@@ -195,7 +195,7 @@ The libraries contained here are both backward and forward compatible for all v1
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.utility.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.utility){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.runner.utility%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.runner.utility){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.utility.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.utility){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.runner.utility?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.runner.utility){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `net472`, `net8.0`
 > | Depends on | [`xunit.abstractions`](#xunit.abstractions), [`xunit.v3.runner.common`](#xunit.v3.runner.common)
@@ -211,7 +211,7 @@ This package contains types that are shared between [`xunit.v3.core`](#xunit.v3.
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.common.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.common){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.common%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.common){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.common.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.common){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.common?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.common){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `netstandard2.0`
 
@@ -222,7 +222,7 @@ This package contains types that are shared between [`xunit.v3.runner.inproc.con
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.common.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.common){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.v3.runner.common%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.runner.common){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.v3.runner.common.svg?style=flat)](https://www.nuget.org/packages/xunit.v3.runner.common){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3.runner.common?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3.runner.common){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `netstandard2.0`
 > | Depends on | [`xunit.v3.common`](#xunit.v3.common)
@@ -234,7 +234,7 @@ This package contains common interfaces used by various parts of xUnit.net v2. I
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.abstractions.svg?style=flat)](https://www.nuget.org/packages/xunit.abstractions){ .version-stable }[![](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fxunit%2Fxunit%2Fshield%2Fxunit.abstractions%2Flatest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.abstractions){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.abstractions.svg?style=flat)](https://www.nuget.org/packages/xunit.abstractions){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.abstractions?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.abstractions){ .version-ci .hidden }
 > | Introduced | 1.0
 > | Targets    | `net35`, `netstandard1.0`
 
