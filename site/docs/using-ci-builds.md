@@ -17,10 +17,10 @@ You should feel confident to use CI builds, especially ones that we recommend.
 {: .table .latest }
 |                             | Latest CI
 | --------------------------- | ---------
-| `xunit.v3`                  | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.v3/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3)
-| `xunit`                     | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit)
-| `xunit.analyzers`           | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.analyzers/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers)
-| `xunit.runner.visualstudio` | [![](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.runner.visualstudio/latest&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.visualstudio)
+| `xunit.v3`                  | [![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3)
+| `xunit`                     | [![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit)
+| `xunit.analyzers`           | [![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.analyzers?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers)
+| `xunit.runner.visualstudio` | [![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.runner.visualstudio?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.visualstudio)
 
 ## How to consume CI builds{ #consume }
 
