@@ -23,7 +23,7 @@ This is the package that will most typically be used by unit test authors. It br
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.svg?style=flat)](https://www.nuget.org/packages/xunit){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.svg?style=flat)](https://www.nuget.org/packages/xunit){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Depends On | [`xunit.assert`](#xunit.assert), [`xunit.analyzers`](#xunit.analyzers), [`xunit.core`](#xunit.core)
 
@@ -39,7 +39,7 @@ This is a separate NuGet package, because some developers wish to use the xUnit.
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.assert.svg?style=flat)](https://www.nuget.org/packages/xunit.assert){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.assert?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.assert){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.assert.svg?style=flat)](https://www.nuget.org/packages/xunit.assert){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.assert/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.assert){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `netstandard1.1`
 
@@ -52,7 +52,7 @@ This library provides code analysis and code fixers for common issues that are e
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.analyzers.svg?style=flat)](https://www.nuget.org/packages/xunit.analyzers){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.analyzers?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.analyzers.svg?style=flat)](https://www.nuget.org/packages/xunit.analyzers){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.analyzers/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers){ .version-ci .hidden }
 > | Introduced | 2.3
 
 ### `xunit.core`{ #xunit.core }
@@ -67,7 +67,7 @@ Referencing this package includes `xunit.core.dll` and also copies (but does not
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.core.svg?style=flat)](https://www.nuget.org/packages/xunit.core){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.core?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.core){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.core.svg?style=flat)](https://www.nuget.org/packages/xunit.core){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.core/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.core){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `netstandard1.1`
 > | Depends on | [`xunit.extensibility.core`](#xunit.extensibility.core)
@@ -86,7 +86,7 @@ This package contains the console test runner. This runner is capable of running
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.console.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.console){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.runner.console?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.console){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.console.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.console){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.runner.console/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.console){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `net452`
 
@@ -97,7 +97,7 @@ This package contains the MSBuild test runner. This runner is capable of running
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.msbuild.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.msbuild){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.runner.msbuild?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.msbuild){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.msbuild.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.msbuild){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.runner.msbuild/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.msbuild){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `net452`
 
@@ -118,7 +118,7 @@ The VSTest framework is used by several 3rd party runners, including:
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.visualstudio.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.visualstudio){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.runner.visualstudio?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.visualstudio){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.visualstudio.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.visualstudio){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.runner.visualstudio/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.visualstudio){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `net472`, `net8.0`
 
@@ -135,7 +135,7 @@ You usually won't need to directly reference this package.
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.abstractions.svg?style=flat)](https://www.nuget.org/packages/xunit.abstractions){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.abstractions?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.abstractions){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.abstractions.svg?style=flat)](https://www.nuget.org/packages/xunit.abstractions){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.abstractions/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.abstractions){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `net35`, `netstandard1.0`
 
@@ -150,7 +150,7 @@ For more information, see the [`xunit/assert.xunit` README](https://github.com/x
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.assert.source.svg?style=flat)](https://www.nuget.org/packages/xunit.assert.source){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.assert.source?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.assert.source){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.assert.source.svg?style=flat)](https://www.nuget.org/packages/xunit.assert.source){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.assert.source/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.assert.source){ .version-ci .hidden }
 > | Targets    | `netstandard1.1` with C# 6 or later
 > | Introduced | 2.0
 
@@ -163,7 +163,7 @@ This package is referenced by [`xunit.core`](#xunit.core). It differs in that it
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.extensibility.core.svg?style=flat)](https://www.nuget.org/packages/xunit.extensibility.core){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.extensibility.core?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.extensibility.core){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.extensibility.core.svg?style=flat)](https://www.nuget.org/packages/xunit.extensibility.core){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.extensibility.core/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.extensibility.core){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `net452`, `netstandard1.1`
 > | Depends on | [`xunit.abstractions`](#xunit.abstractions)
@@ -177,7 +177,7 @@ It differs from the [`xunit.core`](#xunit.core) package in that it adds a refere
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.extensibility.execution.svg?style=flat)](https://www.nuget.org/packages/xunit.extensibility.execution){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.extensibility.execution?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.extensibility.execution){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.extensibility.execution.svg?style=flat)](https://www.nuget.org/packages/xunit.extensibility.execution){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.extensibility.execution/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.extensibility.execution){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `net452`, `netstandard1.1`
 > | Depends on | [`xunit.extensibility.core`](#xunit.extensibility.core)
@@ -191,7 +191,7 @@ The libraries contained here are both backward and forward compatible for all xU
 > { .table-compact }
 > |            |
 > | ---------- | -----
-> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.utility.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.utility){ .version-stable }[![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.runner.utility?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.utility){ .version-ci .hidden }
+> | Latest     | [![](https://img.shields.io/nuget/v/xunit.runner.utility.svg?style=flat)](https://www.nuget.org/packages/xunit.runner.utility){ .version-stable }[![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.runner.utility/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.runner.utility){ .version-ci .hidden }
 > | Introduced | 2.0
 > | Targets    | `net35`, `net452`, `netstandard1.1`, `netstandard1.5`, `netcoreapp1.0`
 > | Depends on | [`xunit.abstractions`](#xunit.abstractions)

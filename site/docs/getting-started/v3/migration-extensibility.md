@@ -14,8 +14,8 @@ The current builds are:
 
 | Package                     | NuGet Version                                                                                                                               | [CI Version](/docs/using-ci-builds)
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------
-| `xunit.v3.*`                | [![](https://img.shields.io/nuget/v/xunit.v3.svg?logo=nuget)](https://www.nuget.org/packages/xunit.v3)                                   | [![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.v3?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3)
-| `xunit.analyzers`           | [![](https://img.shields.io/nuget/v/xunit.analyzers.svg?logo=nuget)](https://www.nuget.org/packages/xunit.analyzers)                     | [![](https://img.shields.io/feedz/vpre/xunit/xunit/xunit.analyzers?logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers)
+| `xunit.v3.*`                | [![](https://img.shields.io/nuget/v/xunit.v3.svg?logo=nuget)](https://www.nuget.org/packages/xunit.v3)                                   | [![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.v3/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.v3)
+| `xunit.analyzers`           | [![](https://img.shields.io/nuget/v/xunit.analyzers.svg?logo=nuget)](https://www.nuget.org/packages/xunit.analyzers)                     | [![](https://img.shields.io/endpoint.svg?url=https://f.feedz.io/xunit/xunit/shield/xunit.analyzers/latest&logo=nuget&color=f58142)](https://feedz.io/org/xunit/repository/xunit/packages/xunit.analyzers)
 
 Note that while we attempt to ensure that CI builds are always usable, we cannot make guarantees. If you come across issues using a CI build, please [let us know](https://github.com/xunit/xunit/issues)!
 
