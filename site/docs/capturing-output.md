@@ -8,7 +8,7 @@ In order to assist in debugging failing test (especially when running them on re
 
 * xUnit.net v1 always captured output from `Console`, `Debug`, and `Trace`.
 
-* xUnit.net v2 removed this ability and replaced it with an injectable `ITraceOutputHelper` that could be used to capture output from a test.
+* xUnit.net v2 removed this ability and replaced it with an injectable `ITestOutputHelper` that could be used to capture output from a test.
 
 * xUnit.net v3 reintroduced the ability to capture output, which is disabled by default for backward compatibility with v2.
 
