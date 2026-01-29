@@ -346,7 +346,7 @@ After running the tests, you'll see that the icons now change to indicate which 
 ## Using JetBrains Rider
 
 > [!NOTE]
-> These screen shots were taken with Rider 2024.2. Your screen may look slightly different if you have a newer version. The latest version of Rider supports Microsoft Testing Platform also supports Microsoft Testing Platform (which is natively implemented in xUnit.net v3), so the instructions to add the `xunit.runner.visualstudio` and `Microsoft.NET.Test.Sdk` packages may not be necessary.
+> These screen shots were taken with Rider 2024.2. Your screen may look slightly different if you have a newer version. The latest version of Rider also supports Microsoft Testing Platform (which is natively implemented in xUnit.net v3), so the instructions to add the `xunit.runner.visualstudio` and `Microsoft.NET.Test.Sdk` packages may not be necessary.
 
 Rider contains a Tests tool window that can run tests from a variety of third party test frameworks, including xUnit.net. The inclusion of `xunit.runner.visualstudio` (and `Microsoft.NET.Test.Sdk`) allows the Tests tool window to find and run our tests.
 
