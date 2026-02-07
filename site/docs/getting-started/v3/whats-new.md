@@ -347,7 +347,7 @@ For more information, see the [documentation page](/docs/getting-started/v3/micr
 
   This best guess is based on two contracts added to v3 which can be implemented by third party assertion libraries. Throwing an exception which implements an interface named `IAssertionException` (in any namespace) will be reported as an assertion failure; similarly, throwing an exception which implements an interface named `ITestTimeoutException` (in any namespace) will be reported as a timed-out test.
 
-* `ITestCaseMetadata` has three new properties: `Explicit, `TestMethodParameterTypes` and `TestMethodReturnType`.
+* `ITestCaseMetadata` has three new properties: `Explicit`, `TestMethodParameterTypes` and `TestMethodReturnType`.
 
   Note that type names here are returned in [VSTest format](https://github.com/microsoft/vstest/blob/main/docs/RFCs/0017-Managed-TestCase-Properties.md), not in .NET canonical format, as they are intended to be used for VSTest and Microsoft Testing Platform consumption. We do not recommend using these properties in any other capacity.
 
