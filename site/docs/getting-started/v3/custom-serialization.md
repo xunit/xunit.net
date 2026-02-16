@@ -52,7 +52,7 @@ System types:
 
 Additional supported values:
 
-* Arrays of serializable values
+* Single-dimensional arrays of serializable values
 * Enum values
 * Values which implement both [`IFormattable`](https://learn.microsoft.com/dotnet/api/system.iformattable) and [`IParsable<TSelf>`](https://learn.microsoft.com/dotnet/api/system.iparsable-1) _(starting with v3 1.1.0 or later)_.
 * Tuples, typed via `Tuple<>` or `ValueTuple<>`, as well as untyped _(starting with v3 3.0.1 or later)_.
