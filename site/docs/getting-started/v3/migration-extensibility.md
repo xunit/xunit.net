@@ -3,7 +3,7 @@ title: Migrating Extensibility from v2 to v3
 title-version: 2025 January 1
 ---
 
-This migration guide aims to be a focused guide for extensibility authors who want to migrate their xUnit.net extensions from v2 to v3. This guide is focused on the extensibility experience, and assumes you are already familiar with the [migration guidance for unit test authors](/docs/getting-started/v3/migration) already. You may also want to read the "[What's New in v3](/docs/getting-started/v3/whats-new)" document to know what new features have been added to v3, that you may way to include in your extensibility.
+This migration guide aims to be a focused guide for extensibility authors who want to migrate their xUnit.net extensions from v2 to v3. This guide is focused on the extensibility experience, and assumes you are already familiar with the [migration guidance for unit test authors](/docs/getting-started/v3/migration) already. You may also want to read the "[What's New in v3](/docs/getting-started/v3/whats-new)" document to know what new features have been added to v3, that you may want to include in your extensibility.
 
 In this document, we will split guidance based on those writing extensions to the core framework ("Core Extensibility") and those who are writing test runners ("Runner Extensibility"). For developers who are extending the assertion library, there should be little to no change for you other than updating your package names (from `xunit.assert` or `xunit.assert.source` to `xunit.v3.assert` or `xunit.v3.assert.source` respectively).
 
