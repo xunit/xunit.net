@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1037
 description: There are fewer theory data type arguments than required by the parameters of the test method
-category: Usage
 severity: Error
 v2: true
 v3: true

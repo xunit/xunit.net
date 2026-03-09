@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1026
 description: Theory methods should use all of their parameters
-category: Usage
 severity: Warning
 v2: true
 v3: true

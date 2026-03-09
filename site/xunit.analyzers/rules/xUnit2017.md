@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2017
 description: Do not use Contains() to check if a value exists in a collection
-category: Assertions
 severity: Warning
 v2: true
 v3: true

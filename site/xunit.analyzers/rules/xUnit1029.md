@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1029
 description: Local functions cannot be test functions
-category: Usage
 severity: Error
 v2: true
 v3: true

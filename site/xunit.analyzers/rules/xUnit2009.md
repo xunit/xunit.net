@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2009
 description: Do not use boolean check to check for substrings
-category: Assertions
 severity: Warning
 v2: true
 v3: true

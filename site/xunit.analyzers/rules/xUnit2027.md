@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2027
 description: Comparison of sets to linear containers have undefined results
-category: Assertions
 severity: Warning
 v2: true
 v3: true

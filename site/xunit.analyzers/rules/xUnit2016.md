@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2016
 description: Keep precision in the allowed range when asserting equality of doubles or decimals.
-category: Assertions
 severity: Error
 v2: true
 v3: true

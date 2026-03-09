@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1031
 description: Do not use blocking task operations in test method
-category: Usage
 severity: Warning
 v2: true
 v3: true

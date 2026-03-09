@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2007
 description: Do not use typeof expression to check the type
-category: Assertions
 severity: Warning
 v2: true
 v3: true

@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1038
 description: There are more theory data type arguments than allowed by the parameters of the test method
-category: Usage
 severity: Error
 v2: true
 v3: true

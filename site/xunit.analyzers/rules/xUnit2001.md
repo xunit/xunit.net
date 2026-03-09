@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2001
 description: Do not use invalid equality check
-category: Assertions
 severity: Hidden
 v2: true
 v3: true

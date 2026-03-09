@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1008
 description: Test data attribute should only be used on a Theory
-category: Usage
 severity: Warning
 v2: true
 v3: true

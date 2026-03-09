@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1053
 description: The static member used as theory data must be statically initialized
-category: Usage
 severity: Warning
 v2: true
 v3: true

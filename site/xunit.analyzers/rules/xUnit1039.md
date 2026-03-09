@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1039
 description: The type argument to theory data is not compatible with the type of the corresponding test method parameter
-category: Usage
 severity: Error
 v2: true
 v3: true

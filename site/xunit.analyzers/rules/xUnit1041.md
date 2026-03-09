@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1041
 description: Fixture arguments to test classes must have fixture sources
-category: Usage
 severity: Warning
 v2: true
 v3: true

@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2025
 description: The boolean assertion statement can be simplified
-category: Assertions
 severity: Info
 v2: true
 v3: true

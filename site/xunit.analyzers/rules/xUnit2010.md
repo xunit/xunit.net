@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2010
 description: Do not use boolean check to check for string equality
-category: Assertions
 severity: Warning
 v2: true
 v3: true

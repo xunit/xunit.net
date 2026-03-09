@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1010
 description: The value is not convertible to the method parameter type
-category: Usage
 severity: Error
 v2: true
 v3: true

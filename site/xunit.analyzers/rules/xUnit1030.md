@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1030
 description: Do not call ConfigureAwait in test method
-category: Usage
 severity: Warning
 v2: true
 v3: true

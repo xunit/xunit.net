@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1036
 description: There is no matching method parameter
-category: Usage
 severity: Error
 v2: true
 v3: true

@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit3000
 description: Classes which cross AppDomain boundaries must derive directly or indirectly from LongLivedMarshalByRefObject
-category: Extensibility
 severity: Error
 v2: true
 v3: false

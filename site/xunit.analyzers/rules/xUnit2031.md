@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit2031
 description: Do not use Where clause with Assert.Single
-category: Assertions
 severity: Warning
 v2: true
 v3: true

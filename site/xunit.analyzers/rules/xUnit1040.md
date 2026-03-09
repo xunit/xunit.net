@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1040
 description: The type argument to theory data is nullable, while the type of the corresponding test method parameter is not
-category: Usage
 severity: Warning
 v2: true
 v3: true

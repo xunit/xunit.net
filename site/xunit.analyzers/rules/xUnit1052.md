@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit1052
 description: Avoid using 'TheoryData<...>' with types that implement 'ITheoryDataRow'
-category: Usage
 severity: Warning
 v2: false
 v3: true

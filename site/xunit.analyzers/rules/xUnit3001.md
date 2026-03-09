@@ -2,7 +2,6 @@
 analyzer: true
 title: xUnit3001
 description: Classes that are marked as serializable (or created by the test framework at runtime) must have a public parameterless constructor
-category: Extensibility
 severity: Error
 v2: true
 v3: true
