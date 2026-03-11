@@ -60,6 +60,7 @@ title: Roslyn Analyzer Rules
 | [xUnit1050](/xunit.analyzers/rules/xUnit1050) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Info::{.label .label-Info}       | The class referenced by the ClassData attribute returns untyped data rows
 | [xUnit1051](/xunit.analyzers/rules/xUnit1051) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Warning::{.label .label-Warning} | Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken
 | [xUnit1052](/xunit.analyzers/rules/xUnit1052) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Warning::{.label .label-Warning} | Avoid using 'TheoryData<...>' with types that implement 'ITheoryDataRow'
+| [xUnit1053](/xunit.analyzers/rules/xUnit1053) | ::v2::{.label .label-version-True} ::v3::{.label .label-version-True}   | ::Warning::{.label .label-Warning} | The static member used as theory data must be statically initialized
 
 ## Assertion Analyzers (2xxx)
 
