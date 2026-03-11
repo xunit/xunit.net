@@ -109,3 +109,25 @@ title: Roslyn Analyzer Rules
 | [xUnit3001](/xunit.analyzers/rules/xUnit3001) | ::v2::{.label .label-version-True} ::v3::{.label .label-version-True}   | ::Error::{.label .label-Error}     | Classes that are marked as serializable (or created by the test framework at runtime) must have a public parameterless constructor
 | [xUnit3002](/xunit.analyzers/rules/xUnit3002) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Warning::{.label .label-Warning} | Classes which are JSON serializable should not be tested for their concrete type
 | [xUnit3003](/xunit.analyzers/rules/xUnit3003) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Warning::{.label .label-Warning} | Classes which extend FactAttribute (directly or indirectly) should provide a public constructor for source information
+
+## Code Generators (9xxx)
+
+{ .table-analyzers }
+| ID                                            |                                                                         |                                | Title
+| --------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------ | -----
+| [xUnit9000](/xunit.analyzers/rules/xUnit9000) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Type must have non-obsolete public parameterless public constructor
+| [xUnit9001](/xunit.analyzers/rules/xUnit9001) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Type must implement appropriate interface
+| [xUnit9002](/xunit.analyzers/rules/xUnit9002) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Type must have public static property
+| [xUnit9003](/xunit.analyzers/rules/xUnit9003) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Type must have a single public non-static constructor
+| [xUnit9004](/xunit.analyzers/rules/xUnit9004) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Type must be public or internal
+| [xUnit9005](/xunit.analyzers/rules/xUnit9005) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Generic collection definitions are not supported
+| [xUnit9006](/xunit.analyzers/rules/xUnit9006) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Tests cannot set both SkipUnless and SkipWhen
+| [xUnit9007](/xunit.analyzers/rules/xUnit9007) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Test classes may not be decorated with ICollectionFixture<>
+| [xUnit9008](/xunit.analyzers/rules/xUnit9008) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Cultured test methods must have at least one culture
+| [xUnit9009](/xunit.analyzers/rules/xUnit9009) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Fact methods cannot be generic
+| [xUnit9010](/xunit.analyzers/rules/xUnit9010) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Theory methods cannot be generic
+| [xUnit9011](/xunit.analyzers/rules/xUnit9011) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | Theory parameter cannot use params modifier
+| [xUnit9012](/xunit.analyzers/rules/xUnit9012) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | MemberData member may not be overloaded
+| [xUnit9013](/xunit.analyzers/rules/xUnit9013) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | MemberData type must be either public or internal
+| [xUnit9014](/xunit.analyzers/rules/xUnit9014) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | MemberData parameter cannot use params modifier
+| [xUnit9015](/xunit.analyzers/rules/xUnit9015) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True}  | ::Error::{.label .label-Error} | There is no matching MemberData method argument
