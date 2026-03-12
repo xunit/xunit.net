@@ -186,7 +186,7 @@ StackTests.PushThree_CountIsThree [FAIL]
 We know that hard-coding `Count` to one isn't going to be be good enough any more, so let's update it:
 
 ```csharp
-public void Push(int element) => Count = 3;
+public void Push(int element) => Count++;
 ```
 
 Let's move on and see what's next.
