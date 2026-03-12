@@ -531,11 +531,11 @@ We want `Peek` to behave like `Pop` in the error condition of an empty stack, so
 
 ```csharp
 [Fact]
-public void EmptyStack_PopThrows()
+public void EmptyStack_PeekThrows()
 {
     var stack = new Stack();
 
-    var ex = Record.Exception(() => stack.Pop());
+    var ex = Record.Exception(() => stack.Peek());
 
     Assert.IsType<InvalidOperationException>(ex);
     Assert.Equal("The stack is empty", ex.Message);
