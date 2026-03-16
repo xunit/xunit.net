@@ -5,8 +5,8 @@ description: Avoid using 'async void' for test methods as it is deprecated in xU
 severity: Warning
 v2: true
 v3: false
+aot: false
 ---
-
 ## Cause
 
 A violation of this rule occurs when an async test method returns `void`.

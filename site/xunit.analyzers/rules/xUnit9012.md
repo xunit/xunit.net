@@ -4,7 +4,8 @@ title: xUnit9012
 description: MemberData member may not be overloaded
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

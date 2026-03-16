@@ -5,6 +5,7 @@ description: Do not use blocking task operations in test method
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

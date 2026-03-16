@@ -5,6 +5,7 @@ description: Do not use Assert.Empty to check if a value does not exist in a col
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

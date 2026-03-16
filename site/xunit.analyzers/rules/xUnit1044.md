@@ -5,6 +5,7 @@ description: Avoid using TheoryData type arguments that are not serializable
 severity: Info
 v2: true
 v3: true
+aot: false
 ---
 
 ## Cause

@@ -5,6 +5,7 @@ description: Do not use collection methods for single-item collections
 severity: Info
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

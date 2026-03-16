@@ -5,6 +5,7 @@ description: Avoid using 'TheoryData<...>' with types that implement 'ITheoryDat
 severity: Warning
 v2: false
 v3: true
+aot: true
 ---
 
 ## Cause

@@ -4,7 +4,8 @@ title: xUnit9006
 description: Tests cannot set both SkipUnless and SkipWhen
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

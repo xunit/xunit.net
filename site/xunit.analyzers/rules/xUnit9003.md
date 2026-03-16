@@ -4,7 +4,8 @@ title: xUnit9003
 description: Type must have a single public non-static constructor
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

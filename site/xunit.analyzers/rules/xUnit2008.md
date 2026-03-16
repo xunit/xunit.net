@@ -5,6 +5,7 @@ description: Do not use boolean check to match on regular expressions
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

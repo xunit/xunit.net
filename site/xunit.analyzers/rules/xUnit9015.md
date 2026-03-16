@@ -4,7 +4,8 @@ title: xUnit9015
 description: There is no matching MemberData method argument
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

@@ -5,6 +5,7 @@ description: Collection definition classes must be public
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

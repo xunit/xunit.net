@@ -4,7 +4,8 @@ title: xUnit9014
 description: MemberData parameter cannot use params modifier
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

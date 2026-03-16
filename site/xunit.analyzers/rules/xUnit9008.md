@@ -4,7 +4,8 @@ title: xUnit9008
 description: Cultured test methods must have at least one culture
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

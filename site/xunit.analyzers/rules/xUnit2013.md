@@ -5,6 +5,7 @@ description: Do not use equality check to check for collection size.
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

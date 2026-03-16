@@ -5,6 +5,7 @@ description: Do not use Assert.Empty or Assert.NotEmpty with problematic types
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

@@ -4,7 +4,8 @@ title: xUnit9000
 description: Type must have non-obsolete public constructor
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

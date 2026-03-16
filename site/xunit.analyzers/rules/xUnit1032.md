@@ -5,6 +5,7 @@ description: Test classes cannot be nested within a generic class
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

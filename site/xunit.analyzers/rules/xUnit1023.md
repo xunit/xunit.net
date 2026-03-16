@@ -5,8 +5,8 @@ description: Theory methods cannot have default parameter values
 severity: Error
 v2: true
 v3: false
+aot: false
 ---
-
 ## Cause
 
 In versions of xUnit.net prior to 2.2.0, `[Theory]` methods did not support default values on parameters.

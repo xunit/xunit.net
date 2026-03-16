@@ -5,6 +5,7 @@ description: Do not use boolean asserts for simple equality tests
 severity: Info
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

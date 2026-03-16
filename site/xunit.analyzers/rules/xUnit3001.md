@@ -5,6 +5,7 @@ description: Classes that are marked as serializable (or created by the test fra
 severity: Error
 v2: true
 v3: true
+aot: false
 ---
 
 ## Cause

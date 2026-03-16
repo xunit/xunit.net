@@ -5,6 +5,7 @@ description: Test classes decorated with 'Xunit.IClassFixture<TFixture>' or 'Xun
 severity: Info
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

@@ -5,6 +5,7 @@ description: Public method should be marked as test
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

@@ -5,6 +5,7 @@ description: Do not use 'async void' for test methods as it is no longer support
 severity: Error
 v2: false
 v3: true
+aot: true
 ---
 
 ## Cause

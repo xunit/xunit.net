@@ -4,7 +4,8 @@ title: xUnit9005
 description: Generic collection definitions are not supported
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

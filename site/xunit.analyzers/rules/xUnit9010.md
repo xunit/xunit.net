@@ -4,7 +4,8 @@ title: xUnit9010
 description: Theory methods cannot be generic
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

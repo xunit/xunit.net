@@ -5,6 +5,7 @@ description: Async assertions should be awaited
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

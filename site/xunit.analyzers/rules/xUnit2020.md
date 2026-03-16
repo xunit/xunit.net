@@ -5,6 +5,7 @@ description: Do not use always-failing boolean assertion to fail a test
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

@@ -5,6 +5,7 @@ description: The static member used as theory data must be statically initialize
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

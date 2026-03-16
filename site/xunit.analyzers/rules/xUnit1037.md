@@ -5,6 +5,7 @@ description: There are fewer theory data type arguments than required by the par
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

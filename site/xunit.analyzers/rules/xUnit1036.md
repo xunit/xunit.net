@@ -5,6 +5,7 @@ description: There is no matching method parameter
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

@@ -5,6 +5,7 @@ description: Do not use throws check to check for asynchronously thrown exceptio
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

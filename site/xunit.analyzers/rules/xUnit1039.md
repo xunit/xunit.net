@@ -5,6 +5,7 @@ description: The type argument to theory data is not compatible with the type of
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

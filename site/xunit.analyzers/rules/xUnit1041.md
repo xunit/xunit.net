@@ -5,6 +5,7 @@ description: Fixture arguments to test classes must have fixture sources
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

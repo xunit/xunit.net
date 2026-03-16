@@ -5,6 +5,7 @@ description: The boolean assertion statement can be simplified
 severity: Info
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

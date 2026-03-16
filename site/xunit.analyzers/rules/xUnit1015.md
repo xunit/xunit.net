@@ -5,6 +5,7 @@ description: MemberData must reference an existing member
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

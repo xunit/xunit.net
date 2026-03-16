@@ -4,7 +4,8 @@ title: xUnit9002
 description: Type must have public static property
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

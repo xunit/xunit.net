@@ -4,7 +4,8 @@ title: xUnit9007
 description: Test classes may not be decorated with ICollectionFixture<>
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

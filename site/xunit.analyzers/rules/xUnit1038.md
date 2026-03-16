@@ -5,6 +5,7 @@ description: There are more theory data type arguments than allowed by the param
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

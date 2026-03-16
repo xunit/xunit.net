@@ -5,6 +5,7 @@ description: Do not use invalid equality check
 severity: Hidden
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

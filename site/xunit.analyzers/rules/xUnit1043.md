@@ -5,6 +5,7 @@ description: Constructors on classes derived from FactAttribute must be public w
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

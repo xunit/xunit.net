@@ -5,6 +5,7 @@ description: MemberData should use nameof operator for member name
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

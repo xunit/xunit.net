@@ -5,6 +5,7 @@ description: The class referenced by the ClassData attribute returns untyped dat
 severity: Info
 v2: false
 v3: true
+aot: true
 ---
 
 ## Cause

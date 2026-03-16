@@ -5,6 +5,7 @@ description: Avoid using TheoryDataRow arguments that might not be serializable
 severity: Info
 v2: false
 v3: true
+aot: false
 ---
 
 ## Cause

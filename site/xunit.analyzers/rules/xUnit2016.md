@@ -5,6 +5,7 @@ description: Keep precision in the allowed range when asserting equality of doub
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

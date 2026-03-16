@@ -5,6 +5,7 @@ description: Fact methods should not have test data
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

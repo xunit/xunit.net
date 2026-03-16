@@ -5,6 +5,7 @@ description: Calls to methods which accept CancellationToken should use TestCont
 severity: Warning
 v2: false
 v3: true
+aot: true
 ---
 
 ## Cause

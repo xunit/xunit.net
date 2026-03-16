@@ -5,6 +5,7 @@ description: Classes which are JSON serializable should not be tested for their 
 severity: Warning
 v2: false
 v3: true
+aot: false
 ---
 
 ## Cause

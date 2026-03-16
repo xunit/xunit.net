@@ -5,6 +5,7 @@ description: InlineData values must match the number of method parameters
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

@@ -4,7 +4,8 @@ title: xUnit9004
 description: Type must be public or internal
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

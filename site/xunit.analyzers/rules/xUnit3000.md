@@ -5,8 +5,8 @@ description: Classes which cross AppDomain boundaries must derive directly or in
 severity: Error
 v2: true
 v3: false
+aot: false
 ---
-
 ## Cause
 
 Classes which may cross `AppDomain` boundaries must derive from `LongLivedMarshalByRefObject` to correctly support both .NET Framework (with app domains) and .NET Core (without app domains).

@@ -5,6 +5,7 @@ description: Theory methods should have parameters
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

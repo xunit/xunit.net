@@ -5,6 +5,7 @@ description: Do not use typeof expression to check the type
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

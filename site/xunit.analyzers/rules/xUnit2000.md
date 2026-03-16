@@ -5,6 +5,7 @@ description: Constants and literals should be the expected argument
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

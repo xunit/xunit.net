@@ -5,6 +5,7 @@ description: Do not use Where clause with Assert.Single
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

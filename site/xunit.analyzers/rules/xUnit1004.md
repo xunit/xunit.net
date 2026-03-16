@@ -5,6 +5,7 @@ description: Test methods should not be skipped
 severity: Info
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

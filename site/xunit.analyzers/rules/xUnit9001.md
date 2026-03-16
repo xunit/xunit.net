@@ -4,7 +4,8 @@ title: xUnit9001
 description: Type must implement appropriate interface
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

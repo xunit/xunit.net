@@ -5,6 +5,7 @@ description: Do not compare an object's exact type to an abstract class or inter
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

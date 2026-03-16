@@ -5,6 +5,7 @@ description: Comparison of sets must be done with IEqualityComparer
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

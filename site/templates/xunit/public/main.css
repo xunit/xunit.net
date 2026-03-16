@@ -350,6 +350,11 @@ blockquote.about-links {
   white-space: nowrap;
 }
 
+.label-Fixed {
+  font-family: var(--bs-font-monospace);
+  font-weight: bold;
+}
+
 .label-Info {
   background-color: #5bc0de;
 }

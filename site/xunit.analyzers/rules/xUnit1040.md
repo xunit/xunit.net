@@ -5,6 +5,7 @@ description: The type argument to theory data is nullable, while the type of the
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

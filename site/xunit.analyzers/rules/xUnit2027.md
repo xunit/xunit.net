@@ -5,6 +5,7 @@ description: Comparison of sets to linear containers have undefined results
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

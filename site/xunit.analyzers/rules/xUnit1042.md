@@ -5,6 +5,7 @@ description: The member referenced by the MemberData attribute returns untyped d
 severity: Info
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

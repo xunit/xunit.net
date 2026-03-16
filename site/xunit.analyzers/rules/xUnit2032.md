@@ -5,6 +5,7 @@ description: Type assertions based on 'assignable from' are confusingly named
 severity: Info
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

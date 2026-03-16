@@ -5,6 +5,7 @@ description: Do not use identity check on value type
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

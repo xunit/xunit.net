@@ -5,6 +5,7 @@ description: Boolean assertions should not be negated
 severity: Info
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

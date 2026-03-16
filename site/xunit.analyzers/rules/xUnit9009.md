@@ -4,7 +4,8 @@ title: xUnit9009
 description: Fact methods cannot be generic
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause

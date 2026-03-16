@@ -5,6 +5,7 @@ description: MemberData must reference a property with a getter
 severity: Error
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

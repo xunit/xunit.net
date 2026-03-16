@@ -5,6 +5,7 @@ description: MemberData should not have parameters if the referenced member is n
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

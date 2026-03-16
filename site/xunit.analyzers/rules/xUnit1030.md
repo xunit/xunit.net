@@ -5,6 +5,7 @@ description: Do not call ConfigureAwait in test method
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

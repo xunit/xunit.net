@@ -5,6 +5,7 @@ description: Null should not be used for value type parameters
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

@@ -5,6 +5,7 @@ description: Do not use boolean check to check for substrings
 severity: Warning
 v2: true
 v3: true
+aot: true
 ---
 
 ## Cause

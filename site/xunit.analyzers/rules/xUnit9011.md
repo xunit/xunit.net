@@ -4,7 +4,8 @@ title: xUnit9011
 description: Theory parameter cannot use params modifier
 severity: Error
 v2: false
-v3: true
+v3: false
+aot: true
 ---
 
 ## Cause
