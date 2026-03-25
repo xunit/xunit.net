@@ -10,6 +10,8 @@
     href: /docs/getting-started/v3/getting-started
   - name: What's New in v3?
     href: /docs/getting-started/v3/whats-new
+  - name: Testing with Native AOT
+    href: /docs/getting-started/v3/native-aot
   - name: Migrating Unit Tests
     href: /docs/getting-started/v3/migration
   - name: Migrating Extensibility
