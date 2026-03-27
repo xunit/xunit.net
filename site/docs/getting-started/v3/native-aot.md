@@ -21,7 +21,7 @@ Additionally, we make extensive use of `[OverloadResolutionPriority]`, so the mi
 
 ## New NuGet packages
 
-Every library package that we publish now includes an AOT variant, which contains libraries that are designed about Native AOT compatibility. Consult the table below to see which package names have changed:
+Every library package that we publish now includes an AOT variant, which contains libraries that are designed around Native AOT compatibility. Consult the table below to see which package names have changed:
 
 Reflection Package                                                                                   | Native AOT Package
 ---------------------------------------------------------------------------------------------------- | ------------------
@@ -52,11 +52,7 @@ Once you've published your Native AOT test project (that is, by using `dotnet pu
 
 Our first-party multi-assembly runners are still able to run published Native AOT projects (by passing the produced executable to them as the test assembly filename). That means you can continue to use runners like `xunit.v3.runner.console` or `xunit.v3.runner.msbuild` to validate your published projects and run multiple assemblies in parallel.
 
-Third-party runners that support Microsoft Testing Platform will support your Native AOT test projects _in unpublished form_. That means you can build and run those tests in existing environments like Visual Studio or VS Code and be able to run your tests, whether they are using the reflection or AOT version of xUnit.net.
-
-Once you've run `dotnet publish` against a Native AOT project, that published executable can be run directly, but MTP third-party runners will not consume such executables. Our first party multi-assembly runners (like `xunit.v3.runner.console` and `xunit.v3.runner.msbuild`) are still able to run published Native AOT executables, so you can use a first party runner to run multiple published AOT test projects in parallel.
-
-If you define `<UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>` to enable the Microsoft Testing Platform UX for `dotnet run`, this will also apply to published projects. This allows you to use any MTP-compatible extensions for published projects (assuming the extension is compatible with Native AOT).
+Third-party runners that support Microsoft Testing Platform will support your Native AOT test projects _in unpublished form_ as mentioned above. If you define `<UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>` to enable the Microsoft Testing Platform UX for `dotnet run`, this will also apply to published projects. This allows you to use any MTP-compatible extensions for published projects (assuming the extension is compatible with Native AOT).
 
 ## Behavioral changes
 
