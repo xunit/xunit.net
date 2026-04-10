@@ -168,6 +168,34 @@
       href: /xunit.analyzers/rules/xUnit1052
     - name: xUnit1053
       href: /xunit.analyzers/rules/xUnit1053
+    - name: xUnit1054
+      href: /xunit.analyzers/rules/xUnit1054
+    - name: xUnit1055
+      href: /xunit.analyzers/rules/xUnit1055
+    - name: xUnit1056
+      href: /xunit.analyzers/rules/xUnit1056
+    - name: xUnit1057
+      href: /xunit.analyzers/rules/xUnit1057
+    - name: xUnit1058
+      href: /xunit.analyzers/rules/xUnit1058
+    - name: xUnit1059
+      href: /xunit.analyzers/rules/xUnit1059
+    - name: xUnit1060
+      href: /xunit.analyzers/rules/xUnit1060
+    - name: xUnit1061
+      href: /xunit.analyzers/rules/xUnit1061
+    - name: xUnit1062
+      href: /xunit.analyzers/rules/xUnit1062
+    - name: xUnit1063
+      href: /xunit.analyzers/rules/xUnit1063
+    - name: xUnit1064
+      href: /xunit.analyzers/rules/xUnit1064
+    - name: xUnit1065
+      href: /xunit.analyzers/rules/xUnit1065
+    - name: xUnit1066
+      href: /xunit.analyzers/rules/xUnit1066
+    - name: xUnit1067
+      href: /xunit.analyzers/rules/xUnit1067
   - name: Assertion
     items:
     - name: xUnit2000
@@ -246,40 +274,10 @@
       href: /xunit.analyzers/rules/xUnit3002
     - name: xUnit3003
       href: /xunit.analyzers/rules/xUnit3003
-  - name: Code Generators
-    items:
-    - name: xUnit9000
-      href: /xunit.analyzers/rules/xUnit9000
-    - name: xUnit9001
-      href: /xunit.analyzers/rules/xUnit9001
-    - name: xUnit9002
-      href: /xunit.analyzers/rules/xUnit9002
-    - name: xUnit9003
-      href: /xunit.analyzers/rules/xUnit9003
-    - name: xUnit9004
-      href: /xunit.analyzers/rules/xUnit9004
-    - name: xUnit9005
-      href: /xunit.analyzers/rules/xUnit9005
-    - name: xUnit9006
-      href: /xunit.analyzers/rules/xUnit9006
-    - name: xUnit9007
-      href: /xunit.analyzers/rules/xUnit9007
-    - name: xUnit9008
-      href: /xunit.analyzers/rules/xUnit9008
-    - name: xUnit9009
-      href: /xunit.analyzers/rules/xUnit9009
-    - name: xUnit9010
-      href: /xunit.analyzers/rules/xUnit9010
-    - name: xUnit9011
-      href: /xunit.analyzers/rules/xUnit9011
-    - name: xUnit9012
-      href: /xunit.analyzers/rules/xUnit9012
-    - name: xUnit9013
-      href: /xunit.analyzers/rules/xUnit9013
-    - name: xUnit9014
-      href: /xunit.analyzers/rules/xUnit9014
-    - name: xUnit9015
-      href: /xunit.analyzers/rules/xUnit9015
+    - name: xUnit3004
+      href: /xunit.analyzers/rules/xUnit3004
+    - name: xUnit3005
+      href: /xunit.analyzers/rules/xUnit3005
 
 - name: API Documentation
   items:

@@ -1,7 +1,7 @@
 ---
 analyzer: true
 title: xUnit1033
-description: Test classes decorated with 'Xunit.IClassFixture<TFixture>' or 'Xunit.ICollectionFixture<TFixture>' should add a constructor argument of type TFixture
+description: Test classes decorated with 'IClassFixture<TFixture>' or 'ICollectionFixture<TFixture>' should add a constructor argument of type TFixture
 severity: Info
 v2: true
 v3: true
