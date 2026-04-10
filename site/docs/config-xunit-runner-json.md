@@ -190,6 +190,7 @@ Set this to automatically perform transforms on default test names. This value c
   * `X2C` becomes `,`
   * `U1D13` becomes `ᴓ`
 * `"replacePeriodWithComma"` replaces periods with a comma and a space. This option is typically only useful if `methodDisplay` is `classAndMethod`.
+* `"removeAsyncSuffix"` removes the word `Async` from the end of the test method name. Only available in test framework v3 4.0+.
 
 > { .table-compact }
 > |                  |
