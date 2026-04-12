@@ -3,6 +3,9 @@ title: Getting Started with xUnit.net v2
 title-version: 2025 July 4
 ---
 
+> [!NOTE]
+> Core Framework v2 is in maintenance mode. Critical bug fixes will be issued, but no new feature work is being done. All new features are taking place with Code Framework v3 only. Developers are encouraged to upgrade from v2 to v3 at their earliest convenience.
+
 In this document, we will demonstrate getting started with xUnit.net v2 when targeting .NET 8 (or later) and/or .NET Framework 4.7.2 (or later), showing you how to write and run your first set of unit tests. We will be using the .NET SDK command line.
 
 > [!NOTE]

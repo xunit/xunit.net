@@ -3,6 +3,9 @@ title: What NuGet Packages Should I Use?
 title-version: xUnit.net v2
 ---
 
+> [!NOTE]
+> Core Framework v2 is in maintenance mode. Critical bug fixes will be issued, but no new feature work is being done. All new features are taking place with Code Framework v3 only. Developers are encouraged to upgrade from v2 to v3 at their earliest convenience.
+
 xUnit.net v2 ships with many NuGet packages. This guide helps you understand which NuGet packages you should use in your projects.
 
 If you don't know where to start, try starting with a reference to [`xunit`](#xunit).

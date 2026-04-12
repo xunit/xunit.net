@@ -3,6 +3,9 @@ title: "Microsoft Testing Platform (xUnit.net v2)"
 title-version: 2025 December 30
 ---
 
+> [!NOTE]
+> Core Framework v2 is in maintenance mode. Critical bug fixes will be issued, but no new feature work is being done. All new features are taking place with Code Framework v3 only. Developers are encouraged to upgrade from v2 to v3 at their earliest convenience.
+
 Support for running xUnit.net v2 tests via [Microsoft Testing Platform](https://learn.microsoft.com/dotnet/core/testing/unit-testing-platform-intro) is available via a third party NuGet package (`YTest.MTP.XUnit2`).
 
 * [NuGet Package](https://www.nuget.org/packages/YTest.MTP.XUnit2)
