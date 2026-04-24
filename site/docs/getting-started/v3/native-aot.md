@@ -187,7 +187,7 @@ The following APIs have been marked as `[Obsolete]`:
 
 The following APIs have had behavioral changes:
 
-- `AssemblyFixtureAttribute` has been unsealed in both reflection and AOT modes
+- `AssemblyFixtureAttribute` has been unsealed in reflection mode, and remains sealed in AOT modes
 - `ClassDataAttribute` is now sealed in AOT mode
 - `ClassDataAttribute<T>` is now sealed in AOT mode
 - `CulturedFactAttribute` is now sealed in AOT mode
@@ -198,7 +198,7 @@ The following APIs have had behavioral changes:
   - `SkipUnless` and `SkipWhen` have changed from `string?` to `Func<bool>?` in AOT mode
   - `SkipType` is obsolete in AOT mode
 - `TheoryAttribute` is now sealed in AOT mode
-- `TraitAttribute` is now unsealed in both reflection and AOT mode
+- `TraitAttribute` is now sealed in AOT mode
 
 ### `Xunit.Runner.Common` namespace
 
