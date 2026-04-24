@@ -1,9 +1,9 @@
 ---
 title: Testing with Native AOT
-title-version: 2026 March 25
+title-version: 2026 April 24
 ---
 
-_Last updated for version `4.0.0-pre.33`_
+_Last updated for version `4.0.0-pre.99`_
 
 Beginning with package version 4.0, xUnit.net now supports testing with Native AOT.
 
@@ -172,7 +172,7 @@ Many of the changes in the core library will be related to changes in the way te
 
 - Attributes becoming unsealed in both reflection and AOT modes is typically in support of extensibility, where previously the developer could create a new attribute that implemented an existing interface, but to support AOT mode must derive from the attribute in question (e.g., `AssemblyFixtureAttribute` and `IAssemblyFixtureAttribute`).
 
-- Attributes becoming sealed in AOT mode is typically due to the fact that attribute is no longer found via reflection at runtime, and instead a source generator must be written to discover it at build time and emit registration code.
+- Attributes becoming sealed in AOT mode is typically due to the fact that attribute is no longer found via reflection at runtime, and instead a source generator must be written to discover it at build time and emit registration code. Developers who wish to write their own versions of these attributes (e.g., `TraitAttribute`) must not only create the new attribute, but also write a source generator to register them at build time.
 
 ### `Xunit` namespace
 
@@ -187,18 +187,21 @@ The following APIs have been marked as `[Obsolete]`:
 
 The following APIs have had behavioral changes:
 
-- `AssemblyFixtureAttribute` has been unsealed in reflection mode, and remains sealed in AOT mode
-- `ClassDataAttribute` is now sealed in AOT mode
-- `ClassDataAttribute<T>` is now sealed in AOT mode
-- `CulturedFactAttribute` is now sealed in AOT mode
-- `CulturedTheoryAttribute` is now sealed in AOT mode
-- `FactAttribute` is now sealed in AOT mode
-- `InlineDataAttribute` is now sealed in AOT mode
+- `AssemblyFixtureAttribute` is unsealed in reflection mode, and sealed in AOT mode
+- `ClassDataAttribute` is unsealed in reflection mode, and sealed in AOT mode
+- `CulturedFactAttribute` is unsealed in reflection mode, and sealed in AOT mode
+- `CulturedTheoryAttribute` is unsealed in reflection mode, and sealed in AOT mode
+- `FactAttribute` is unsealed in reflection mode, and sealed in AOT mode
 - `ITheoryDataRow`
   - `SkipUnless` and `SkipWhen` have changed from `string?` to `Func<bool>?` in AOT mode
   - `SkipType` is obsolete in AOT mode
-- `TheoryAttribute` is now sealed in AOT mode
-- `TraitAttribute` is now sealed in AOT mode
+- `TheoryAttribute` is unsealed in reflection mode, and sealed in AOT mode
+- `TraitAttribute` is unsealed in reflection mode, and sealed in AOT mode
+
+The following classes have had inheritance changes:
+
+- `CaptureConsoleAttribute` is derived from `AssemblyFixtureAttribute` in reflection mode only. Support for `CaptureConsoleAttribute` is handled via source generation in AOT mode.
+- `CaptureTraceAttribute` is derived from `AssemblyFixtureAttribute` in reflection mode only. Support for `CaptureTraceAttribute` is handled via source generation in AOT mode.
 
 ### `Xunit.Runner.Common` namespace
 
@@ -258,7 +261,7 @@ The following APIs have been marked as `[Obsolete]`:
 - `IXunitTestCaseDiscoverer`<br />_Discoverers have been replaced by source generators_
 - `XunitDelayEnumeratedTestCase`<br />`XunitTest`<br />`XunitTestAssembly`<br />`XunitTestCase`<br />`XunitTestClass`<br />`XunitTestCollection`<br />`XunitTestMethod`<br />_These reflection-based classes are replaced by `CodeGenXyz` alternatives_
 - `XunitTestCaseDiscovererAttribute`<br />_Discoverers have been replaced by source generators_
-- `XunitTestFramework`<br />`XunitTestFrameworkDiscoverer`<br />`XunitTestFrameworkExecutor`<br />_These reflection-based class are replaced by `CodeGenTestFrameworkXyz` alternatives_
+- `XunitTestFramework`<br />`XunitTestFrameworkDiscoverer`<br />`XunitTestFrameworkExecutor`<br />_These reflection-based classes are replaced by `CodeGenTestFrameworkXyz` alternatives_
 - Runner classes (`XunitTestXyzRunner`, `XunitTestXyzRunnerContext`) have been replaced by `CodeGenTestXyzRunner` alternatives
 
 The following APIs have had signature changes:
