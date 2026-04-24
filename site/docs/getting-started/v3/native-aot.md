@@ -187,7 +187,7 @@ The following APIs have been marked as `[Obsolete]`:
 
 The following APIs have had behavioral changes:
 
-- `AssemblyFixtureAttribute` has been unsealed in reflection mode, and remains sealed in AOT modes
+- `AssemblyFixtureAttribute` has been unsealed in reflection mode, and remains sealed in AOT mode
 - `ClassDataAttribute` is now sealed in AOT mode
 - `ClassDataAttribute<T>` is now sealed in AOT mode
 - `CulturedFactAttribute` is now sealed in AOT mode
