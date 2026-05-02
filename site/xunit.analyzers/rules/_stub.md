@@ -5,6 +5,7 @@ description: Paste the description from the analyzer here
 severity: 'One of: "Error", "Warning", "Info", or "Hidden"'
 v2: 'One of: true or false'
 v3: 'One of: true or false'
+aot: 'One of: true or false'
 ---
 
 ## Cause
