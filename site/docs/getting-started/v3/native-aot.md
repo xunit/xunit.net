@@ -1,15 +1,13 @@
 ---
 title: Testing with Native AOT
-title-version: 2026 April 24
+title-version: 2026 May 2
 ---
 
-_Last updated for version `4.0.0-pre.99`_
+_Last updated for version `4.0.0-pre.108`_
 
 Beginning with package version 4.0, xUnit.net now supports testing with Native AOT.
 
 There is significant change to the underlying infrastructure of the test framework to support Native AOT, since the primary mechanism of test discovery and extensibility -- runtime reflection -- is severely limited in Native AOT. This document describes the differences between using xUnit.net in "reflection mode" vs. using it in "AOT mode".
-
-Additionally, Native AOT mode drops support for Microsoft Testing Platform (MTP) version 1.x. To use MTP, you must use a 2.x version.
 
 ## .NET 9 and C#
 
@@ -25,11 +23,11 @@ Every library package that we publish now includes an AOT variant, which contain
 
 Reflection Package                                                                                   | Native AOT Package
 ---------------------------------------------------------------------------------------------------- | ------------------
-`xunit.v3`<br />`xunit.v3.mtp-v1`<br />`xunit.v3.mtp-v2`<br />`xunit.v3.mtp-off`                     | `xunit.v3.aot`<br />N/A (Native AOT does not support MTP v1)<br />`xunit.v3.aot.mtp-v2`<br />`xunit.v3.aot.mtp-off`
+`xunit.v3`<br />`xunit.v3.mtp-v1`<br />`xunit.v3.mtp-v2`<br />`xunit.v3.mtp-off`                     | `xunit.v3.aot`<br />N/A (4.0+ does not support MTP v1)<br />`xunit.v3.aot.mtp-v2`<br />`xunit.v3.aot.mtp-off`
 `xunit.v3.assert`                                                                                    | `xunit.v3.assert.aot`
 `xunit.v3.assert.source`                                                                             | Use version 4.0+ and [define constant `XUNIT_AOT`](https://github.com/xunit/assert.xunit?tab=readme-ov-file#annotations)
 `xunit.v3.common`                                                                                    | `xunit.v3.common.aot`
-`xunit.v3.core`<br />`xunit.v3.core.mtp-v1`<br />`xunit.v3.core.mtp-v2`<br />`xunit.v3.core.mtp-off` | `xunit.v3.core.aot`<br />N/A (Native AOT does not support MTP v1)<br />`xunit.v3.core.aot.mtp-v2`<br />`xunit.v3.core.aot.mtp-off`
+`xunit.v3.core`<br />`xunit.v3.core.mtp-v1`<br />`xunit.v3.core.mtp-v2`<br />`xunit.v3.core.mtp-off` | `xunit.v3.core.aot`<br />N/A (4.0+ does not support MTP v1)<br />`xunit.v3.core.aot.mtp-v2`<br />`xunit.v3.core.aot.mtp-off`
 `xunit.v3.extensibility.core`                                                                        | `xunit.v3.extensibility.core.aot`
 `xunit.v3.runner.common`                                                                             | `xunit.v3.runner.common.aot`
 `xunit.v3.runner.console`                                                                            | Use version 4.0+
@@ -170,7 +168,7 @@ The following APIs have had behavioral changes:
 
 Many of the changes in the core library will be related to changes in the way tests are discovered and how extensibility changes in the new system.
 
-- Attributes becoming unsealed in both reflection and AOT modes is typically in support of extensibility, where previously the developer could create a new attribute that implemented an existing interface, but to support AOT mode must derive from the attribute in question (e.g., `AssemblyFixtureAttribute` and `IAssemblyFixtureAttribute`).
+- Attributes becoming unsealed in both reflection and AOT modes is typically in support of extensibility, where previously the developer could create a new attribute that implemented an existing interface, but to support AOT mode must derive from the attribute in question.
 
 - Attributes becoming sealed in AOT mode is typically due to the fact that attribute is no longer found via reflection at runtime, and instead a source generator must be written to discover it at build time and emit registration code. Developers who wish to write their own versions of these attributes (e.g., `TraitAttribute`) must not only create the new attribute, but also write a source generator to register them at build time.
 
@@ -181,8 +179,8 @@ The following APIs have been marked as `[Obsolete]`:
 - `CulturedFactAttributeDiscoverer`<br />_Discoverers have been replaced with source generators_
 - `CulturedTheoryAttributeDiscoverer`<br />_Discoverers have been replaced with source generators_
 - `FactDiscoverer`<br />_Discoverers have been replaced with source generators_
-- `TheoryDiscoverer`<br />_Discoverers have been replaced with source generators_
 - `FrontControllerSettings.ctor`<br />_The single constructor has been obsoleted and replaced with three factory methods that allow runnings test by unique ID as well as serialization_
+- `TheoryDiscoverer`<br />_Discoverers have been replaced with source generators_
 - `TraitAttribute.GetTraits`<br />_The `ITraitAttribute` interface is now obsolete, so implementing `GetTraits` is unnecessary_
 
 The following APIs have had behavioral changes:
@@ -213,7 +211,7 @@ The following APIs have been replaced in both reflection and AOT:
 
 - `RegisteredRunnerReporters.Get`<br />with `RegisteredRunnerConfig.GetRunnerReporters`
 
-The following APIs have been marked as `[Obsolete]`:
+The following APIs have been marked as `[Obsolete]` in AOT:
 
 - `MessageSinkMessageDeserializer.RegisterMessageSinkMessageType(Type)`
 - `XunitProjectAssembly.TestCasesToRun`
@@ -248,7 +246,7 @@ The following APIs have been replaced in both reflection and AOT:
 - `ExtensibilityPointFactory.GetTestFramework`<br />with `RegisteredEngineConfig.GetTestFramework`
 - `ExtensibilityPointFactory.GetXunitTestCollectionFactory`<br />with `RegisteredEngineConfig.GetTestCollectionFactory`
 
-The following APIs have been marked as `[Obsolete]`:
+The following APIs have been marked as `[Obsolete]` in AOT:
 
 - `CulturedXunitDelayEnumeratedTheoryTestCase`<br />_Custom test cases are not required for this functionality_
 - `CulturedXunitTestCase`<br />_Custom test cases are not required for this functionality_
@@ -269,21 +267,22 @@ The following APIs have had signature changes:
 - `BeforeAfterTestAttribute.After(MethodInfo, IXunitTest)`<br />to `BeforeAfterTestAttribute.After(ICodeGenTest)`
 - `BeforeAfterTestAttribute.Before(MethodInfo, IXunitTest)`<br /> to `BeforeAfterTestAttribute.Before(ICodeGenTest)`
 - `FixtureMappingManager.ctor` has an additional fixture factory parameter<br />_Fixture factories are created by the source generators, since Native AOT cannot depend on arbitrary constructor invocation via reflection_
-- `TestCollectionFactoryBase` consumes `ICodeTestAssembly` and produces `ICodeGenTestCollection` instances
+- `TestCollectionFactoryBase` consumes `ICodeGenTestAssembly` and produces `ICodeGenTestCollection` instances
 - `XunitRunnerHelper.RunXunitTestCase` is replaced by `XunitRunnerHelper.RunCodeGenTestCase`
 
 ## Source generators
 
 There are two places where source generators are in play: engine configuration (targeting `xunit.v3.core.aot`) and runner configuration (targeting `xunit.v3.runner.common.aot`).
 
-The pattern in both cases for source generators is to generate source for an attribute (which derives from either `EngineInitializationAttribute` or `RunnerInitializationAttribute`), and mark that as an assembly-level attribute. These attributes provide an abstract `InitializeAsync` method which must be implemented, and an optional `DisposeAsync` which may be implement if any cleanup needs to be done. These attributes run very early in the engine/runner startup and very late in cleanup.
+The pattern in both cases for source generators is to generate source for an attribute (which derives from either `EngineInitializationAttribute` or `RunnerInitializationAttribute`), and mark that as an assembly-level attribute. These attributes provide an abstract `InitializeAsync` method which must be implemented, and an optional `DisposeAsync` which may be implemented if any cleanup needs to be done. These attributes run very early in the engine/runner startup and very late in cleanup.
 
 ### Engine configuration
 
-Two particular extensibility points in `xunit.v3.core.aot` have had runtime reflection replaced by build time source generators:
+Three particular extensibility points in `xunit.v3.core.aot` have had runtime reflection replaced by build time source generators:
 
 - Test case discovery (e.g., `[Fact]`, `[Theory]`, etc.)
 - Theory data discovery (e.g., `[InlineData]`, `[MemberData]`, etc.)
+- Generalized configuration via attributes (fixtures, traits, collection definitions, etc.)
 
 If you are extending these in reflection-mode, you must provide source generators for them in AOT mode. Registration initialization code should call the APIs on `RegisteredEngineConfig` to register the information discovered during build.
 
@@ -301,7 +300,7 @@ Test classes are registered by "type index" (in the form of `global::FullyQualif
 - The `ITestCaseOrderer` for the test class, if there is one
 - The `ITestMethodOrderer` for the test class, if there is one
 - The class factory, in the form of `Func<FixtureMappingManager, ValueTask<CoreTestClassCreationResult>>`
-- The class fixture factories, in the form of a dictionary mapping the fixture `Type` to `Func<FixtureMappingManager?, ValueTask<object>>`
+- The class fixture factories, in the form of a dictionary mapping the fixture `Type` to `FixtureFactory`
 
 Test methods are registered by "type index" and method name, and include:
 
@@ -314,7 +313,7 @@ Test methods are registered by "type index" and method name, and include:
 - The `ITestCaseOrderer` for the test method (if there is one)
 - The traits attached explicitly to the test method (if any)
 
-Test case factories are registered by "type index" and method name, and generate 0 or more test cases for the given test method. A factory is used rather than static registration, since some metadata about a test case may change based on the user's requested discovery options (e.g., enabling or disabling pre-enumeration, defaults used to create the test case display name, etc.).
+Test case factories are registered by "type index" and method name, and generate 0 or more test cases for the given test method. A factory is used rather than static registration, since some metadata about a test case may change based on the user's requested discovery options (e.g., enabling or disabling pre-enumeration, defaults used to create the test case display name, etc.). The factory accepts discovery options, metadata about the test class, a disposal tracker which can be used to register objects that need to be cleaned up after the test cases have been run, and return 0 or more test cases.
 
 #### Theory data discovery
 
@@ -333,6 +332,10 @@ There are several other registration APIs that are used by built-in source gener
 - `RegisteredEngineConfig.RegisterAssemblyTestClassOrdererFactory`<br />_Used for `[assembly: TestClassOrderer]`_
 - `RegisteredEngineConfig.RegisterAssemblyTestCollectionOrdererFactory`<br />_Used for `[assembly: TestCollectionOrderer]`_
 - `RegisteredEngineConfig.RegisterAssemblyTestMethodOrdererFactory`<br />_Used for `[assembly: TestMethodOrderer]`_
+- `RegisteredEngineConfig.RegisterAssemblyTrait`<br />_Used for `[assembly: Trait]`_
+- `RegisteredEngineConfig.RegisterCodeGenTestClassTrait`<br />_Used for `[Trait]` on test classes_
+- `RegisteredEngineConfig.RegisterCodeGenTestCollectionTrait`<br />_Used for `[Trait]` on test collections_
+- `RegisteredEngineConfig.RegisterCodeGenTestMethodTrait`<br />_Used for `[Trait]` on test methods_
 - `RegisteredEngineConfig.RegisterCollectionDefinition`<br />_Used for `[CollectionDefinition]` on classes_
 - `RegisteredEngineConfig.RegisterTestCollectionFactoryFactory`<br />_Used for `[assembly: CollectionBehavior]`_
 - `RegisteredEngineConfig.RegisterTestFrameworkFactory`<br />_Used for `[assembly: TestFramework]`_
@@ -345,3 +348,4 @@ There are three registration APIs which are currently used by built-in source ge
 - `RegisteredRunnerConfig.RegisterConsoleResultWriter`<br />_Used for `[assembly: RegisterConsoleResultWriter]`_
 - `RegisteredRunnerConfig.RegisterMicrosoftTestingPlatformResultWriter`<br />_Used for `[assembly: RegisterMicrosoftTestingPlatformResultWriter]`_
 - `RegisteredRunnerConfig.RegisterRunnerReporter`<br />_Used for `[assembly: RegisterRunnerReporter]`_
+- `RegisteredRunnerConfig.RegisterRunnerReporterMessage`<br />_Used for `[assembly: RegisterRunnerReporter]` to report warnings_
