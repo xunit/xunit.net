@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Testing Platform (xUnit.net v3)"
-title-version: 2025 November 2
+title-version: 2026 May 27
 ---
 
 xUnit.net v3 includes built-in support for the new [Microsoft Testing Platform](https://learn.microsoft.com/dotnet/core/testing/unit-testing-platform-intro) (MTP).
@@ -31,25 +31,26 @@ Unlike our support for VSTest, our support for Microsoft Testing Platform is bui
 
 Starting with v3 build `3.2.0`, we now support the ability to choose which major version of Microsoft Testing Platform you wish to support. This includes:
 
-* Microsoft Testing Platform v1 support **(default)**
-* Microsoft Testing Platform v2 support
+* Microsoft Testing Platform v1 support **(default in `3.x.y` builds)**
+* Microsoft Testing Platform v2 support **(default in `4.0.0` builds and later)**
 * Microsoft Testing Platform support disabled
+
+> [!NOTE]
+> Support for Microsoft Testing Platform v1 has been removed from package version `4.0.0` onward. The default for these packages is Microsoft Testing Platform v2.
 
 If you are currently including the `xunit.v3` NuGet package, you may choose among these alternatives:
 
-* `xunit.v3` (includes whatever the default version is, which is currently MTP v1)
-* `xunit.v3.mtp-v1` (explicitly chooses MTP v1)
+* `xunit.v3` (includes whatever the default version is)
+* `xunit.v3.mtp-v1` (explicitly chooses MTP v1, only available for version `3.x.y`)
 * `xunit.v3.mtp-v2` (explicitly chooses MTP v2)
 * `xunit.v3.mtp-off` (explicitly disables MTP support)
 
 If you are currently including the `xunit.v3.core` NuGet package, you may choose among these alternatives:
 
-* `xunit.v3.core` (includes whatever the default version is, which is currently MTP v1)
-* `xunit.v3.core.mtp-v1` (explicitly chooses MTP v1)
+* `xunit.v3.core` (includes whatever the default version is)
+* `xunit.v3.core.mtp-v1` (explicitly chooses MTP v1, only available for version `3.x.y`)
 * `xunit.v3.core.mtp-v2` (explicitly chooses MTP v2)
 * `xunit.v3.core.mtp-off` (explicitly disables MTP support)
-
-At this point in time, we do not have a timeframe for when support for MTP v1 will be discontinued, as Microsoft has not announced any timeframe for the retirement of support for MTP v1. We also do not have a timeframe for if or when we might choose to move to MTP v2 by default (though when we do, that will be considered a breaking change, and we will bump the major version of the xUnit.net NuGet packages).
 
 ### Configuration with `testconfig.json`
 
