@@ -260,7 +260,7 @@ xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
 | Analyzers                        | [1.27.0](/releases/analyzers/1.27.0){: .release }  | [2.0.0-pre.51](/releases/analyzers/2.0.0-pre.51){: .prerelease }
 | Visual Studio adapter            | [3.1.5](/releases/visualstudio/3.1.5){: .release } | [4.0.0-pre.4](/releases/visualstudio/4.0.0-pre.4){: .prerelease }
 
-_<sup>(1)</sup> Core Framework v2 is in maintenance mode. Critical bug fixes will be issued, but no new feature work is being done. All new features are taking place with Code Framework v3 only. Developers are encouraged to upgrade from v2 to v3 at their earliest convenience._
+_<sup>(1)</sup> Core Framework v2 is in maintenance mode. Critical bug fixes will be issued, but no new feature work is being done. All new features are taking place with Core Framework v3 only. Developers are encouraged to upgrade from v2 to v3 at their earliest convenience._
 
 _For older release notes, see the [full release notes list](/releases/)._
 

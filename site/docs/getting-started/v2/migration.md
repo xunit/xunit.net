@@ -3,7 +3,7 @@ title: Migrating Unit Tests from v1 to v2
 ---
 
 > [!NOTE]
-> Core Framework v2 is in maintenance mode. Critical bug fixes will be issued, but no new feature work is being done. All new features are taking place with Code Framework v3 only. Developers are encouraged to upgrade from v2 to v3 at their earliest convenience.
+> Core Framework v2 is in maintenance mode. Critical bug fixes will be issued, but no new feature work is being done. All new features are taking place with Core Framework v3 only. Developers are encouraged to upgrade from v2 to v3 at their earliest convenience.
 
 # Migrating Unit Tests from v1 to v2
 
