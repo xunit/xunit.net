@@ -14,7 +14,7 @@ If you don't know where to start, try starting with a reference to [`xunit.v3`](
 { #radio-selector }
 **Version selector:**
 <input type="radio" name="version" class="version-picker" data-selector=".version-stable" checked="checked" /> Stable (NuGet)
-<input type="radio" name="version" class="version-picker" data-selector=".version-ci" /> Latest CI (feedz.io)
+<input type="radio" name="version" class="version-picker" data-selector=".version-ci" /> Latest CI (feedz.io, [using CI builds](/docs/using-ci-builds))
 
 ## Packages for writing tests{ #testers }
 

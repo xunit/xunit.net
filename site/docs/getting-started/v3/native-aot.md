@@ -276,6 +276,14 @@ There are two places where source generators are in play: engine configuration (
 
 The pattern in both cases for source generators is to generate source for an attribute (which derives from either `EngineInitializationAttribute` or `RunnerInitializationAttribute`), and mark that as an assembly-level attribute. These attributes provide an abstract `InitializeAsync` method which must be implemented, and an optional `DisposeAsync` which may be implemented if any cleanup needs to be done. These attributes run very early in the engine/runner startup and very late in cleanup.
 
+### Extensibility samples
+
+We have provided a source-based NuGet package ([`xunit.v3.generatorutility`](https://www.nuget.org/packages/xunit.v3.generatorutility)) to help developers who are performing common extensions. We have created sample projects which consume this package to provide source generation for xUnit.net extensions in Native AOT:
+
+* [`AotRetryFact`](https://github.com/xunit/samples.xunit/tree/main/v3/AotRetryFact) which shows creating custom test case discovery and execution behavior
+* [`AotCsvDataSource`](https://github.com/xunit/samples.xunit/tree/main/v3/AotCsvDataSource) which shows creating a custom data source attribute
+* [`AotTraitExtensibility`](https://github.com/xunit/samples.xunit/tree/main/v3/AotTraitExtensibility) which shows creating a custom source of traits
+
 ### Engine configuration
 
 Three particular extensibility points in `xunit.v3.core.aot` have had runtime reflection replaced by build time source generators:
@@ -311,7 +319,6 @@ Test methods are registered by "type index" and method name, and include:
 - The source file where the test method lives (if known)
 - The source line number where the test method lives (if known)
 - The `ITestCaseOrderer` for the test method (if there is one)
-- The traits attached explicitly to the test method (if any)
 
 Test case factories are registered by "type index" and method name, and generate 0 or more test cases for the given test method. A factory is used rather than static registration, since some metadata about a test case may change based on the user's requested discovery options (e.g., enabling or disabling pre-enumeration, defaults used to create the test case display name, etc.). The factory accepts discovery options, metadata about the test class, a disposal tracker which can be used to register objects that need to be cleaned up after the test cases have been run, and return 0 or more test cases.
 
