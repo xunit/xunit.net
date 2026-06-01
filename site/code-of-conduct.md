@@ -26,13 +26,13 @@ Examples of unacceptable behavior include:
 
 ## Strict No LLM / No AI Policy
 
-* No LLM-generated content, whether it be code or prose.
-* No paraphrasing LLM-generated content.
-* No LLMs for editing, including fixing spelling or grammatical errors.
-* No LLMs for translation. English is encouraged, but not required. You are welcome to post in your native language and rely on others to have their own translation tools of choice to interpret your words.
-* No LLMs for brainstorming and then sharing the results of that brainstorming, even if you create the prose. If you use a chatbot to give you advice on a comment on the issue tracker, that comment is unwelcome.
-* No LLMs for finding bugs.
-* No talking about use of chatbot/LLM services.
+The project lead has an ethical objection to all use of LLMs for any purpose. We understand that you may be required to use AI in your day to day job; we not only reject such requirements, but more specifically, do not want any contributions that have been made by LLM usage, due to the steep global cost that such usage forces on all of humanity.
+
+You will be responsible for any content you submit, including an acknowledgement that such submissions were written entirely by you. Any submissions that include LLM-generated content will be removed (PRs and issues closed, posts deleted, etc.). Repeated violations of this may result in users being barred from participating in the project.
+
+Although the majority of conversions here are held in English, we appreciate that not everybody can speak it fluently. Please post your content in whatever language is most comfortable for you to write yourself (meaning, do not rely on an LLM to translate it to English). Assume that members of the community will use whatever translation tools are necessary to assist with understanding your non-English content.
+
+There will be no discussion of chat-bots or LLM services permitted.
 
 ## Enforcement Responsibilities
 
