@@ -30,7 +30,7 @@ The project lead has an ethical objection to all use of LLMs for any purpose. We
 
 You will be responsible for any content you submit, including an acknowledgement that such submissions were written entirely by you. Any submissions that include LLM-generated content will be removed (PRs and issues closed, posts deleted, etc.). Repeated violations of this may result in users being barred from participating in the project.
 
-Although the majority of conversions here are held in English, we appreciate that not everybody can speak it fluently. Please post your content in whatever language is most comfortable for you to write yourself (meaning, do not rely on an LLM to translate it to English). Assume that members of the community will use whatever translation tools are necessary to assist with understanding your non-English content.
+Although the majority of conversations here are held in English, we appreciate that not everybody can speak it fluently. Please post your content in whatever language is most comfortable for you to write yourself (meaning, do not rely on an LLM to translate it to English). Assume that members of the community will use whatever translation tools are necessary to assist with understanding your non-English content.
 
 There will be no discussion of chat-bots or LLM services permitted.
 
