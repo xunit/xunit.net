@@ -300,6 +300,18 @@ Set this to `true` to show messages from `ITestOutputHelper` live during the tes
 > | JSON schema type | Boolean
 > | Default value    | `false`
 
+### `shutdownForegroundThreadWaitSeconds`{ #shutdownForegroundThreadWaitSeconds }
+
+Set this to change the number of seconds a test project will wait on shutdown for any foreground threads that have been left running. If the foreground threads don't stop in time, then the test project will return failure.
+
+> { .table-compact }
+> |                  |
+> | ---------------- | -----
+> | Test framework   | v3 4.0+
+> | JSON schema type | 32-bit integer
+> | Minimum value    | `1`
+> | Default value    | `10`
+
 ### `stopOnFail`{ #stopOnFail }
 
 Set this to `true` to stop running further tests once a test has failed. (Because of the asynchronous nature of test execution, this will not necessarily happen immediately; any test that is already in flight may complete, which may result in multiple test failures reported.)

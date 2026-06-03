@@ -145,6 +145,13 @@
        "default": false,
        "type": "boolean"
     },
+    "shutdownForegroundThreadWaitSeconds": {
+      "description": "The number of seconds to wait for foreground threads to shut down before failing the test run. Defaults to 10. Must be a positive integer value greater than 0.",
+      "default": 10,
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483646
+    },
     "stopOnFail": {
       "description": "Enable or disable stopping running further tests once a failed test has been recorded.",
       "default": false,
