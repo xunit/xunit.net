@@ -1,6 +1,6 @@
 ---
 title: Config with xunit.runner.json
-title-version: 2025 July 30
+title-version: 2026 June 7
 ---
 
 Configuration files can be used to configure xUnit.net on a per test-assembly basis.
@@ -11,7 +11,6 @@ Configuration files can be used to configure xUnit.net on a per test-assembly ba
 > The assembly-specific filename takes precedence over the non-specific filename; there is **no merging** of values between files.
 
 ## Adding the configuration file{ #file }
-
 
 1. Add a new JSON file to the root of your test project. Name the file `xunit.runner.json`. Start with a schema reference so that text editors (like Visual Studio & Visual Studio Code) can provide auto-complete behavior while editing the file:
 
@@ -371,6 +370,7 @@ Set this to change the number of seconds a test project will wait on shutdown fo
 > { .table-compact }
 > |                  |
 > | ---------------- | -----
+> | Runners          | v3 4.0+
 > | Test framework   | v3 4.0+
 > | JSON schema type | 32-bit integer
 > | Minimum value    | `1`
@@ -392,7 +392,8 @@ Set this to `true` to stop running further tests once a test has failed. (Becaus
 
 | Version            | Url
 | ------------------ | ---
-| 3.1<br />(current) | [https://xunit.net/schema/v3.1/xunit.runner.schema.json](/schema/v3.1/xunit.runner.schema.json)<br />[https://xunit.net/schema/current/xunit.runner.schema.json](/schema/current/xunit.runner.schema.json)
+| 4.0<br />(current) | [https://xunit.net/schema/v3.1/xunit.runner.schema.json](/schema/v3.1/xunit.runner.schema.json)<br />[https://xunit.net/schema/current/xunit.runner.schema.json](/schema/current/xunit.runner.schema.json)
+| 3.1               | [https://xunit.net/schema/v3.1/xunit.runner.schema.json](/schema/v3.1/xunit.runner.schema.json)
 | 3.0                | [https://xunit.net/schema/v3.0/xunit.runner.schema.json](/schema/v3.0/xunit.runner.schema.json)
 | 2.8.1              | [https://xunit.net/schema/v2.8.1/xunit.runner.schema.json](/schema/v2.8.1/xunit.runner.schema.json)
 | 2.8                | [https://xunit.net/schema/v2.8/xunit.runner.schema.json](/schema/v2.8/xunit.runner.schema.json)

@@ -1,12 +1,12 @@
 ---
 title: Config with testconfig.json (Microsoft Testing Platform)
-title-version: 2025 July 30
+title-version: 2026 June 7
 ---
 
-Beginning with xUnit.net v3 version `3.0.0-pre.15`, when running tests in Microsoft Testing Platform mode, you can utilize [`testconfig.json`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#testconfigjson) to provide test project configuration.
+Beginning with xUnit.net v3 version `3.0.0`, when running tests in Microsoft Testing Platform mode, you can utilize [`testconfig.json`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#testconfigjson) to provide test project configuration.
 
 > [!NOTE]
-> Using `testconfig.json` is only supported when running tests in Microsoft Testing Platform mode. Running tests any other way (including using our first party runners or any non-Microsoft Testing Plateform third party runner) does not support `testconfig.json`, and you should rely on [xUnit.net's native JSON configuration files](/docs/config-xunit-runner-json) instead. For more information about v3 and Microsoft Testing Platform, see [our documentation page](/docs/getting-started/v3/microsoft-testing-platform).
+> Using `testconfig.json` is only supported when running tests in Microsoft Testing Platform mode. Running tests any other way (including using our first party runners or any non-Microsoft Testing Platform third party runner) does not support `testconfig.json`, and you should rely on [xUnit.net's native JSON configuration files](/docs/config-xunit-runner-json) instead. For more information about v3 and Microsoft Testing Platform, see [our documentation page](/docs/getting-started/v3/microsoft-testing-platform).
 
 ## Format of the `testconfig.json` file
 
