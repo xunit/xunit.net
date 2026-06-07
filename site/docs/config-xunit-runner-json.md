@@ -392,7 +392,7 @@ Set this to `true` to stop running further tests once a test has failed. (Becaus
 
 | Version            | Url
 | ------------------ | ---
-| 4.0<br />(current) | [https://xunit.net/schema/v3.1/xunit.runner.schema.json](/schema/v3.1/xunit.runner.schema.json)<br />[https://xunit.net/schema/current/xunit.runner.schema.json](/schema/current/xunit.runner.schema.json)
+| 4.0<br />(current) | [https://xunit.net/schema/v3.1/xunit.runner.schema.json](/schema/v4.0/xunit.runner.schema.json)<br />[https://xunit.net/schema/current/xunit.runner.schema.json](/schema/current/xunit.runner.schema.json)
 | 3.1               | [https://xunit.net/schema/v3.1/xunit.runner.schema.json](/schema/v3.1/xunit.runner.schema.json)
 | 3.0                | [https://xunit.net/schema/v3.0/xunit.runner.schema.json](/schema/v3.0/xunit.runner.schema.json)
 | 2.8.1              | [https://xunit.net/schema/v2.8.1/xunit.runner.schema.json](/schema/v2.8.1/xunit.runner.schema.json)

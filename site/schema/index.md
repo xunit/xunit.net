@@ -16,6 +16,7 @@ The primary recommended URL is [https://xunit.net/schema/current/xunit.runner.sc
 ## v3
 
 [current](current/xunit.runner.schema.json){: .release }
+[4.0](v4.0/xunit.runner.schema.json){: .release }
 [3.1](v3.1/xunit.runner.schema.json){: .release }
 [3.0](v3.0/xunit.runner.schema.json){: .release }
 [3.0-alpha-1](v3.0-alpha-1/xunit.runner.schema.json){: .prerelease }
