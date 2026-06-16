@@ -477,6 +477,8 @@ A few notable things about running with `xunit-console`:
 
 * When running v3 test projects, they are run in a separate process. Like previous versions of `xunit.console`, it continues to run v1 and v2 test projects in the same process as the console runner (optionally in a separate AppDomain, if needed). Running them in a separate process does incur some overhead vs. running them directly, though in practice this should be fairly benign for most users.
 
+* When filtering tests by class or method name, nested test classes should use the CLR nested type separator (`+`) rather than the C# member access operator (`.`). For example, use `-class MyTests.OuterTests+InnerTests` (or `-class+ MyTests.OuterTests+InnerTests` for an exact class name match), and use `-method MyTests.OuterTests+InnerTests.TestName` for a test method inside that nested class.
+
 * Result files from `xunit-console` contain run information for all tests assemblies in a single report. If you were run each v3 project individually and ask for a result file, it would only include information for that single test assembly.
 
 * Custom reporters are not available through `xunit-console`, as they are installed into the v3 test assembly's runner directly. If you are using a custom reporter, then you must directly run the test project.
