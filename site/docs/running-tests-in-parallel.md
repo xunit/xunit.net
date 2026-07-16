@@ -39,7 +39,7 @@ With Runners v2 2.8+, you can specify overrides for the parallelism algorithm in
 * Microsoft Testing Platform can specify the value via [`testconfig.json`](/docs/config-testconfig-json#parallelAlgorithm)
 
 > [!NOTE]
-> * The algorithm is only used when you have enabled test collection parallelism, and you are using a limited number of threads (i.e., not `unlimited` or `-1`).
+> * The algorithm is only used when the parallel mode is not `off`, and you are using a limited number of threads (i.e., not `unlimited` or `-1`).
 > * You must be using Core Framework v2 2.8 or later (or Core Framework v3) for the new algorithm.
 > * You must be using a runner linked against v2 2.8 or later (or v3) for the new algorithm configuration file support. This includes all in-box v2 runners 2.8 or later, all in-box v3 runners, and `xunit.runner.visualstudio` 2.8 or later. Third party runners will need to be linked against `xunit.runner.utility` 2.8.0 or later, or `xunit.v3.runner.utility`.
 
@@ -59,13 +59,45 @@ When we say "Parallelism in Test Frameworks", what we mean specifically is how a
 
 As mentioned above, parallelism in the test framework is a feature that was introduced in Core Framework v2. Tests written in xUnit.net v1 cannot be run in parallel against each other in the same assembly, though multiple test assemblies linked against v1 are still able to participate in the runner parallelism feature described in the next sub-section.
 
-### Parallelism in xUnit.net v2/v3
+### Parallel modes
 
-#### Test Collections
+In xUnit.net v2, and xUnit.net v3 prior to 4.0, only two parallel modes are supported (`none` and `collections`); in xUnit.net v3 starting with 4.0, a third mode is supported (`all`). The default mode for all v2 and v3 projects is `collections`.
 
-How does xUnit.net v2/v3 decide which tests can run against each other in parallel? It uses a concept called _test collections_ to make that decision.
+#### Parallel mode: `none`
 
-By default, each test class is a unique test collection. Tests within the same test class will not run in parallel against each other. Let's examine a very simple test assembly, one with a single test class:
+In parallel mode `none`, tests within a test assembly are not run in parallel. Each test is run sequentially. There is no need to protect against simultaneous tests accessing shared resources, since only a single test at a time will be running.
+
+Let's assume you have two test classes:
+
+```csharp
+public class TestClass1
+{
+    [Fact]
+    public void Test1()
+    {
+        Thread.Sleep(3000);
+    }
+}
+
+public class TestClass2
+{
+    [Fact]
+    public void Test2()
+    {
+        Thread.Sleep(5000);
+    }
+}
+```
+
+When we run this test assembly, we see that the total time spent runnings the tests is approximately 8 seconds. These two tests are not run in parallel: one is run, then when it's finished, the other will be run.
+
+#### Parallel mode: `collections`
+
+In parallel mode `collections`, tests within a single test collection will not be run in parallel against each other, but tests in different test collections will run in parallel against each other.
+
+By default, there is a _test collection per test class_. This means that tests in a test class will not be run in parallel against one another, but tests in different test classes will be. Shared resources may need to be protected if they could be accessed from several tests simultaneously.
+
+Let's examine a very simple test assembly, one with a single test class:
 
 ```csharp
 public class TestClass1
@@ -110,8 +142,6 @@ public class TestClass2
 
 Now when we run this test assembly, we see that the total time spent running the tests is approximately 5 seconds (assuming you have at least two threads available for parallelism). That's because `Test1` and `Test2` are in different test collections, so they are able to run in parallel against one another.
 
-#### Custom Test Collections
-
 If we need to indicate that multiple test classes should not be run in parallel against one another, then we place them into the same test collection. This is simply a matter of decorating each test class with an attribute that places them into the same uniquely named test collection:
 
 ```csharp
@@ -141,37 +171,187 @@ This instructs xUnit.net not run these two classes against each other in paralle
 > [!NOTE]
 > For more information on test collections, including the ability to use them to share text context, see [Shared Context](/docs/shared-context).
 
-#### Changing Default Behavior
+#### Parallel mode: `all`
 
-There are several default pieces of behavior that can be configured by the developer as relates to running tests in parallel. These are all changed by applying an assembly level attribute:
+In parallel mode `all`, all tests are run in parallel against all other tests.
 
-* Put all test classes into a single test collection by default:
+Let's examine a very simple test assembly, one with a single test class:
 
-  `[assembly: CollectionBehavior(CollectionBehavior.CollectionPerAssembly)]`
+```csharp
+public class TestClass1
+{
+    [Fact]
+    public void Test1()
+    {
+        Thread.Sleep(3000);
+    }
 
-  _**Default**: CollectionBehavior.CollectionPerClass_
+    [Fact]
+    public void Test2()
+    {
+        Thread.Sleep(5000);
+    }
+}
+```
 
-* Set the maximum number of threads to use when running test in parallel:
+When we run this test assembly, we see that the total time spent running the tests is approximately 5 seconds, since both tests are run at the same time.
 
-  `[assembly: CollectionBehavior(MaxParallelThreads = _n_)]`
+### Selectively opting out of parallelism
 
-  _**Default**: number of CPU threads in the PC_
+When parallelism is enabled (that is, for parallel mode `collections` or `all`), you can selectively opt out parallelism entirely. Any test which is opted out of parallelism will be guaranteed not to run in parallel against any other test.
 
-* Turn off parallelism inside the assembly:
+#### Opting a test collection out of parallelism
 
-  `[assembly: CollectionBehavior(DisableTestParallelization = true)]`
+_Valid for parallel modes `collections` and `all`, ignored by parallel mode `none`_
 
-  _**Default**: false_
+To opt all the tests from a test collection out of parallelism, create a collection definition with parallelism turned off, like this:
 
-* Turn off parallelism for specific Test Collection
+```csharp
+[CollectionDefinition("Test Collection Name", DisableParallelization = true)]
+public class OurTestCollectionDefinition { }
 
-  `[CollectionDefinition(DisableParallelization = true)]` (placed on the collection definition class)
+[Collection("Test Collection Name")]
+public class TestClass1
+{
+    [Fact]
+    public void Test1()
+    {
+        // ... test code here ...
+    }
+}
+```
 
-  _**Default**: false_<br />
+#### Opting a test class out of parallelism
 
-  Parallel-capable test collections will be run first (in parallel), followed by parallel-disabled test collections (run sequentially).
+_Valid for parallel mode `all`, ignored by parallel modes `collections` and `none`_
 
-For the assembly-level attributes, you can only have one of these attributes per assembly; if you want to combine multiple behaviors, do it with a single attribute. Also be aware that these values affect only this assembly; if multiple assemblies are running in parallel against one another, they have their own independent values.
+To opt all the tests from a test class out of parallelism, add `[TestClass]`, as illustrated here:
+
+```csharp
+[TestClass(DisableParallelism = true)]
+public class TestClass1
+{
+    [Fact]
+    public void Test1()
+    {
+        // ... test code here ...
+    }
+}
+```
+
+#### Opting a test method out of parallelism
+
+_Valid for parallel mode `all`, ignored by parallel modes `collections` and `none`_
+
+To opt all the tests from a test method out of parallelism, add `DisableParallelism` to the `[Fact]` or `[Theory]` attribute, as illustrated here:
+
+```csharp
+public class TestClass1
+{
+    [Fact(DisableParallelism = true)]
+    public void Test1()
+    {
+        // ... test code here ...
+    }
+}
+```
+
+#### Opting a data source out of parallelism
+
+_Valid for parallel mode `all`, ignored by parallel modes `collections` and `none`_
+
+To opt all the tests from a theory data source out of parallelism, add `DisableParallelism` to the data attribute, as illustrated here:
+
+```csharp
+public class TestClass1
+{
+    [Theory]
+    [InlineData(42, DisableParallelization = true)]  // Runs non-parallel
+    [InlineData(2112)]                               // Runs in parallel
+    public void Test1(int value)
+    {
+        // ... test code here ...
+    }
+}
+```
+
+### Opting a data row out of parallelism
+
+_Valid for parallel mode `all`, ignored by parallel modes `collections` and `none`_
+
+To opt an individual data row out of parallelism, use the `DisableParallelism` property on the theory data row object, as illustrated here:
+
+```csharp
+public class TestClass1
+{
+    public static IEnumerable<TheoryDataRow<int>> DataSource =
+    [
+        new(42) { DisableParallelization = true },  // Runs non-parallel
+        new(2112),                                  // Runs in parallel
+    ];
+
+    [Theory]
+    [MemberData(nameof(DataSource))]
+    public void Test1(int value)
+    {
+        // ... test code here ...
+    }
+}
+```
+
+### Changing default behaviors
+
+There are several default pieces of behavior that can be configured by the developer as relates to running tests in parallel. These are all changed by applying an assembly level attribute.
+
+#### Set the default collection behavior:
+
+_Core Framework v2, v3_
+
+> `[assembly: CollectionBehavior(CollectionBehavior.CollectionPerAssembly)]`<br />
+> `[assembly: CollectionBehavior(CollectionBehavior.CollectionPerClass)]`<br />
+> &nbsp; &nbsp; _**Default:** `CollectionBehavior.CollectionPerClass`_
+
+#### Set the maximum number of threads to use when running test in parallel:
+
+_Core Framework v2, v3 (prior to 4.0)_
+
+> `[assembly: CollectionBehavior(MaxParallelThreads = n)]`<br />
+> &nbsp; &nbsp; _**Default**: number of CPU threads in the PC_
+
+_Core Framework v3 (4.0 and later)_
+
+> `[assembly: Parallelization(MaxThreads = n)]`<br />
+> &nbsp; &nbsp; _**Default**: number of CPU threads in the PC_
+
+#### Set the parallel mode:
+
+_Core Framework v2, v3 (prior to 4.0)_
+
+> `[assembly: CollectionBehavior(DisableTestParallelization = false)]`<br />
+> `[assembly: CollectionBehavior(DisableTestParallelization = true)]`<br />
+> &nbsp; &nbsp; _**Default**: `false`_<br />
+> &nbsp; &nbsp; _Note: `false` is equivalent to `collections`, and `true` is equivalent to `none`)_
+
+_Core Framework v3 (4.0 and later)_
+
+> `[assembly: Parallelization(Mode = ParallelMode.None)]`<br />
+> `[assembly: Parallelization(Mode = ParallelMode.Collections)]`<br />
+> `[assembly: Parallelization(Mode = ParallelMode.All)]`<br />
+> &nbsp; &nbsp; _**Default**: `ParallelMode.Collections`_
+
+#### Set the parallel algorithm:
+
+_Core Framework v2, v3 (prior to 4.0)_
+
+> `[assembly: CollectionBehavior(ParallelAlgorithm = ParallelAlgorithm.Aggressive)]`<br />
+> `[assembly: CollectionBehavior(ParallelAlgorithm = ParallelAlgorithm.Conservative)]`<br />
+> &nbsp; &nbsp; _**Default**: `ParallelAlgorithm.Conservative`_
+
+_Core Framework v3 (4.0 and later)_
+
+> `[assembly: Parallelization(Algorithm = ParallelAlgorithm.Aggressive)]`<br />
+> `[assembly: Parallelization(Algorithm = ParallelAlgorithm.Conservative)]`<br />
+> &nbsp; &nbsp; _**Default**: `ParallelAlgorithm.Conservative`_
 
 ## Parallelism in Runners{ #parallelism-in-runners }
 
@@ -185,15 +365,28 @@ The console runner (`xunit.runner.console` for v2 and `xunit.v3.runner.console` 
 
 The following command line options can be used to influence parallelism:
 
-| Option                        | Effect
-| ----------------------------- | ------
-| `-maxThreads <n>`             | Overrides the maximum number of threads used _per assembly._ For console runner v2 2.8.0 or later (and console runner v3), you can also use a multiplier syntax (i.e., `2.0x` will use a max thread count that is double the number of CPU threads). The default value is the number of CPU threads in the PC.
-| `-parallel <option>`          | Allows the user to specify which kinds of parallelization should be allowed for the test run. The valid option values are `none` (turns off all parallelization), `collections` (parallelizes collections but not assemblies), `assemblies` (parallelizes assemblies but not collections), and `all` (parallelizes both collections and assemblies). The default value is `collections`.
-| `-parallelAlgorithm <option>` | Changes the parallelism algorithm. Prior to Core Framework v2 2.8, the system always used the `aggressive` algorithm; for Core Framework v2 2.8 onward (and Core Framework v3), you can specify either `conservative` or `aggressive`.
+| Option                         | Effect
+| ------------------------------ | ------
+| `-maxThreads <n>`              | Overrides the maximum number of threads used _per assembly._ For console runner v2 2.8.0 or later (and console runner v3), you can also use a multiplier syntax (i.e., `2.0x` will use a max thread count that is double the number of CPU threads). The default value is the number of CPU threads in the PC.
+| `-parallelAlgorithm <option>`  | Changes the parallelism algorithm. Prior to Core Framework v2 2.8, the system always used the `aggressive` algorithm; for Core Framework v2 2.8 onward (and Core Framework v3), you can specify either `conservative` or `aggressive`.
+| `-parallelAssemblies <option>` | Changes the inter-assembly parallel mode (valid values are `on` and `off`).
+| `-parallelMode <option>`       | Changes the intra-assembly parallel mode (valid values are `none`, `collections`, and `all`).
+
+> [!NOTE]
+> If you set `-parallelMode all`, when running v2 test assemblies and/or v3 test assemblies (prior to 4.0), it will be treated by those test assemblies as though you had requested `-parallelMode collections`.
+
+The `-parallelAssemblies` and `-parallelMode` switches are new to `xunit.v3.runner.console` (4.0 and later). `xunit.runner.console` (and `xunit.v3.runner.console` prior to 4.0) have a single `-parallel` option, with the following equivalencies:
+
+Older switch            | New switches
+----------------------- | ------------------
+`-parallel none`        | `-parallelMode none -parallelAssemblies off`
+`-parallel assemblies`  | `-parallelMode none -parallelAssemblies on`
+`-parallel collections` | `-parallelMode collections -parallelAssemblies off`
+`-parallel all`         | `-parallelMode collections -parallelAssemblies on`
 
 ### MSBuild Runner{ #msbuild-runner }
 
-Like the console runner, the MSBuild runner can run multiple assemblies at the same time, and build file options can be used to configuration the parallelism options used when running the tests.
+The MSBuild runner (`xunit.runner.msbuild` for v2 and `xunit.v3.runner.msbuild` for v3) can run multiple assemblies at the same time, and build file options can be used to configuration the parallelism options used when running the tests.
 
 The following `xunit` task properties can be used to influence parallelism:
 
@@ -202,7 +395,12 @@ The following `xunit` task properties can be used to influence parallelism:
 | `MaxParallelThreads`         | Overrides the maximum number of threads used _per assembly._ For MSBuild runner v2 2.8.0 or later (and MSBuild runner v3), you can also use a multiplier syntax (i.e., `2.0x` will use a max thread count that is double the number of CPU threads). The default value is the number of CPU threads in the PC.
 | `ParallelAlgorithm`          | Changes the parallelism algorithm. Prior to Core Framework v2 2.8, the system always used the `aggressive` algorithm; for Core Framework v2 2.8 onward (and Core Framework v3), you can specify either `conservative` or `aggressive`.
 | `ParallelizeAssemblies`      | Set to `true` to run the test assemblies in parallel against one other; set to `false` to run them sequentially. The default value is `false`.
-| `ParallelizeTestCollections` | Set to `true` to run the test collections in parallel against one other; set to `false` to run them sequentially. The default value is `true`
+| `ParallelMode`               | Changes the intra-assembly parallel mode (valid values are `none`, `collections`, and `all`).
+
+> [!NOTE]
+> If you set `ParallelMode='all'`, when running v2 test assemblies and/or v3 test assemblies (prior to 4.0), it will be treated by those test assemblies as though you had requested `ParallelMode='collections'`.
+
+The `ParallelMode` property is new to `xunit.v3.runner.msbuild` (4.0 and later). `xunit.runner.msbuild` (and `xunit.v3.runner.msbuild` prior to 4.0) include a `ParallelizeTestCollections` property, which can be set to `true` or `false` (which is equivalent to parallel mode `collections` and `none`, respectively).
 
 ## Parallelism via Configuration{ #parallelism-via-configuration }
 

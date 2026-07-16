@@ -50,6 +50,10 @@
   float: right;
 }
 
+h4 {
+  font-weight: bold;
+}
+
 /** HEADINGS **/
 
 article h1 {

@@ -187,12 +187,34 @@ Set this to change the way tests are scheduled when they're running in parallel.
 
 Set this to `true` if the assembly is willing to run tests inside this assembly in parallel against each other. Tests in the same test collection will be run sequentially against each other, but tests in different test collections will be run in parallel against each other. Set this to `false` to disable all parallelization within this test assembly.
 
+> [!NOTE]
+> When consumed by v3 4.0+ test projects, this is mapped automatically to `parallelMode` (`true` == `collections`, `false` == `none`). This will not overwrite an explicitly set `parallelMode` value, so it is safe to set both if you have a single configuration file for both older and newer test projects.
+
 > { .table-compact }
 > |                  |
 > | ---------------- | -----
 > | Test framework   | v3 3.0+
 > | JSON schema type | Boolean
 > | Default value    | `true`
+
+### `parallelMode`{ #parallelMode }
+
+Set this to change the default way test parallelization is performed for the test assembly:
+
+* `"none"` no tests are run in parallel
+* `"collections"` test collections are run in parallel; tests within the same collection are run serially
+* `"all"` all tests are run in parallel against each other
+
+> [!NOTE]
+> If you need to use a single configuration file to support both v3 4.0+ projects and older v2 or v3 projects, you may also want to set [`parallelizeTestCollections`](#parallelizeTestCollections) to ensure that the older projects pick up the older configuration file value, while the newer projects pick up `parallelMode`.
+
+> { .table-compact }
+> |                  |
+> | ---------------- | -----
+> | Test framework   | v3 4.0+
+> | JSON schema type | String
+> | Valid values     | `"none"`, `"collections"`, `"all"`
+> | Default value    | `"collections"`
 
 ### `preEnumerateTheories`{ #preEnumerateTheories }
 

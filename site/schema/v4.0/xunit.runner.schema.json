@@ -99,6 +99,15 @@
       "default": true,
       "type": "boolean"
     },
+    "parallelMode": {
+      "description": "Sets the default intra-test assembly parallelism mode. Valid values are 'off' (no parallelism), 'collections' (parallelize tests collections), and 'all' (parallelize all tests). For more information: https://xunit.net/docs/running-tests-in-parallel#parallelism-in-test-frameworks",
+      "default": "collections",
+      "enum": [
+        "off",
+        "collections",
+        "all"
+      ]
+    },
     "preEnumerateTheories": {
       "description": "Enables or disables pre-enumerate of theories so that there is an individual test case for each theory data row. Set this to 'false' to return a single test case for each theory without pre-enumerating the data ahead of time; set this to 'true' to attempt to pre-enumerate each theory row when possible.",
       "type": "boolean"
