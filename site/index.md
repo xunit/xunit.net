@@ -255,10 +255,10 @@ xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
 {: .latest }
 |                                                 | Stable                                             | Prerelease
 | ----------------------------------------------- | -------------------------------------------------- | ----------
-| Core Framework v3                               | [3.2.2](/releases/v3/3.2.2){: .release }           | [4.0.0-pre.128](/releases/v3/4.0.0-pre.128){: .prerelease }
+| Core Framework v3                               | [3.2.2](/releases/v3/3.2.2){: .release }           | [4.0.0-pre.154](/releases/v3/4.0.0-pre.154){: .prerelease }
 | Core Framework v2 <sup>[[1](#footnote-1)]</sup> | [2.9.3](/releases/v2/2.9.3){: .release }           | _None_
-| Analyzers                                       | [1.27.0](/releases/analyzers/1.27.0){: .release }  | [2.0.0-pre.56](/releases/analyzers/2.0.0-pre.56){: .prerelease }
-| Visual Studio adapter                           | [3.1.5](/releases/visualstudio/3.1.5){: .release } | [4.0.0-pre.4](/releases/visualstudio/4.0.0-pre.4){: .prerelease }
+| Analyzers                                       | [1.27.0](/releases/analyzers/1.27.0){: .release }  | [2.0.0-pre.60](/releases/analyzers/2.0.0-pre.60){: .prerelease }
+| Visual Studio adapter                           | [3.1.5](/releases/visualstudio/3.1.5){: .release } | [4.0.0-pre.5](/releases/visualstudio/4.0.0-pre.5){: .prerelease }
 
 _For older release notes, see the [full release notes list](/releases/)._
 

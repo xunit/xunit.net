@@ -30,7 +30,7 @@ using Xunit;
 public class xUnit1010
 {
     [Theory]
-    [InlineData("42")]
+    [InlineData("Hello world")]
     public void TestMethod(int _) { }
 }
 ```
@@ -43,7 +43,7 @@ using Xunit;
 public class xUnit1010
 {
     [Theory]
-    [InlineData("42")]
+    [InlineData("Hello world")]
     public void TestMethod(string _) { }
 }
 ```

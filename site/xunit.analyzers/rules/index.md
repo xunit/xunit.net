@@ -128,6 +128,7 @@ Tag                                                                      | Meani
 | [xUnit2030](/xunit.analyzers/rules/xUnit2030) | ::v2::{.label .label-version-True} ::v3::{.label .label-version-True} ::AOT::{.label .label-version-True}    | ::W::{.label .label-Warning .label-Fixed} | Do not use Assert.NotEmpty to check if a value exists in a collection
 | [xUnit2031](/xunit.analyzers/rules/xUnit2031) | ::v2::{.label .label-version-True} ::v3::{.label .label-version-True} ::AOT::{.label .label-version-True}    | ::W::{.label .label-Warning .label-Fixed} | Do not use Where clause with Assert.Single
 | [xUnit2032](/xunit.analyzers/rules/xUnit2032) | ::v2::{.label .label-version-True} ::v3::{.label .label-version-True} ::AOT::{.label .label-version-True}    | ::I::{.label .label-Info .label-Fixed}    | Type assertions based on 'assignable from' are confusingly named
+| [xUnit2033](/xunit.analyzers/rules/xUnit2033) | ::v2::{.label .label-version-True} ::v3::{.label .label-version-True} ::AOT::{.label .label-version-True}    | ::I::{.label .label-Warning .label-Fixed} | Use the assertion return value instead of re-deriving it
 
 ## Extensibility Analyzers (3xxx)
 

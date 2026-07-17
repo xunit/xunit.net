@@ -277,7 +277,8 @@ div.alert pre {
   white-space: nowrap;
 }
 
-.table-compact {
+.table-compact,
+.table-compact-with-header {
   border-collapse: unset;
   line-height: 1.2;
   margin: 0;
@@ -293,6 +294,12 @@ div.alert pre {
   border: none;
   margin: 0;
   padding: 0 1em 0 0;
+}
+
+.table-compact-with-header th,
+.table-compact-with-header td {
+  border: none;
+  padding: 0.15em 1em 0.15em 0.25em;
 }
 
 .table-compact td:nth-child(1) {
