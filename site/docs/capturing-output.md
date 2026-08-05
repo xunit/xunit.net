@@ -46,7 +46,7 @@ Also bear in mind that `Debug` output is only captured when running a Debug buil
 > [!NOTE]
 > Both the console and the trace system are process-wide shared resources. xUnit.net v3 uses an async-local context (`TestContext`) to be able to associate the current thread with the associated test. This allows test parallelization while routing the console and trace output to their appropriate tests.
 >
-> If you write console or trace output to a thread that is not associated with a test (such as a background worker thread created by your test or production code), then that output will silently discarded as there is no test to associate the output to.
+> If you write console or trace output to a thread that is not associated with a test (such as a background worker thread created by your test or production code), then that output will be silently discarded, as there is no test to associate the output to.
 
 xUnit.net v3 tests may also continue to use `ITestOutputHelper` as described below.
 
@@ -123,7 +123,7 @@ xUnit.net v3 extensibility classes may also continue to use `IMessageSink` as de
 
 ### xUnit.net v2
 
-Each extensibility class has its own individual constructor requirements. In addition, they can take _as their last constructor parameter_ an instance of `IMessageSink` that is designated solely for sending diagnostic messages. Diagnostic messages implement `IDiagnosticMessage` from `xunit.abstractions`. If you're linked against `xunit.execution`, there is a `DiagnosticMessage` class in the `Xunit.Sdk` namespace available for your use.
+Each extensibility class has its own individual constructor requirements. In addition, they can take _(as their last constructor parameter)_ an instance of `IMessageSink` that is designated solely for sending diagnostic messages. Diagnostic messages implement `IDiagnosticMessage` from `xunit.abstractions`. If you're linked against `xunit.execution`, there is a `DiagnosticMessage` class in the `Xunit.Sdk` namespace available for your use.
 
 The extensibility interfaces which currently support this functionality are:
 
