@@ -36,10 +36,8 @@
   --material-danger-background-dark: #572c2c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --card-box-shadow: 0 1px 2px 0 #d0e0eb0f, 0 1px 3px 1px #d0e0eb29;
-  }
+:root[data-bs-theme='dark'] {
+  --card-box-shadow: 0 1px 2px 0 #d0e0eb0f, 0 1px 3px 1px #d0e0eb49;
 }
 
 .hidden {
@@ -124,11 +122,9 @@ img.oversize {
   box-shadow: 3px 3px 20px #666;
 }
 
-@media (prefers-color-scheme: dark) {
-  .border {
-    background-color: #2e3436;
-    box-shadow: 3px 3px 20px #888;
-  }
+[data-bs-theme='dark'] .border {
+  background-color: #2e3436;
+  box-shadow: 3px 3px 20px #888;
 }
 
 /** NAVBAR **/
@@ -234,12 +230,16 @@ code {
   font-size: inherit;
   margin: 2px 2px;
   padding: 0 0.5em;
+  white-space: nowrap;
 }
 
 td code {
   white-space: nowrap;
 }
 
+a:has(>code) {
+  text-decoration-color: var(--bs-code-color);
+}
 a>code {
   color: var(--bs-code-color);
 }
@@ -414,14 +414,12 @@ blockquote.about-links {
   font-weight: 600;
 }
 
-@media (prefers-color-scheme: dark) {
-  .green {
-    color: #3f3;
-  }
+[data-bs-theme='dark'] .green {
+  color: #3f3;
+}
 
-  .red {
-    color: #f33;
-  }
+[data-bs-theme='dark'] .red {
+  color: #f33;
 }
 
 /** VERSION PICKER **/
