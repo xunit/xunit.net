@@ -233,6 +233,10 @@ code {
   white-space: nowrap;
 }
 
+pre code {
+  white-space: inherit;
+}
+
 td code {
   white-space: nowrap;
 }
