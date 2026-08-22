@@ -11,9 +11,6 @@ The `schema-version` attribute on the `assemblies` element identifies the schema
 The top level element of the document is the [assemblies](#assemblies) element.
 
 > [!NOTE]
-> Any child element that doesn't link to specific documentation is an element that contains text, rather than child elements and/or attributes. Older runners will place this text in a CDATA block; newer runners will just put the text directly into the element. XSL-T (and most parsers) won't differentiate between naked text vs. a CDATA block.
-
-> [!NOTE]
 > If you are looking for documentation on the deprecated XML format supported by xUnit.net v1, see the [xUnit.net XML Format v1](/docs/format-xml-v1) documentation page.
 
 ## `<assemblies>`{ #assemblies }
@@ -99,10 +96,7 @@ The `error` element contains information about an environment failure that happe
 
 ## `<errors>`{ #errors }
 
-The `errors` element is a container for 0 or more [`error`](#error) elements.
-
-> [!NOTE]
-> In schema 2+, the `errors` element will never be empty; if there are no errors in the collection, then the `errors` element itself will not be present. Defensively supporting both schema 1 and schema 2+ means you should still plan for `errors` elements with no children.
+The `errors` element is a container for 0 or more [`error`](#error) elements. <sup>[2](#footnote-2)</sup>
 
 > | Child               | Schema | Cardinality | Purpose
 > | ------------------- | ------ | ----------- | -------
@@ -116,10 +110,26 @@ The `failure` element contains information a test failure.
 > | ---------------- | ------ | -----
 > | `exception-type` | 1+     | [Optional] The fully qualified type name of the exception that caused the failure.<br />_**Data type:** String_
 
-> | Child           | Schema | Cardinality | Purpose
-> | --------------- | ------ | ----------- | -------
-> | `<message>`     | 1+     | 0..1        | The composite failure message.
-> | `<stack-trace>` | 1+     | 0..1        | The composite stack trace.
+> | Child                           | Schema | Cardinality | Purpose
+> | ------------------------------- | ------ | ----------- | -------
+> | [`<message>`](#message)         | 1+     | 0..1        | The composite failure message.
+> | [`<stack-trace>`](#stack-trace) | 1+     | 0..1        | The composite stack trace.
+
+## `<message>`{ #message }
+
+The `message` element contains the text of the failure message. This is a composite message for exceptions which include inner exceptions. <sup>[1](#footnote-1)</sup>
+
+## `<output>`{ #output }
+
+The `output` element contains the text of the output captured by the test. For v2 and v3, this includes output written via `ITestOutputHelper`; for v3, this also includes output written to `Console` (if the test project uses `[assembly: CaptureConsole]`) as well as output written to `Trace` (if the test project uses `[assembly: CaptureTrace]`). <sup>[1](#footnote-1)</sup>
+
+## `<reason>`{ #reason }
+
+The `reason` element contains the skip reason for a skipped test. <sup>[1](#footnote-1)</sup>
+
+## `<stack-trace>`{ #stack-trace }
+
+The `stack-trace` element contains the stack trace of a failure. This is a composite stack trace for exceptions which include inner exceptions. <sup>[1](#footnote-1)</sup>
 
 ## `<test>`{ #test }
 
@@ -142,8 +152,8 @@ The `test` element contains information about the run of a single test.
 > | Child                     | Schema | Cardinality | Purpose
 > | ------------------------- | ------ | ----------- | -------
 > | [`<failure>`](#failure)   | 1+     | 0..1        | For failing tests, contains information about the failure.
-> | `<output>`                | 1+     | 0..1        | Any captured output.
-> | `<reason>`                | 1+     | 0..1        | For a skipped test, contains the reason text.
+> | [`<output>`](#output)     | 1+     | 0..1        | Any captured output.
+> | [`<reason>`](#reason)     | 1+     | 0..1        | For a skipped test, contains the reason text.
 > | [`<traits>`](#traits)     | 1+     | 0..1        | Container for 1 or more [`trait`](#trait) elements.
 > | [`<warnings>`](#warnings) | 2+     | 0..1        | Container for 1 or more `warning` elements.
 
@@ -164,10 +174,20 @@ The `traits` element is a container for 1 or more [`trait`](#trait) elements.
 > | ------------------- | ------ | ----------- | -------
 > | [`<trait>`](#trait) | 1+     | 1..*        | One `trait` element for every trait name/value pair associated with the test.
 
+## `<warning>`{ #warning }
+
+The `warning` element contains the text of a single warning. <sup>[1](#footnote-1)</sup>
+
 ## `<warnings>`{ #warnings }
 
 The `warnings` element is a container for 1 or more `warning` elements.
 
-> | Child       | Schema | Cardinality | Purpose
-> | ----------- | ------ | ----------- | -------
-> | `<warning>` | 2+     | 1..*        | One `warning` element for each warning message in the test.
+> | Child                   | Schema | Cardinality | Purpose
+> | ----------------------- | ------ | ----------- | -------
+> | [`<warning>`](#warning) | 2+     | 1..*        | One `warning` element for each warning message in the test.
+
+## Footnotes
+
+1. <span id="footnote-1" /> Any child element which contains text may be placed inside a CDATA block by older runners; newer runners will just put the text directly into the element. XSL-T (and most parsers) won't differentiate between naked text vs. a CDATA block, but some XML parser APIs may make distinctions. When parsing this XML programmatically, please ensure the API you're using either doesn't make a distinction, or that you handle both variations appropriately.
+
+2. <span id="footnote-2" /> In schema 2+, the `errors` element will never be empty; if there are no errors in the collection, then the `errors` element itself will not be present. Defensively supporting both schema 1 and schema 2+ means you should still plan for `errors` elements with no children.
