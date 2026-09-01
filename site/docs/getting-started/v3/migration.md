@@ -104,13 +104,13 @@ Change the following package references (and use versions from the table at the 
 | `xunit.assert.source`                                           | `xunit.v3.assert.source`
 | `xunit.console`                                                 | _Remove, no longer supported_
 | `xunit.core`                                                    | `xunit.v3.core`
-| `xunit.extensibility.core`<br />`xunit.extensibility.execution` | `xunit.v3.extensibility.core` (*)
+| `xunit.extensibility.core`<br />`xunit.extensibility.execution` | `xunit.v3.extensibility.core` (\*)
 | `xunit.runner.console`                                          | `xunit.v3.runner.console`
 | `xunit.runner.msbuild`                                          | `xunit.v3.runner.msbuild`
-| `xunit.runner.reporters`<br />`xunit.runner.utility`            | `xunit.v3.runner.utility` (*)
+| `xunit.runner.reporters`<br />`xunit.runner.utility`            | `xunit.v3.runner.utility` (\*)
 | `xunit.runner.visualstudio`                                     | _Make sure to pick up a 3.x.y version_
 
-_**Note:** In some cases multiple libraries/packages were merged together into a single new library/package, as denoted in the table above with (*)._
+_**Note:** In some cases multiple libraries/packages were merged together into a single new library/package, as denoted in the table above with (\*)._
 
 If you want to use the MSBuild runner, we now ship both a .NET Framework and .NET Core/.NET version in the same package. It will dynamically select the correct version depending on whether you use the .NET Framework MSBuild or the .NET MSBuild (via `dotnet build` or `dotnet msbuild`). However, the .NET version only supports v3 test projects. If you need to still run v1 and/or v2 test projects, you must use the .NET Framework version. (Mono ships with a .NET Framework version of MSBuild, so all comments about .NET Framework also apply to Mono.)
 
