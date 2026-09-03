@@ -108,7 +108,7 @@ Change the following package references (and use versions from the table at the 
 | `xunit.runner.console`                                          | `xunit.v3.runner.console`
 | `xunit.runner.msbuild`                                          | `xunit.v3.runner.msbuild`
 | `xunit.runner.reporters`<br />`xunit.runner.utility`            | `xunit.v3.runner.utility` (\*)
-| `xunit.runner.visualstudio`                                     | _Make sure to pick up a 3.x.y version_
+| `xunit.runner.visualstudio`                                     | _Make sure to pick up version 3.0.0 or later_
 
 _**Note:** In some cases multiple libraries/packages were merged together into a single new library/package, as denoted in the table above with (\*)._
 
