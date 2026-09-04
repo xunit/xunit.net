@@ -279,7 +279,7 @@ The removal of reflection abstractions means that many previous splits between a
 
 One obvious example of this is the removal of `IDataDiscoverer` (previously in `Xunit.Abstractions`) and `DataDiscoverer` (previously in `Xunit.Sdk`). The `IDataDiscoverer.GetData` method has been moved to `IDataAttribute.GetData`, and becomes an abstract method on the base `DataAttribute` class. The previous method was given an `IAttributeInfo` (which pointed to the `DataAttribute`-derived attribute) and `IMethodInfo` (which pointed to the test method); the updated method provides access to the `MethodInfo` (rather than the reflection abstraction version), and also to a disposal tracker so that it can add any data that it creates which might need to be disposed when cleaning up.
 
-If you're looking for a type that has disappeared and it's a discoverer, chances are the thing it previous discovered is now responsible for describing itself, rather than relying on an external discoverer.
+If you're looking for a type that has disappeared and it's a discoverer, chances are the thing it previously discovered is now responsible for describing itself, rather than relying on an external discoverer.
 
 ### Namespace changes
 
