@@ -1,7 +1,7 @@
 ---
 analyzer: true
 title: xUnit1037
-description: There are fewer theory data type arguments than required by the parameters of the test method
+description: There are fewer arguments than required by the parameters of the test method
 severity: Error
 v2: true
 v3: true
@@ -10,8 +10,7 @@ aot: true
 
 ## Cause
 
-When you use `TheoryData` or `TheoryDataRow` with `[MemberData]` or `[ClassData]`, the number of generic types
-must match the number of parameters in the test method. In this case, you have provided too few types.
+When you use `[MemberData]` or `[ClassData]` with `TheoryData`, `TheoryDataRow`, or a tuple, the number of arguments must match the number of parameters in the test method. In this case, you have provided too few arguments.
 
 ## Reason for rule
 
@@ -19,14 +18,13 @@ You must provide the correct number of arguments to the test method to run the t
 
 ## How to fix violations
 
-To fix a violation of this rule, either add more type parameters to match the method signature, or remove
-parameters from the test method.
+To fix a violation of this rule, either add more arguments to match the method signature, or remove parameters from the test method.
 
 ## Examples
 
 ### Violates
 
-### Using `TheoryData<>` (for v2 and v3)
+#### Using `TheoryData<>` (for v2 and v3)
 
 ```csharp
 using Xunit;
@@ -42,7 +40,7 @@ public class xUnit1037
 }
 ```
 
-### Using `TheoryDataRow<>` (for v3 only)
+#### Using `TheoryDataRow<>` (for v3 only)
 
 ```csharp
 using Xunit;
@@ -83,9 +81,52 @@ public class xUnit1037
 }
 ```
 
+#### Using a tuple (for v3 only)
+
+```csharp
+using Xunit;
+
+public class xUnit1037
+{
+    public static IEnumerable<(int, string)> PropertyData =>
+        [(1, "Hello"), (2, "there"), (3, "world")];
+
+    [Theory]
+    [MemberData(nameof(PropertyData))]
+    public void TestMethod(int _1, string _2, double _3) { }
+}
+```
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using Xunit;
+
+public class ClassRowData : IEnumerable<(int, string)>
+{
+    public IEnumerator<(int, string)> GetEnumerator()
+    {
+        yield return (1, "Hello");
+        yield return (2, "there");
+        yield return (3, "world");
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+}
+
+public class xUnit1037
+{
+    [Theory]
+    [ClassData(typeof(ClassRowData))]
+    public void TestMethod(int _1, string _2, double _3) { }
+}
+```
+
 ### Does not violate
 
-### Using `TheoryData<>` (for v2 and v3)
+#### Using `TheoryData<>` (for v2 and v3)
+
+_Fix by adding an argument:_
 
 ```csharp
 using Xunit;
@@ -101,6 +142,8 @@ public class xUnit1037
 }
 ```
 
+_Fix by removing a parameter:_
+
 ```csharp
 using Xunit;
 
@@ -115,7 +158,9 @@ public class xUnit1037
 }
 ```
 
-### Using `TheoryDataRow<>` (for v3 only)
+#### Using `TheoryDataRow<>` (for v3 only)
+
+_Fix by adding an argument:_
 
 ```csharp
 using System.Collections.Generic;
@@ -129,20 +174,6 @@ public class xUnit1037
     [Theory]
     [MemberData(nameof(PropertyData))]
     public void TestMethod(int _1, string _2) { }
-}
-```
-
-```csharp
-using Xunit;
-
-public class xUnit1037
-{
-    public static IEnumerable<TheoryDataRow<int>> PropertyData =>
-        [new(1), new(2), new(3)];
-
-    [Theory]
-    [MemberData(nameof(PropertyData))]
-    public void TestMethod(int _) { }
 }
 ```
 
@@ -170,6 +201,22 @@ public class xUnit1037
 }
 ```
 
+_Fix by removing a parameter:_
+
+```csharp
+using Xunit;
+
+public class xUnit1037
+{
+    public static IEnumerable<TheoryDataRow<int>> PropertyData =>
+        [new(1), new(2), new(3)];
+
+    [Theory]
+    [MemberData(nameof(PropertyData))]
+    public void TestMethod(int _) { }
+}
+```
+
 ```csharp
 using System.Collections;
 using System.Collections.Generic;
@@ -194,3 +241,88 @@ public class xUnit1037
     public void TestMethod(int _1) { }
 }
 ```
+
+#### Using a tuple (for v3 only)
+
+_Fix by adding an argument:_
+
+```csharp
+using Xunit;
+
+public class xUnit1037
+{
+    public static IEnumerable<(int, string)> PropertyData =>
+        [(1, "Hello", 21.12), (2, "there", 42.24), (3, "world", 63.36)];
+
+    [Theory]
+    [MemberData(nameof(PropertyData))]
+    public void TestMethod(int _1, string _2, double _3) { }
+}
+```
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using Xunit;
+
+public class ClassRowData : IEnumerable<(int, string)>
+{
+    public IEnumerator<(int, string)> GetEnumerator()
+    {
+        yield return (1, "Hello", 21.12);
+        yield return (2, "there", 42.24);
+        yield return (3, "world", 63.36);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+}
+
+public class xUnit1037
+{
+    [Theory]
+    [ClassData(typeof(ClassRowData))]
+    public void TestMethod(int _1, string _2, double _3) { }
+}
+```
+
+_Fix by removing a parameter:_
+
+```csharp
+using Xunit;
+
+public class xUnit1037
+{
+    public static IEnumerable<(int, string)> PropertyData =>
+        [(1, "Hello"), (2, "there"), (3, "world")];
+
+    [Theory]
+    [MemberData(nameof(PropertyData))]
+    public void TestMethod(int _1, string _2) { }
+}
+```
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using Xunit;
+
+public class ClassRowData : IEnumerable<(int, string)>
+{
+    public IEnumerator<(int, string)> GetEnumerator()
+    {
+        yield return (1, "Hello");
+        yield return (2, "there");
+        yield return (3, "world");
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+}
+
+public class xUnit1037
+{
+    [Theory]
+    [ClassData(typeof(ClassRowData))]
+    public void TestMethod(int _1, string _2) { }
+}
+```
+
