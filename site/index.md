@@ -255,9 +255,9 @@ xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
 {: .latest }
 |                                                 | Stable                                             | Prerelease
 | ----------------------------------------------- | -------------------------------------------------- | ----------
-| Core Framework v3                               | [4.0.0](/releases/v3/4.0.0){: .release }           | _None_
+| Core Framework v3                               | [4.0.1](/releases/v3/4.0.1){: .release }           | _None_
 | Core Framework v2 <sup>[[1](#footnote-1)]</sup> | [2.9.3](/releases/v2/2.9.3){: .release }           | _None_
-| Analyzers                                       | [2.0.0](/releases/analyzers/2.0.0){: .release }    | _None_
+| Analyzers                                       | [2.1.0](/releases/analyzers/2.1.0){: .release }    | _None_
 | Visual Studio adapter                           | [4.0.0](/releases/visualstudio/4.0.0){: .release } | _None_
 
 _For older release notes, see the [full release notes list](/releases/)._
