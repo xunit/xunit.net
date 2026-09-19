@@ -89,6 +89,8 @@ Tag                                                                      | Meani
 | [xUnit1067](/xunit.analyzers/rules/xUnit1067) | ::v2::{.label .label-version-True} ::v3::{.label .label-version-True} ::AOT::{.label .label-version-True}   | ::E::{.label .label-Error .label-Fixed}   | There is no matching MemberData method argument
 | [xUnit1068](/xunit.analyzers/rules/xUnit1068) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-False} ::AOT::{.label .label-version-True} | ::E::{.label .label-Error .label-Fixed}   | MemberData cannot point to an open generic type
 | [xUnit1069](/xunit.analyzers/rules/xUnit1069) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True} ::AOT::{.label .label-version-True}  | ::W::{.label .label-Warning .label-Fixed} | Test methods with a Timeout should reference TestContext.Current.CancellationToken
+| [xUnit1070](/xunit.analyzers/rules/xUnit1070) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True} ::AOT::{.label .label-version-True}  | ::E::{.label .label-Error .label-Fixed}   | Cultured test methods cannot have null cultures
+| [xUnit1071](/xunit.analyzers/rules/xUnit1071) | ::v2::{.label .label-version-False} ::v3::{.label .label-version-True} ::AOT::{.label .label-version-True}  | ::W::{.label .label-Warning .label-Fixed} | Cultured test methods should not have duplicate cultures
 
 ## Assertion Analyzers (2xxx)
 
