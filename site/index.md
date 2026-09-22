@@ -30,13 +30,13 @@ dotnet new install xunit.v3.templates
 
 ```text
 The following template packages will be installed:
-    xunit.v3.templates
+   xunit.v3.templates
 
-Success: xunit.v3.templates::2.0.3 installed the following templates:
+Success: xunit.v3.templates@4.0.1 installed the following templates:
 Template Name                   Short Name        Language    Tags
-------------------------------  ----------------  ----------  ----------
+------------------------------  ----------------  ----------  ----------------------
 xUnit.net v3 Extension Project  xunit3-extension  [C#],F#,VB  Test/xUnit
-xUnit.net v3 Test Project       xunit3            [C#],F#,VB  Test/xUnit
+xUnit.net v3 Test Project       xunit3            [C#],F#,VB  Test/xUnit/Desktop/Web
 ```
 
 Create a unit test project:
@@ -51,6 +51,8 @@ The template "xUnit.net v3 Test Project" was created successfully.
 Processing post-creation actions...
 Restoring C:\Dev\SampleProject\SampleProject.csproj:
 Restore succeeded.
+
+Successfully modified global.json.
 ```
 
 Edit `UnitTest1.cs`:
@@ -80,7 +82,7 @@ dotnet run
 ```
 
 ```text
-xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
+xUnit.net v3 In-Process Runner v4.0.1+8ed8aa354c (64-bit .NET 8.0.31)
   Discovering: SampleProject
   Discovered:  SampleProject
   Starting:    SampleProject
@@ -90,9 +92,9 @@ xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
       Actual:   4
       Stack Trace:
         UnitTest1.cs(14,0): at SampleProject.UnitTest1.Bad()
-  Finished:    SampleProject
+  Finished:    SampleProject (ID = 'bae55cf6f267288a77732296cb50d0e628d4d1ffd4d217f8bc25638a8ef29431')
 === TEST EXECUTION SUMMARY ===
-    SampleProject  Total: 2, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0.054s
+   SampleProject  Total: 2, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0.092s
 ```
 
 ### [F#](#tab/fs)
@@ -105,13 +107,13 @@ dotnet new install xunit.v3.templates
 
 ```text
 The following template packages will be installed:
-    xunit.v3.templates
+   xunit.v3.templates
 
-Success: xunit.v3.templates::2.0.3 installed the following templates:
+Success: xunit.v3.templates@4.0.1 installed the following templates:
 Template Name                   Short Name        Language    Tags
-------------------------------  ----------------  ----------  ----------
+------------------------------  ----------------  ----------  ----------------------
 xUnit.net v3 Extension Project  xunit3-extension  [C#],F#,VB  Test/xUnit
-xUnit.net v3 Test Project       xunit3            [C#],F#,VB  Test/xUnit
+xUnit.net v3 Test Project       xunit3            [C#],F#,VB  Test/xUnit/Desktop/Web
 ```
 
 Create a unit test project:
@@ -126,6 +128,8 @@ The template "xUnit.net v3 Test Project" was created successfully.
 Processing post-creation actions...
 Restoring C:\Dev\SampleProject\SampleProject.fsproj:
 Restore succeeded.
+
+Successfully modified global.json.
 ```
 
 Edit `UnitTest1.fs`:
@@ -147,14 +151,14 @@ let Bad() =
     Assert.Equal(5, Add(2, 2))
 ```
 
-Execute the tests: `dotnet run`
+Execute the tests:
 
 ```
 dotnet run
 ```
 
 ```text
-xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
+xUnit.net v3 In-Process Runner v4.0.1+8ed8aa354c (64-bit .NET 8.0.31)
   Discovering: SampleProject
   Discovered:  SampleProject
   Starting:    SampleProject
@@ -164,9 +168,9 @@ xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
       Actual:   4
       Stack Trace:
         UnitTest1.fs(14,0): at UnitTest1.Bad()
-  Finished:    SampleProject
+  Finished:    SampleProject (ID = 'bae55cf6f267288a77732296cb50d0e628d4d1ffd4d217f8bc25638a8ef29431')
 === TEST EXECUTION SUMMARY ===
-    SampleProject  Total: 2, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0.052s
+   SampleProject  Total: 2, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0.079s
 ```
 
 ### [Visual Basic](#tab/vb)
@@ -179,13 +183,13 @@ dotnet new install xunit.v3.templates
 
 ```text
 The following template packages will be installed:
-    xunit.v3.templates
+   xunit.v3.templates
 
-Success: xunit.v3.templates::2.0.3 installed the following templates:
+Success: xunit.v3.templates@4.0.1 installed the following templates:
 Template Name                   Short Name        Language    Tags
-------------------------------  ----------------  ----------  ----------
+------------------------------  ----------------  ----------  ----------------------
 xUnit.net v3 Extension Project  xunit3-extension  [C#],F#,VB  Test/xUnit
-xUnit.net v3 Test Project       xunit3            [C#],F#,VB  Test/xUnit
+xUnit.net v3 Test Project       xunit3            [C#],F#,VB  Test/xUnit/Desktop/Web
 ```
 
 Create a unit test project:
@@ -200,6 +204,8 @@ The template "xUnit.net v3 Test Project" was created successfully.
 Processing post-creation actions...
 Restoring C:\Dev\SampleProject\SampleProject.vbproj:
 Restore succeeded.
+
+Successfully modified global.json.
 ```
 
 Edit `UnitTest1.vb`:
@@ -226,14 +232,14 @@ Public Class UnitTest1
 End Class
 ```
 
-Execute the tests: `dotnet run`
+Execute the tests:
 
 ```
 dotnet run
 ```
 
 ```text
-xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
+xUnit.net v3 In-Process Runner v4.0.1+8ed8aa354c (64-bit .NET 8.0.31)
   Discovering: SampleProject
   Discovered:  SampleProject
   Starting:    SampleProject
@@ -243,9 +249,9 @@ xUnit.net v3 In-Process Runner v2.0.3+216a74a292 (64-bit .NET 8.0.17)
       Actual:   4
       Stack Trace:
         UnitTest1.vb(16,0): at SampleProject.UnitTest1.Bad()
-  Finished:    SampleProject
+  Finished:    SampleProject (ID = 'bae55cf6f267288a77732296cb50d0e628d4d1ffd4d217f8bc25638a8ef29431')
 === TEST EXECUTION SUMMARY ===
-    SampleProject  Total: 2, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0.052s
+   SampleProject  Total: 2, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0.080s
 ```
 
 ---
