@@ -358,3 +358,9 @@
     href: /docs/hash-sets-vs-linear-containers
   - name: Theory Data Stability in Test Explorer
     href: /docs/theory-data-stability-in-vs
+
+- name: Governance
+  href: /governance
+
+- name: Code of Conduct
+  href: /code-of-conduct
