@@ -14,6 +14,8 @@
     href: /docs/getting-started/v3/native-aot
   - name: Migrating Unit Tests
     href: /docs/getting-started/v3/migration
+  - name: Extensibility Overview
+    href: /docs/getting-started/v3/extensibility
   - name: Migrating Extensibility
     href: /docs/getting-started/v3/migration-extensibility
   - name: Microsoft Testing Platform (MTP)
