@@ -30,6 +30,8 @@
     href: /docs/getting-started/v3/custom-serialization
   - name: Writing a Custom Runner Reporter
     href: /docs/getting-started/v3/custom-runner-reporter
+  - name: Extensibility Overview
+    href: /docs/getting-started/v3/extensibility
 
 - name: xUnit.net v2
   items:
