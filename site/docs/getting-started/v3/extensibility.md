@@ -17,7 +17,9 @@ The [AssertExamples sample](https://github.com/xunit/samples.xunit/tree/main/v3/
 
 ## Custom traits
 
-Traits let you attach name/value pairs to tests, which runners can filter and group on. To create your own trait attributes, implement `ITraitAttribute`. The [TraitExtensibility sample](https://github.com/xunit/samples.xunit/tree/main/v3/TraitExtensibilityExample) shows a `CategoryAttribute` which applies one or more traits to a test method, class, or assembly.
+Traits let you attach name/value pairs to tests, which runners can filter and group on. To create your own trait attributes, implement `ITraitAttribute`. The [TraitExtensibility sample](https://github.com/xunit/samples.xunit/tree/main/v3/TraitExtensibilityExample) and [AotTraitExtensibility sample](https://github.com/xunit/samples.xunit/tree/main/v3/AotTraitExtensibility) shows a `CategoryAttribute` which applies one or more traits to a test method, class, or assembly.
+
+The former example is applicable to developers using reflection-based testing (the default), whereas the latter example is applicable to developers using Native AOT testing. The samples differ due to the need for some extensions in Native AOT to include source generators, which includes trait extensions. Almost all test and test metadata discovery happens during compilation for Native AOT, rather than at runtime in reflection-based testing.
 
 ## Custom test frameworks
 
