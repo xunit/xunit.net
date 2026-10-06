@@ -252,6 +252,9 @@ xUnit.net v3 In-Process Runner v4.0.0-pre.108+342e27492f (64-bit .NET 8.0.23)
 
 Although we've only written 3 test methods, the test runner actually ran 5 tests; that's because each theory with its data set is a separate test. Note also that the runner tells you exactly which set of data failed, because it includes the parameter values in the name of the test.
 
+> [!NOTE]
+> For more information on available theory data attributes and how to provide a custom data source attribute, please see [Theory Data Attributes](/docs/getting-started/v3/theory-data-attributes).
+
 ## Using Visual Studio
 
 > [!NOTE]
