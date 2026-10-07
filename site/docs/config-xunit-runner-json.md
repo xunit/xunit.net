@@ -1,6 +1,6 @@
 ---
 title: Config with xunit.runner.json
-title-version: 2026 June 7
+title-version: 2026 October 9
 ---
 
 Configuration files can be used to configure xUnit.net on a per test-assembly basis.
@@ -27,6 +27,9 @@ Configuration files can be used to configure xUnit.net on a per test-assembly ba
      <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
    </ItemGroup>
    ```
+
+> [!NOTE]
+> Although we generally recommend you use the "current" schema version (so that it automatically moves forward with new releases), you may wish to target your schema for a specific test framework version. For a complete list of available schema URLs, see [JSON Schema for xunit.runner.json](/schema/xunit-runner-json).
 
 ## Supported configuration items{ #items }
 
@@ -411,18 +414,14 @@ Set this to `true` to stop running further tests once a test has failed. (Becaus
 > | JSON schema type | Boolean
 > | Default value    | `false`
 
-## List of schema versions{ #schemas }
+### `synchronousReporting`{ #synchronousReporting }
 
-| Version            | Url
-| ------------------ | ---
-| 4.0<br />(current) | [https://xunit.net/schema/v4.0/xunit.runner.schema.json](/schema/v4.0/xunit.runner.schema.json)<br />[https://xunit.net/schema/current/xunit.runner.schema.json](/schema/current/xunit.runner.schema.json)
-| 3.1               | [https://xunit.net/schema/v3.1/xunit.runner.schema.json](/schema/v3.1/xunit.runner.schema.json)
-| 3.0                | [https://xunit.net/schema/v3.0/xunit.runner.schema.json](/schema/v3.0/xunit.runner.schema.json)
-| 2.8.1              | [https://xunit.net/schema/v2.8.1/xunit.runner.schema.json](/schema/v2.8.1/xunit.runner.schema.json)
-| 2.8                | [https://xunit.net/schema/v2.8/xunit.runner.schema.json](/schema/v2.8/xunit.runner.schema.json)
-| 2.5                | [https://xunit.net/schema/v2.5/xunit.runner.schema.json](/schema/v2.5/xunit.runner.schema.json)
-| 2.4                | [https://xunit.net/schema/v2.4/xunit.runner.schema.json](/schema/v2.4/xunit.runner.schema.json)
-| 2.3                | [https://xunit.net/schema/v2.3/xunit.runner.schema.json](/schema/v2.3/xunit.runner.schema.json)
-| 2.2                | [https://xunit.net/schema/v2.2/xunit.runner.schema.json](/schema/v2.2/xunit.runner.schema.json)
-| 2.1                | [https://xunit.net/schema/v2.1/xunit.runner.schema.json](/schema/v2.1/xunit.runner.schema.json)
-| 1.0                | [https://xunit.net/schema/v1/xunit.runner.schema.json](/schema/v1/xunit.runner.schema.json)
+Set this to `true` to enable synchronous message reporting. (Typically, this setting is only useful to third party runners who wish to modify the result message reporting behavior; end users will rarely have need to change this setting.)
+
+> { .table-compact }
+> |                  |
+> | ---------------- | -----
+> | Runners          | v3 4.0.2+
+> | Test framework   | v3 4.0.2+
+> | JSON schema type | Boolean
+> | Default value    | `false`

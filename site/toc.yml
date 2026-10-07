@@ -53,9 +53,11 @@
   - name: Config with xunit.runner.json
     href: /docs/config-xunit-runner-json
   - name: JSON Schema for xunit.runner.json
-    href: /schema/
+    href: /schema/xunit-runner-json
   - name: Config with testconfig.json
     href: /docs/config-testconfig-json
+  - name: JSON Schema for testconfig.json
+    href: /schema/testconfig-json
   - name: Config with RunSettings
     href: /docs/config-runsettings
 
@@ -208,6 +210,8 @@
       href: /xunit.analyzers/rules/xUnit1070
     - name: xUnit1071
       href: /xunit.analyzers/rules/xUnit1071
+    - name: xUnit1072
+      href: /xunit.analyzers/rules/xUnit1072
   - name: Assertion
     items:
     - name: xUnit2000
@@ -299,6 +303,10 @@
 
 - name: API Documentation
   items:
+  - name: v3 4.0.2
+    href: https://api.xunit.net/v3/4.0.2
+  - name: v3 4.0.2 (Native AOT)
+    href: https://api.xunit.net/v3-aot/4.0.2
   - name: v3 4.0.1
     href: https://api.xunit.net/v3/4.0.1
   - name: v3 4.0.1 (Native AOT)

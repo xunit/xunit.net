@@ -1,25 +1,50 @@
 ---
 title: Config with testconfig.json (Microsoft Testing Platform)
-title-version: 2026 June 7
+title-version: 2026 October 9
 ---
 
 Beginning with xUnit.net v3 version `3.0.0`, when running tests in Microsoft Testing Platform mode, you can utilize [`testconfig.json`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#testconfigjson) to provide test project configuration.
 
 > [!NOTE]
 > Using `testconfig.json` is only supported when running tests in Microsoft Testing Platform mode. Running tests any other way (including using our first party runners or any non-Microsoft Testing Platform third party runner) does not support `testconfig.json`, and you should rely on [xUnit.net's native JSON configuration files](/docs/config-xunit-runner-json) instead. For more information about v3 and Microsoft Testing Platform, see [our documentation page](/docs/getting-started/v3/microsoft-testing-platform).
+>
+> Only use this configuration file if:
+>
+> * You only run tests in Microsoft Testing Platform mode, or
+>
+> * You wish to set configuration values that are only applicable when running in Microsoft Testing Platform mode.
 
-## Format of the `testconfig.json` file
+## Adding the configuration file{ #file }
 
-The `testconfig.json` is a standard JSON file that lives in the root of your test project. xUnit.net configuration items are placed into a top-level object named `xUnit`. For example, to set the runtime culture and disable parallelization:
+Add a new JSON file to the root of your test project. Name the file `testconfig.json`. Start with a schema reference so that text editors (like Visual Studio & Visual Studio Code) can provide auto-complete behavior while editing the file:
+
+   ```json
+   {
+     "$schema": "https://xunit.net/schema/current/xunit.testconfig.schema.json"
+   }
+   ```
+
+> [!NOTE]
+> Although we generally recommend you use the "current" schema version (so that it automatically moves forward with new releases), you may wish to target your schema for a specific test framework version. For a complete list of available schema URLs, see [JSON Schema for testconfig.json](/schema/testconfig-json).
+
+xUnit.net configuration items are placed into a top-level object named `xUnit`. For example, to set the runtime culture and disable parallelization:
 
 ```json
 {
+  "$schema": "https://xunit.net/schema/current/xunit.testconfig.schema.json",
   "xUnit": {
     "culture": "en-GB",
     "parallelizeTestCollections": false
   }
 }
 ```
+
+Additional configuration sections supported directly by Microsoft Testing Platform include:
+
+* [`commandLineOptionDefaults`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#passive-command-line-option-defaults)
+* [`commandLineOptions`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#cli-options-in-testconfigjson)
+* [`environmentVariables`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#environment-variables-in-testconfigjson)
+* [`platformOptions`](https://learn.microsoft.com/dotnet/core/testing/microsoft-testing-platform-config#platform-options)
 
 ## Supported configuration items
 
@@ -341,7 +366,17 @@ Set this to `true` to stop running further tests once a test has failed. (Becaus
 > { .table-compact }
 > |                  |
 > | ---------------- | -----
-> | Runners          | v2 2.5+, v3
 > | Test framework   | v2, v3
+> | JSON schema type | Boolean
+> | Default value    | `false`
+
+### `synchronousReporting`{ #synchronousReporting }
+
+Set this to `true` to enable synchronous message reporting. (Typically, this setting is only useful to third party runners who wish to modify the result message reporting behavior; end users will rarely have need to change this setting.)
+
+> { .table-compact }
+> |                  |
+> | ---------------- | -----
+> | Test framework   | v3 4.0.2+
 > | JSON schema type | Boolean
 > | Default value    | `false`
