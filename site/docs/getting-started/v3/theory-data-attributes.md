@@ -9,7 +9,7 @@ In this document, we will discuss the three built-in data source attributes (inc
 
 ### InlineData
 
-The first and most commonly used data source attribute is `[InlineData]`. This allows the developer to provide their data inline in the attribute, hence the name. Let's example the [Getting Started](/docs/getting-started/v3/getting-started) example:
+The first and most commonly used data source attribute is `[InlineData]`. This allows the developer to provide their data inline in the attribute, hence the name. Let's start with the [Getting Started](/docs/getting-started/v3/getting-started) example:
 
 ```csharp
 [Theory]
@@ -158,7 +158,7 @@ public class UnitTest
 }
 ```
 
-This a more complex and less convenient alternative to `MemberData`, so we expect this to be much more rarely used.
+This a more complex and less convenient alternative to `MemberData`, so we expect this to be chosen less often.
 
 ## Alternative return types
 
@@ -195,7 +195,7 @@ Since data sources are customizable by developers, you may not want to pre-enume
 
 Types which represent data rows can implement `ITheoryDataRow`. There are two different variants for reflection-mode and Native AOT-mode, but they essentially represent the things that you can do with `TheoryDataRow<...>` today: provide a data row that includes metadata about the data row itself, in addition to the data for the data row.
 
-Implementers might include anybody who wants to provide a source of data rows where `TheoryDataRow` or `TheoryDataRow<...>` is no sufficient or appropriate.
+Implementers might include anybody who wants to provide a source of data rows where `TheoryDataRow` or `TheoryDataRow<...>` is not sufficient or appropriate.
 
 ### DataAttribute
 
