@@ -200,6 +200,14 @@
       href: /xunit.analyzers/rules/xUnit1066
     - name: xUnit1067
       href: /xunit.analyzers/rules/xUnit1067
+    - name: xUnit1068
+      href: /xunit.analyzers/rules/xUnit1068
+    - name: xUnit1069
+      href: /xunit.analyzers/rules/xUnit1069
+    - name: xUnit1070
+      href: /xunit.analyzers/rules/xUnit1070
+    - name: xUnit1071
+      href: /xunit.analyzers/rules/xUnit1071
   - name: Assertion
     items:
     - name: xUnit2000
@@ -268,6 +276,8 @@
       href: /xunit.analyzers/rules/xUnit2031
     - name: xUnit2032
       href: /xunit.analyzers/rules/xUnit2032
+    - name: xUnit2033
+      href: /xunit.analyzers/rules/xUnit2033
   - name: Extensibility
     items:
     - name: xUnit3000
@@ -282,6 +292,10 @@
       href: /xunit.analyzers/rules/xUnit3004
     - name: xUnit3005
       href: /xunit.analyzers/rules/xUnit3005
+    - name: xUnit3006
+      href: /xunit.analyzers/rules/xUnit3006
+    - name: xUnit3007
+      href: /xunit.analyzers/rules/xUnit3007
 
 - name: API Documentation
   items:
