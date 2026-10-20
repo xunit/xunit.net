@@ -55,6 +55,25 @@ You can provide _metadata about the data row_ via properties on `InlineData`, si
 * Setting a timeout for the data row (e.g., `Timeout = 10_000` for 10 second timeout)
 * Adding custom traits for the data row (e.g., `Traits = ["key1", "value1", "key2", "value2"]`)
 
+> [!NOTE]
+> If you want to support `decimal` parameters with argument values in `[InlineData]`, we strongly suggest you use a string value rather than a floating point value, since the latter values are often not capable of accurately storing values that would be valid in `decimal`.
+>
+> For example, the value `0.1` as a `double` is actually stored as `0.10000000000000001`. This could cause such values to be represented in unexpected ways when converted to `decimal`, [especially in .NET 11 and later](https://learn.microsoft.com/dotnet/core/compatibility/core-libraries/11/decimal-biginteger-floating-point-conversions). Using the string conversion prevents the quirks of floating point values from converting to inappropriate `decimal` values.
+>
+> ✅ Recommended
+> ```csharp
+> [Theory]
+> [InlineData("0.1")]
+> public void TestMethod(decimal m)
+> ```
+>
+> ❌ Not recommended
+> ```csharp
+> [Theory]
+> [InlineData(0.1)]
+> public void TestMethod(decimal m)
+> ```
+
 ### MemberData
 
 While `InlineData` is convenient for simple data, it has two significant downsides:
