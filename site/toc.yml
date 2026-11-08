@@ -226,6 +226,8 @@
       href: /xunit.analyzers/rules/xUnit1071
     - name: xUnit1072
       href: /xunit.analyzers/rules/xUnit1072
+    - name: xUnit1073
+      href: /xunit.analyzers/rules/xUnit1073
   - name: Assertion
     items:
     - name: xUnit2000
