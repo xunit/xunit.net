@@ -330,45 +330,7 @@
       href: /xunit.analyzers/rules/xUnit3007
 
 - name: API Documentation
-  items:
-  - name: v3 4.0.2
-    href: https://api.xunit.net/v3/4.0.2
-  - name: v3 4.0.2 (Native AOT)
-    href: https://api.xunit.net/v3-aot/4.0.2
-  - name: v3 4.0.1
-    href: https://api.xunit.net/v3/4.0.1
-  - name: v3 4.0.1 (Native AOT)
-    href: https://api.xunit.net/v3-aot/4.0.1
-  - name: v3 4.0.0
-    href: https://api.xunit.net/v3/4.0.0
-  - name: v3 4.0.0 (Native AOT)
-    href: https://api.xunit.net/v3-aot/4.0.0
-  - name: v3 3.2.2
-    href: https://api.xunit.net/v3/3.2.2
-  - name: v3 3.2.1
-    href: https://api.xunit.net/v3/3.2.1
-  - name: v3 3.2.0
-    href: https://api.xunit.net/v3/3.2.0
-  - name: v3 3.1.0
-    href: https://api.xunit.net/v3/3.1.0
-  - name: v3 3.0.1
-    href: https://api.xunit.net/v3/3.0.1
-  - name: v3 3.0.0
-    href: https://api.xunit.net/v3/3.0.0
-  - name: v3 2.0.3
-    href: https://api.xunit.net/v3/2.0.3
-  - name: v3 2.0.2
-    href: https://api.xunit.net/v3/2.0.2
-  - name: v3 2.0.1
-    href: https://api.xunit.net/v3/2.0.1
-  - name: v3 2.0.0
-    href: https://api.xunit.net/v3/2.0.0
-  - name: v3 1.1.0
-    href: https://api.xunit.net/v3/1.1.0
-  - name: v3 1.0.1
-    href: https://api.xunit.net/v3/1.0.1
-  - name: v3 1.0.0
-    href: https://api.xunit.net/v3/1.0.0
+  href: https://api.xunit.net/
 
 - name: Test Results in CI Systems
   items:
