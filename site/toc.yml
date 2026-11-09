@@ -2,7 +2,19 @@
   href: /
 
 - name: Release Notes
-  href: /releases
+  items:
+  - name: All Release Notes
+    href: /releases
+  - name: Latest Releases
+    items:
+    - name: Core Framework v3
+      href: /releases/v3/4.0.3
+    - name: Core Framework v2
+      href: /releases/v2/2.9.3
+    - name: Analyzers
+      href: /releases/analyzers/2.3.0
+    - name: Visual Studio adapter
+      href: /releases/visualstudio/4.0.1
 
 - name: xUnit.net v3
   items:

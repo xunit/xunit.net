@@ -59,3 +59,6 @@ public class xUnit1073
     public void TestMethod() { }
 }
 ```
+
+> [!NOTE]
+> This is a post-compile analyzer, so it may not show up in real time (or highlighted in the source code). It will be reported when the test project is compiled.
